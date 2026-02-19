@@ -1,10 +1,7 @@
 {
   "root": "./book",
-  "title": "CREATOR documentation",
-  "author": "CREATOR Team",
-  "structure": {
-    "readme": "introduction.md"
-  },
+  "title": "WepSIM documentation",
+  "author": "WepSIM Team",
   "plugins": ["alerts", "mermaid-md-adoc", "gtag", "hide-published-with"],
   "pluginsConfig": {
     "alerts": {

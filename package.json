@@ -5,9 +5,9 @@
     "honkit-plugin-mermaid-md-adoc": "^0.0.8"
   },
   "scripts": {
-    "build": "npx honkit build docs",
-    "serve": "npx honkit serve docs",
-    "book":  "npm install; npx honkit build docs; npx honkit serve docs"
+    "build": "npx honkit build docs ../book",
+    "serve": "npx honkit serve docs ../book",
+    "book":  "npm install; npx honkit build docs ../book; npx honkit serve docs ../book"
   },
   "devDependencies": {
     "gitbook-plugin-gtag": "^0.0.3"
