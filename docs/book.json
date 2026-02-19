@@ -1,0 +1,17 @@
+{
+  "title": "WepSIM documentation",
+  "description": "WepSIM documents",
+  "author": "WepSIM Team",
+  "plugins": ["mermaid","highlight","hide-published-with","hints","chapter-fold","gtag"],
+  "pluginsConfig": {
+    "highlight": {
+      "exclude": ["mermaid"]
+    },
+    "gtag": {
+      "token": "G-NYK3H6B6R9"
+    }
+  },
+  "styles": {
+    "website": "styles/website.css"
+  }
+}

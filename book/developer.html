@@ -3,17 +3,33 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>WepSIM Source Code · HonKit</title>
+        <title>WepSIM Source Code · WepSIM documentation</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.1.6">
-        
+        <meta name="author" content="WepSIM Team">
         
         
     
     <link rel="stylesheet" href="gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="gitbook/honkit-plugin-mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
             
                 
                 <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
@@ -31,16 +47,6 @@
 
     
 
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
         
     
@@ -301,92 +307,92 @@
 <li>If you want to use the WepSIM engine within your App, there is a WepSIM API in JavaScript available too.
 You will need to include the WepSIM engine in your proyect:</li>
 </ul>
-<pre><code class="lang-javascript">  &lt;script src=<span class="hljs-string">"min.sim_all.js"</span>   &gt;&lt;<span class="hljs-regexp">/script&gt;&lt;noscript&gt;Your browser does not support JavaScript!&lt;/</span>noscript&gt;
-  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"min.wepsim_web.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span>Your browser does not support JavaScript!<span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span></span>
+<pre><code class="lang-javascript">  <script src="min.sim_all.js"></script><noscript>Your browser does not support JavaScript!</noscript>
+  <script src="min.wepsim_web.js"></script><noscript>Your browser does not support JavaScript!</noscript>
 </code></pre>
 <ul>
 <li>And then, one simple example of using this WepSIM API is the following:</li>
 </ul>
-<pre><code class="lang-javascript">  <span class="hljs-comment">/*
+<pre><code class="lang-javascript">  /*
    * Input: minimal firmware and minimal assembly code
-   */</span>
+   */
 
-  str_firmware = <span class="hljs-string">'begin {\n'</span> +
-                 <span class="hljs-string">'  fetch:  (T2, C0),\n'</span> +
-                 <span class="hljs-string">'          (TA, R, BW=11, M1=1, C1=1),\n'</span> +
-                 <span class="hljs-string">'          (M2, C2, T1, C3),\n'</span> +
-                 <span class="hljs-string">'          (A0, B=0, C=0)\n'</span> +
-                 <span class="hljs-string">'}\n'</span> +
-                 <span class="hljs-string">'nop {\n'</span> +
-                 <span class="hljs-string">'        co=010110,\n'</span> +
-                 <span class="hljs-string">'        nwords=1,\n'</span> +
-                 <span class="hljs-string">'        {\n'</span> +
-                 <span class="hljs-string">'                (A0=1, B=1, C=0)\n'</span> +
-                 <span class="hljs-string">'        }\n'</span> +
-                 <span class="hljs-string">'}\n'</span> +
-                 <span class="hljs-string">'registers {\n'</span> +
-                 <span class="hljs-string">'        0=$zero,\n'</span> +
-                 <span class="hljs-string">'        29=$sp (stack_pointer)\n'</span> +
-                 <span class="hljs-string">'}\n'</span> ;
+  str_firmware = 'begin {\n' +
+                 '  fetch:  (T2, C0),\n' +
+                 '          (TA, R, BW=11, M1=1, C1=1),\n' +
+                 '          (M2, C2, T1, C3),\n' +
+                 '          (A0, B=0, C=0)\n' +
+                 '}\n' +
+                 'nop {\n' +
+                 '        co=010110,\n' +
+                 '        nwords=1,\n' +
+                 '        {\n' +
+                 '                (A0=1, B=1, C=0)\n' +
+                 '        }\n' +
+                 '}\n' +
+                 'registers {\n' +
+                 '        0=$zero,\n' +
+                 '        29=$sp (stack_pointer)\n' +
+                 '}\n' ;
 
-   str_assembly = <span class="hljs-string">'.text\n'</span> +
-                  <span class="hljs-string">'main: nop\n'</span> ;
+   str_assembly = '.text\n' +
+                  'main: nop\n' ;
 
 
-   <span class="hljs-comment">/*
+   /*
     * Code: Initialize WepSIM + reset + 
     *       compile firmware + compile assembly + 
     *       execute + get final state
-    */</span>
+    */
 
-    <span class="hljs-comment">// 1) initialize WepSIM engine</span>
-    <span class="hljs-keyword">var</span> ret = <span class="hljs-title function_">simcore_init</span>(<span class="hljs-literal">false</span>) ;
+    // 1) initialize WepSIM engine
+    var ret = simcore_init(false) ;
 
-    <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span> != ret.<span class="hljs-property">ok</span>) {
-        ret = <span class="hljs-title function_">simcore_init_hw</span>(<span class="hljs-string">'ep'</span>) ;
+    if (false != ret.ok) {
+        ret = simcore_init_hw('ep') ;
     }
 
-    <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span> != ret.<span class="hljs-property">ok</span>) {
-        <span class="hljs-keyword">var</span> ui_cb = {} ;
-        <span class="hljs-title function_">simcore_init_ui</span>(ui_cb) ;
+    if (false != ret.ok) {
+        var ui_cb = {} ;
+        simcore_init_ui(ui_cb) ;
     }
 
-    <span class="hljs-comment">// 2) reset hardware</span>
-    <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span> != ret.<span class="hljs-property">ok</span>) {
-        <span class="hljs-title function_">simcore_reset</span>() ;
+    // 2) reset hardware
+    if (false != ret.ok) {
+        simcore_reset() ;
     }
 
-    <span class="hljs-comment">// 3) load firmware</span>
-    <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span> != ret.<span class="hljs-property">ok</span>) {
-        ret = <span class="hljs-title function_">simcore_compile_firmware</span>(str_firmware) ;
+    // 3) load firmware
+    if (false != ret.ok) {
+        ret = simcore_compile_firmware(str_firmware) ;
     }
 
-    <span class="hljs-comment">// 4) load assembly</span>
-    <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span> != ret.<span class="hljs-property">ok</span>) {
-        ret = <span class="hljs-title function_">simcore_compile_assembly</span>(str_assembly) ;
+    // 4) load assembly
+    if (false != ret.ok) {
+        ret = simcore_compile_assembly(str_assembly) ;
     }
 
-    <span class="hljs-comment">// 5) execute firmware-assembly</span>
-    <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span> != ret.<span class="hljs-property">ok</span>) {
-        <span class="hljs-keyword">var</span> options = {
-                         <span class="hljs-attr">instruction_limit</span>:  <span class="hljs-number">1024</span>,
-                         <span class="hljs-attr">cycles_limit</span>:      <span class="hljs-number">10240</span>
+    // 5) execute firmware-assembly
+    if (false != ret.ok) {
+        var options = {
+                         instruction_limit:  1024,
+                         cycles_limit:      10240
                       } ;
-        ret = <span class="hljs-title function_">simcore_execute_program</span>(options) ;
+        ret = simcore_execute_program(options) ;
     }
 
-    <span class="hljs-comment">// 6) show a final report</span>
-    <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span> != ret.<span class="hljs-property">ok</span>) {
-        <span class="hljs-keyword">var</span> state_obj = <span class="hljs-title function_">simcore_simstate_current2state</span>() ;
-        ret.<span class="hljs-property">msg</span> = <span class="hljs-title function_">simcore_simstate_state2checklist</span>(state_obj, <span class="hljs-string">''</span>) ;
+    // 6) show a final report
+    if (false != ret.ok) {
+        var state_obj = simcore_simstate_current2state() ;
+        ret.msg = simcore_simstate_state2checklist(state_obj, '') ;
     }
 
 
-   <span class="hljs-comment">/*
+   /*
     * Output: the final state (or error found)
-    */</span>
+    */
 
-   <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(ret.<span class="hljs-property">msg</span>) ;
+   console.log(ret.msg) ;
 </code></pre>
 <p><a name="wepsim-apache-cordova"></a></p>
 <h1 id="wepsim-for-apache-cordova">WepSIM for Apache Cordova</h1>
@@ -395,7 +401,7 @@ You will need to include the WepSIM engine in your proyect:</li>
 <li><p>1.1) Follow Apache Cordova tutorial in order to create a new project:</p>
 <pre><code class="lang-bash">npm install -g cordova
 cordova create wepsim es.uc3m.inf.arcos.wepsim WepSIM
-<span class="hljs-built_in">cd</span> wepsim
+cd wepsim
 cordova platform add android
 cordova platform add ios
 </code></pre>
@@ -479,7 +485,7 @@ unzip master.zip
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"WepSIM Source Code","level":"4.1","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"developer.md","mtime":"2026-02-19T15:02:37.470Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-02-19T15:18:43.655Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"WepSIM Source Code","level":"4.1","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid","highlight","hide-published-with","hints","chapter-fold","gtag","livereload"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"search":{},"mermaid":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"gtag":{"token":"G-NYK3H6B6R9"},"highlight":{"exclude":["mermaid"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"WepSIM Team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WepSIM documentation","gitbook":"*","description":"WepSIM documents"},"file":{"path":"developer.md","mtime":"2026-02-19T15:02:37.470Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-02-19T15:53:43.758Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -531,6 +537,26 @@ unzip master.zip
     </script>
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/honkit-plugin-mermaid/mermaid-load.js"></script>
+        
+    
+        
+        <script src="gitbook/honkit-plugin-mermaid/mermaid.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-gtag/plugin.js"></script>
+        
     
         
         <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
