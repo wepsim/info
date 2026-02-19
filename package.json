@@ -15,6 +15,7 @@
       "book": "npm install; npx honkit build docs ../book; npx honkit serve docs ../book"
    },
    "devDependencies": {
+      "gitbook-plugin-copy-code-button": "^0.0.2",
       "gitbook-plugin-gtag": "^0.0.3",
       "honkit-plugin-mermaid": "^0.1.4"
    },

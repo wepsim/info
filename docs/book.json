@@ -2,7 +2,7 @@
   "title": "WepSIM documentation",
   "description": "WepSIM documents",
   "author": "WepSIM Team",
-  "plugins": ["mermaid","highlight","hide-published-with","hints","chapter-fold","gtag"],
+  "plugins": ["mermaid","highlight","hide-published-with","hints","chapter-fold","gtag","copy-code-button"],
   "pluginsConfig": {
     "highlight": {
       "exclude": ["mermaid"]

@@ -62,6 +62,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="web/getting-wepsim.html" />
+    
     
 
     </head>
@@ -88,6 +90,8 @@
 
     
         
+        <li class="header">Getting Started</li>
+        
         
     
         <li class="chapter active" data-level="1.1" data-path="./">
@@ -103,42 +107,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="web.html">
+        <li class="chapter " data-level="1.2" data-path="web/getting-wepsim.html">
             
-                <a href="web.html#getting-wepsim">
-            
-                    
-                    Run WepSIM
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="web.html">
-            
-                <a href="web.html#getting-started">
-            
-                    
-                    Using WepSIM
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="2.1" data-path="command-line.html">
-            
-                <a href="command-line.html#getting-wepsim">
+                <a href="web/getting-wepsim.html">
             
                     
                     Getting WepSIM
@@ -149,9 +120,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="command-line.html">
+        <li class="chapter " data-level="1.3" data-path="web/using-wepsim.html">
             
-                <a href="command-line.html#getting-started">
+                <a href="web/using-wepsim.html">
             
                     
                     Using WepSIM
@@ -165,16 +136,16 @@
 
     
         
-        <li class="divider"></li>
+        <li class="header">Command-line</li>
         
         
     
-        <li class="chapter " data-level="3.1" data-path="hooks.html">
+        <li class="chapter " data-level="2.1" data-path="command-line/getting-wepsim-cl.html">
             
-                <a href="hooks.html#wepsim-links-in-documents">
+                <a href="command-line/getting-wepsim-cl.html">
             
                     
-                    WepSIM Links in documents
+                    Getting WepSIM
             
                 </a>
             
@@ -182,9 +153,55 @@
             
         </li>
     
-        <li class="chapter " data-level="3.2" data-path="hooks.html">
+        <li class="chapter " data-level="2.2" data-path="command-line/using-wepsim-cl.html">
             
-                <a href="hooks.html#wepsim-from-google-colab">
+                <a href="command-line/using-wepsim-cl.html">
+            
+                    
+                    Using WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="command-line/checkingwith-wepsim-cl.html">
+            
+                <a href="command-line/checkingwith-wepsim-cl.html">
+            
+                    
+                    Checking with WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Integration with WepSIM</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="integration/links.html">
+            
+                <a href="integration/links.html">
+            
+                    
+                    WepSIM links in documents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="integration/gcolab.html">
+            
+                <a href="integration/gcolab.html">
             
                     
                     WepSIM on Google Colab
@@ -198,7 +215,7 @@
 
     
         
-        <li class="divider"></li>
+        <li class="header">Developers</li>
         
         
     
@@ -240,6 +257,13 @@
 
             
         </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
     
 
     
@@ -286,33 +310,36 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="wepsim-web-elemental-processor-simulator">WepSIM: Web Elemental Processor Simulator</h1>
-<p><img src="https://github.com/acaldero/wepsim/actions/workflows/node.js.yml/badge.svg" alt="Build Status"></img>
-<a href="https://qlty.sh/gh/acaldero/projects/wepsim" target="_blank"><img src="https://qlty.sh/gh/acaldero/projects/wepsim/maintainability.svg" alt="Maintainability"></img></a>
-<a href="https://app.codacy.com/gh/acaldero/wepsim/dashboard" target="_blank"><img src="https://api.codacy.com/project/badge/Grade/579e744cedde4dc78f8084d9db7abd32" alt="Codacy Badge"></img></a>
-<a href="https://www.gnu.org/licenses/lgpl-3.0" target="_blank"><img src="https://img.shields.io/badge/License-LGPL%20v3-blue.svg" alt="License: LGPL v3"></img></a>
-<a href="https://github.com/wepsim/wepsim/releases/tag/v2.3.8" target="_blank"><img src="https://img.shields.io/badge/Stable-2.3.8-green.svg" alt="Release"></img></a></p>
-<p>Welcome to the WepSIM documentation!</p>
-<h2 id="👨‍🎓-students-start-here">👨‍🎓 Students, start here!</h2>
+                                <h1 id="welcome-to-the-wepsim-documentation">Welcome to the WepSIM documentation!</h1>
+<h3 id="👨‍🎓-students-start-here">👨‍🎓 Students, start here!</h3>
 <p>New to WepSIM? Get up and running quickly:</p>
 <ol>
 <li><strong><a href="https://wepsim.github.io/wepsim" target="_blank">Try it now in your browser</a></strong> - No installation needed!</li>
-<li>Learn about the <strong><a href="web.html">Web Interface</a></strong> or <strong><a href="command-line.html">CLI Interface</a></strong> to navigate the simulator</li>
+<li>Learn about the <strong><a href="web/using-wepsim.html">Web Interface</a></strong> to enjoy the simulator</li>
+<li>Or learn about <strong><a href="command-line/getting-wepsim-cl.html">installing</a></strong> and <strong><a href="command-line/using-wepsim-cl.html">using the CLI Interface</a></strong> </li>
 </ol>
-<h2 id="👨‍🏫-teachers-start-here">👨‍🏫 Teachers, start here!</h2>
+<h3 id="👨‍🏫-teachers-start-here">👨‍🏫 Teachers, start here!</h3>
 <p>Setting up WepSIM for your course:</p>
+<ul>
+<li><strong><a href="integration/links.html">WepSIM links in your documents</a></strong> - Integrate WepSIM active links in your educational materials</li>
+<li><strong><a href="integration/gcolab.html">WepSIM in your notebooks</a></strong> - Integrate WepSIM in your Google Colab notebooks</li>
+</ul>
+<p>Automatinc checking from command line:</p>
 <ol>
-<li><strong><a href="command-line.html#getting-wepsim">Installation Guide</a></strong> - Get the CLI version up and running</li>
-<li><strong><a href="hooks.html#wepsim-links-in-documents">WepSIM links in documents</a></strong> - Integrate WepSIM active links in your educational materials</li>
-<li><strong><a href="hooks.html#wepsim-from-google-colab">WepSIM on Google Colab notebooks</a></strong> - Integrate WepSIM in your Google Colab notebooks</li>
+<li><strong><a href="command-line/getting-wepsim-cl.html">Installation Guide</a></strong> - Get the CLI version up and running</li>
+<li><strong><a href="command-line/checkingwith-wepsim-cl.html">Checking</a></strong> - Checking with the CLI version</li>
 </ol>
-<h2 id="🧑‍💻-developers-start-here">🧑‍💻 Developers, start here!</h2>
+<h3 id="🧑‍💻-developers-start-here">🧑‍💻 Developers, start here!</h3>
+<p>Interesting in a Android/iOS App? 
+Please check out:</p>
+<ul>
+<li><a href="developer.html#wepsim-for-apache-cordova">WepSIM for Apache Cordova</a></li>
+</ul>
 <p>Interested in contributing or extending WepSIM? 
 Please check out:</p>
 <ul>
 <li><a href="developer.html#wepsim-source-code">WepSIM Source Code</a></li>
 <li><a href="developer.html#wepsim-engine-api">WepSIM engine API</a></li>
-<li><a href="developer.html#wepsim-for-apache-cordova">WepSIM for Apache Cordova</a></li>
 </ul>
 
                                 
@@ -342,6 +369,10 @@ Please check out:</p>
             
                 
                 
+                <a href="web/getting-wepsim.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Getting WepSIM">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
             
         
     </div>
@@ -349,7 +380,7 @@ Please check out:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"plugins":["mermaid","highlight","hide-published-with","hints","chapter-fold","gtag","livereload"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"search":{},"mermaid":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"gtag":{"token":"G-66LLXNP464"},"highlight":{"exclude":["mermaid"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"WepSIM Team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WepSIM documentation","gitbook":"*","description":"WepSIM documents"},"file":{"path":"README.md","mtime":"2026-02-19T15:10:14.632Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-02-19T16:09:08.868Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"Getting WepSIM","level":"1.2","depth":1,"path":"web/getting-wepsim.md","ref":"web/getting-wepsim.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid","highlight","hide-published-with","hints","chapter-fold","gtag","copy-code-button"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"search":{},"mermaid":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"gtag":{"token":"G-66LLXNP464"},"highlight":{"exclude":["mermaid"]},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"WepSIM Team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WepSIM documentation","gitbook":"*","description":"WepSIM documents"},"file":{"path":"README.md","mtime":"2026-02-20T01:34:41.289Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-02-20T01:46:49.686Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
@@ -423,7 +454,7 @@ Please check out:</p>
         
     
         
-        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
         
     
         

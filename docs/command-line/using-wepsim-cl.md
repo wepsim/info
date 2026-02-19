@@ -1,33 +1,19 @@
 
-
-# Getting WepSIM
-
-From Linux/Unix command line, please:
-* Check you have installed Node v18.20+, and Bash 5.2+:
-  ```bash
-  sudo apt-get install nodejs npm bash -y
-  ```
-* Get WepSIM by executing:
-  ```bash
-  wget https://github.com/wepsim/wepsim/releases/download/v2.3.8/wepsim-2.3.8.zip
-  unzip wepsim-2.3.8.zip
-  cd wepsim-2.3.8
-  npm install terser jq jshint yargs clear inquirer@8.2.6 fuzzy \
-           inquirer-command-prompt inquirer-autocomplete-prompt@1
-  ``` 
-* Execute wepsim.sh with the help flag in order to show the available command switches:
-  ```bash
-  ./wepsim.sh -h
-  ```
-
-
 # Getting Started
 
-## A) Run (and print the final state)
+* [Run and print the final state](#run-and-print-the-final-state)
+* [Run step by step](#run-step-by-step)
+* [Run microstep by microstep](#run-microstep-by-microstep)
+* [Run microstep by microstep with verbalized output](#run-microstep-by-microstep-with-verbalized-output)
+
+
+### Run and print the final state
 
 + From the command line it is possible to 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print the final state:
   ```bash
-  ./wepsim.sh -a run -m ep -f ./repo/microcode/mips/ep_base.mc -s ./repo/assembly/mips/s1e5.asm
+  ./wepsim.sh -a run -m ep \
+              -f ./repo/microcode/mips/ep_base.mc \
+              -s ./repo/assembly/mips/s1e5.asm
   ```
   Output:
   <html>
@@ -37,11 +23,13 @@ From Linux/Unix command line, please:
   </html>
 
 
-## B) Run step by step
+### Run step by step
 
 + It is also possible to 'run' 'step by step' the 's1_e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print for each assembly instruction the state elements that modify its value:
   ```bash
-  ./wepsim.sh -a stepbystep -m ep -f ./repo/microcode/mips/ep_base.mc -s ./repo/assembly/mips/s1e1.asm
+  ./wepsim.sh -a stepbystep -m ep \
+              -f ./repo/microcode/mips/ep_base.mc \
+              -s ./repo/assembly/mips/s1e1.asm
   ```
   Output:
   <html>
@@ -57,11 +45,13 @@ From Linux/Unix command line, please:
   </html>
 
 
-## C) Run microstep by microstep
+### Run microstep by microstep
 
 + And to 'run' 'microstep by microstep' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print for each microinstruction the state elements that modify its value:
   ```bash
-  ./wepsim.sh -a microstepbymicrostep -m ep -f ./repo/microcode/mips/ep_base.mc -s ./repo/assembly/mips/s1e1.asm
+  ./wepsim.sh -a microstepbymicrostep -m ep \
+              -f ./repo/microcode/mips/ep_base.mc \
+              -s ./repo/assembly/mips/s1e1.asm
   ```
   Output:
   <html>
@@ -82,39 +72,13 @@ From Linux/Unix command line, please:
   </html>
 
 
-## D) Run & check end state (example when o.k.)
-
-+ You can check if the state at the end of the execution is the same as the one stored on file 'cl-s1e1.txt'. You can 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode (**and if it matches the expected state, then the output is going to be**):
-  ```bash
-  ./wepsim.sh -a check -m ep -f ./repo/microcode/mips/ep_base.mc -s ./repo/assembly/mips/s1e1.asm -r ./repo/checklist/mips/cl-s1e1.txt
-  ```
-  Output:
-  <html>
-  <pre>
-  OK: Execution: no error reported
-  </pre>
-  </html>
-
-
-## E) Run & check end state (example when k.o.)
-
-+ You can check if the state at the end of the execution is the same as the one stored on file 'cl-s1e1.txt'. You can 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode (**and if it fails to match the expected state then the output is going to be**):
-  ```bash
-  ./wepsim.sh -a check -m ep -f ./repo/microcode/mips/ep_base.mc -s ./repo/assembly/mips/s1e1.asm -r ./repo/checklist/mips/cl-s1e2.txt
-  ```
-  Output:
-  <html>
-  <pre>
-  ERROR: Execution: different results: cpu[R1]='0' (expected '0xf'), cpu[R2]='0x2' (expected '0xf'), cpu[R3]='0' (expected '0x1'), cpu[R29]='0x100000' (expected '0xfffff'), cpu[PC]='0x8078' (expected '0x8018'), memory[0x1000]='0' (expected '0xa07ff0f'), memory[0x1004]='0' (expected '0x10061'), memory[0x1008]='0' (expected '0x7ffff'), memory[0x100c]='0' (expected '0x61000a'), memory[0x1010]='0' (expected '0xf'), memory[0x1014]='0' (expected '0xffffffff'), memory[0x1018]='0' (expected '0x7'), memory[0x101c]='0' (expected '0x12345678'), memory[0x1020]='0' (expected '0x61'), memory[0x1024]='0' (expected '0x6c6c6568'), memory[0x1028]='0' (expected '0x726f776f'), memory[0x102c]='0' (expected '0x646c'), memory[0x8000]='0x8400002' (expected '0x20201000'), memory[0x8004]='0x8600001' (expected '0x10601010'), memory[0x8008]='0xa21809' (expected '0x820000f'), memory[0x800c]='0x8400002' (expected '0x24201000'), memory[0x8010]='0x8600001' (expected '0x840000f'), memory[0x8014]='0xa2180a' (expected '0x14401010'), 
-  </pre>
-  </html>
-
-
-## F) Run microstep by microstep with verbalized output
+### Run microstep by microstep with verbalized output
 
 + And finally, it is possible to execute microstep by microstep but with a more verbose description:
   ```bash
-  ./wepsim.sh -a microstepverbalized -m ep -f ./repo/microcode/mips/ep_base.mc -s ./repo/assembly/mips/s1e1.asm
+  ./wepsim.sh -a microstepverbalized -m ep \
+              -f ./repo/microcode/mips/ep_base.mc \
+              -s ./repo/assembly/mips/s1e1.asm
   ```
   Output:
   <html>
