@@ -1,0 +1,24 @@
+{
+  "root": "./book",
+  "title": "CREATOR documentation",
+  "author": "CREATOR Team",
+  "structure": {
+    "readme": "introduction.md"
+  },
+  "plugins": ["alerts", "mermaid-md-adoc", "gtag"],
+  "pluginsConfig": {
+    "alerts": {
+      "important": {
+        "label": "Important",
+        "icon": "fa fa-exclamation-circle",
+        "className": "important"
+      }
+    },
+    "gtag": {
+      "token": "GTM-P3Z24SPH"
+    }
+  },
+  "styles": {
+    "website": "styles/website.css"
+  }
+}

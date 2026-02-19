@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "gitbook-plugin-alerts": "file:./plugins/gitbook-plugin-alerts",
+    "honkit": "^6.1.4",
+    "honkit-plugin-mermaid-md-adoc": "^0.0.8"
+  },
+  "scripts": {
+    "build": "npx honkit build docs",
+    "serve": "npx honkit serve docs",
+    "book":  "npm install; npx honkit build docs; npx honkit serve docs"
+  },
+  "devDependencies": {
+    "gitbook-plugin-gtag": "^0.0.3"
+  }
+}
