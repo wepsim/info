@@ -23,7 +23,7 @@ Step   | iOS                       |  Android                  | Action to perfo
  **4** | ![screen:pwa_ios](https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_ios004.jpg) | ![screen:pwa_android](https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_android004_short.jpg) | Then, WepSIM can be launched from the home screen icon.
 
 
-# Getting Started: Visual User Interface
+# Getting Started
 
 ## A) Steps to execute a WepSIM example
 

@@ -162,7 +162,7 @@ For example, the following link loads the RISC-V assembly code for the factorial
 
 <a name="wepsim-gcolab"/>
 
-## WepSIM from Google Colab
+### WepSIM from Google Colab
 
 + The following fragment is an example of how to integrate the WepSIM command-line within Google Colab cell:
   ```python
@@ -232,5 +232,4 @@ For example, the following link loads the RISC-V assembly code for the factorial
   !echo "(2/2) Done!"
   show_asm_in_ws('s1e1.asm','RISCV')
   ```
-
 

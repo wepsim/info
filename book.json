@@ -5,7 +5,7 @@
   "structure": {
     "readme": "introduction.md"
   },
-  "plugins": ["alerts", "mermaid-md-adoc", "gtag"],
+  "plugins": ["alerts", "mermaid-md-adoc", "gtag", "hide-published-with"],
   "pluginsConfig": {
     "alerts": {
       "important": {

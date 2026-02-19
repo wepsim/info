@@ -1,0 +1,562 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>WepSIM Source Code · HonKit</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.1.6">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="web.html">
+            
+                <a href="web.html#getting-wepsim">
+            
+                    
+                    Run WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="web.html">
+            
+                <a href="web.html#getting-started">
+            
+                    
+                    Using WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="command-line.html">
+            
+                <a href="command-line.html#getting-wepsim">
+            
+                    
+                    Getting WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="command-line.html">
+            
+                <a href="command-line.html#getting-started">
+            
+                    
+                    Using WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="hooks.html">
+            
+                <a href="hooks.html#wepsim-links-in-documents">
+            
+                    
+                    WepSIM Links in documents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="hooks.html">
+            
+                <a href="hooks.html#wepsim-from-google-colab">
+            
+                    
+                    WepSIM on Google Colab
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="developer.html">
+            
+                <a href="developer.html#wepsim-source-code">
+            
+                    
+                    WepSIM Source Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="developer.html">
+            
+                <a href="developer.html#wepsim-engine-api">
+            
+                    
+                    WepSIM engine API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="developer.html">
+            
+                <a href="developer.html#wepsim-for-apache-cordova">
+            
+                    
+                    WepSIM for Apache Cordova
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >WepSIM Source Code</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="getting-started-developers">Getting Started: Developers</h1>
+<h2 id="wepsim-source-code">WepSIM Source Code</h2>
+<ul>
+<li><p>WepSIM GitHub Repository:</p>
+<ul>
+<li>Stable  build: <a href="https://github.com/wepsim/wepsim" target="_blank">https://github.com/wepsim/wepsim</a></li>
+<li>Nightly build: <a href="https://github.com/acaldero/wepsim" target="_blank">https://github.com/acaldero/wepsim</a></li>
+</ul>
+</li>
+<li><p>The WepSIM architecture can be summarized in the following Figure (made by <a href="https://app.diagrams.net" target="_blank">https://app.diagrams.net</a>):
+<img src="https://raw.githubusercontent.com/wepsim/wepsim/master/docs/ws_arch_215-v2.png" alt="screen:example1"></img></p>
+</li>
+</ul>
+<p><a name="wepsim-engine-api"></a></p>
+<h2 id="wepsim-engine-api">WepSIM engine API</h2>
+<ul>
+<li>If you want to use the WepSIM engine within your App, there is a WepSIM API in JavaScript available too.
+You will need to include the WepSIM engine in your proyect:</li>
+</ul>
+<pre><code class="lang-javascript">  &lt;script src=<span class="hljs-string">"min.sim_all.js"</span>   &gt;&lt;<span class="hljs-regexp">/script&gt;&lt;noscript&gt;Your browser does not support JavaScript!&lt;/</span>noscript&gt;
+  <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"min.wepsim_web.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span>Your browser does not support JavaScript!<span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span></span>
+</code></pre>
+<ul>
+<li>And then, one simple example of using this WepSIM API is the following:</li>
+</ul>
+<pre><code class="lang-javascript">  <span class="hljs-comment">/*
+   * Input: minimal firmware and minimal assembly code
+   */</span>
+
+  str_firmware = <span class="hljs-string">'begin {\n'</span> +
+                 <span class="hljs-string">'  fetch:  (T2, C0),\n'</span> +
+                 <span class="hljs-string">'          (TA, R, BW=11, M1=1, C1=1),\n'</span> +
+                 <span class="hljs-string">'          (M2, C2, T1, C3),\n'</span> +
+                 <span class="hljs-string">'          (A0, B=0, C=0)\n'</span> +
+                 <span class="hljs-string">'}\n'</span> +
+                 <span class="hljs-string">'nop {\n'</span> +
+                 <span class="hljs-string">'        co=010110,\n'</span> +
+                 <span class="hljs-string">'        nwords=1,\n'</span> +
+                 <span class="hljs-string">'        {\n'</span> +
+                 <span class="hljs-string">'                (A0=1, B=1, C=0)\n'</span> +
+                 <span class="hljs-string">'        }\n'</span> +
+                 <span class="hljs-string">'}\n'</span> +
+                 <span class="hljs-string">'registers {\n'</span> +
+                 <span class="hljs-string">'        0=$zero,\n'</span> +
+                 <span class="hljs-string">'        29=$sp (stack_pointer)\n'</span> +
+                 <span class="hljs-string">'}\n'</span> ;
+
+   str_assembly = <span class="hljs-string">'.text\n'</span> +
+                  <span class="hljs-string">'main: nop\n'</span> ;
+
+
+   <span class="hljs-comment">/*
+    * Code: Initialize WepSIM + reset + 
+    *       compile firmware + compile assembly + 
+    *       execute + get final state
+    */</span>
+
+    <span class="hljs-comment">// 1) initialize WepSIM engine</span>
+    <span class="hljs-keyword">var</span> ret = <span class="hljs-title function_">simcore_init</span>(<span class="hljs-literal">false</span>) ;
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span> != ret.<span class="hljs-property">ok</span>) {
+        ret = <span class="hljs-title function_">simcore_init_hw</span>(<span class="hljs-string">'ep'</span>) ;
+    }
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span> != ret.<span class="hljs-property">ok</span>) {
+        <span class="hljs-keyword">var</span> ui_cb = {} ;
+        <span class="hljs-title function_">simcore_init_ui</span>(ui_cb) ;
+    }
+
+    <span class="hljs-comment">// 2) reset hardware</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span> != ret.<span class="hljs-property">ok</span>) {
+        <span class="hljs-title function_">simcore_reset</span>() ;
+    }
+
+    <span class="hljs-comment">// 3) load firmware</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span> != ret.<span class="hljs-property">ok</span>) {
+        ret = <span class="hljs-title function_">simcore_compile_firmware</span>(str_firmware) ;
+    }
+
+    <span class="hljs-comment">// 4) load assembly</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span> != ret.<span class="hljs-property">ok</span>) {
+        ret = <span class="hljs-title function_">simcore_compile_assembly</span>(str_assembly) ;
+    }
+
+    <span class="hljs-comment">// 5) execute firmware-assembly</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span> != ret.<span class="hljs-property">ok</span>) {
+        <span class="hljs-keyword">var</span> options = {
+                         <span class="hljs-attr">instruction_limit</span>:  <span class="hljs-number">1024</span>,
+                         <span class="hljs-attr">cycles_limit</span>:      <span class="hljs-number">10240</span>
+                      } ;
+        ret = <span class="hljs-title function_">simcore_execute_program</span>(options) ;
+    }
+
+    <span class="hljs-comment">// 6) show a final report</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-literal">false</span> != ret.<span class="hljs-property">ok</span>) {
+        <span class="hljs-keyword">var</span> state_obj = <span class="hljs-title function_">simcore_simstate_current2state</span>() ;
+        ret.<span class="hljs-property">msg</span> = <span class="hljs-title function_">simcore_simstate_state2checklist</span>(state_obj, <span class="hljs-string">''</span>) ;
+    }
+
+
+   <span class="hljs-comment">/*
+    * Output: the final state (or error found)
+    */</span>
+
+   <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(ret.<span class="hljs-property">msg</span>) ;
+</code></pre>
+<p><a name="wepsim-apache-cordova"></a></p>
+<h1 id="wepsim-for-apache-cordova">WepSIM for Apache Cordova</h1>
+<h2 id="1-prepare-the-apache-cordova-project">1) Prepare the Apache Cordova Project:</h2>
+<ul>
+<li><p>1.1) Follow Apache Cordova tutorial in order to create a new project:</p>
+<pre><code class="lang-bash">npm install -g cordova
+cordova create wepsim es.uc3m.inf.arcos.wepsim WepSIM
+<span class="hljs-built_in">cd</span> wepsim
+cordova platform add android
+cordova platform add ios
+</code></pre>
+</li>
+<li><p>1.2) Install at least the following plugins:</p>
+<pre><code class="lang-bash">cordova plugin add cordova-plugin-console
+cordova plugin add cordova-plugin-device
+cordova plugin add cordova-plugin-dialogs
+cordova plugin add https://github.com/apache/cordova-plugin-file-transfer.git
+cordova plugin add cordova-plugin-file
+cordova plugin add cordova-plugin-splashscreen
+cordova plugin add cordova-plugin-web-share
+</code></pre>
+</li>
+</ul>
+<h2 id="2-update-wepsim-files">2) Update WepSIM files:</h2>
+<ul>
+<li><p>2.1) Copy WepSIM files into the www directory:</p>
+<pre><code class="lang-bash">wget https://github.com/wepsim/wepsim/archive/refs/heads/master.zip
+unzip master.zip
+</code></pre>
+</li>
+<li><p>2.2) Build www for the Apache Cordova project:</p>
+<pre><code class="lang-bash">./wepsim-master/devel/mk_cordova.sh
+</code></pre>
+</li>
+</ul>
+<h2 id="3-build-android-apk">3) Build Android .apk:</h2>
+<ul>
+<li><p>3.1) Build .apk:</p>
+<pre><code class="lang-bash">cordova build android --debug
+</code></pre>
+</li>
+<li><p>3.2) Run WepSIM's App...</p>
+<ul>
+<li>... on Emulator:<pre><code class="lang-bash">cordova run android
+</code></pre>
+</li>
+<li>... on Device:<pre><code class="lang-bash">adb -d install -r ./platforms/android/app/build/outputs/apk/debug/app-debug.apk
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"WepSIM Source Code","level":"4.1","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"developer.md","mtime":"2026-02-19T15:02:37.470Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-02-19T15:13:29.146Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

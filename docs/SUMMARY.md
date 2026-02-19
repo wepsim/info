@@ -2,8 +2,7 @@
 # Getting WepSIM
 
 * [Run WepSIM](web.md#getting-wepsim)
-* [Install WepSIM](web.md#install-wepsim-as-pwa)
-* [Using WepSIM](web.md#getting-started-visual-user-interface)
+* [Using WepSIM](web.md#getting-started)
 
 # Command-line
 
@@ -13,16 +12,14 @@
 
 # Integrating WepSIM
 
-* [WepSIM Links in documents](hooks.md#wepsim-links)
-* [WepSIM on Google Colab](hooks.md#wepsim-gcolab)
+* [WepSIM Links in documents](hooks.md#wepsim-links-in-documents)
+* [WepSIM on Google Colab](hooks.md#wepsim-from-google-colab)
 
 
 # Getting Started: Developers
 
 * [WepSIM Source Code](developer.md#wepsim-source-code)
 * [WepSIM engine API](developer.md#wepsim-engine-api)
-* [WepSIM for Apache Cordova](developer.md#wepsim-apache-cordova)
-
-
+* [WepSIM for Apache Cordova](developer.md#wepsim-for-apache-cordova)
 
 
