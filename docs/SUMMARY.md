@@ -18,6 +18,18 @@
 * [WepSIM on Google Colab](integration/gcolab.md)
 
 
+## Example of labs
+
+* [Side-channel attack](labs/rv_lab1_en.md)
+* [Design your ISA](labs/rv_lab2_en.md)
+
+
+## Example of tutorials
+
+* [RISC-V](tutorials/riscv.md)
+* [MIPS](tutorials/mips.md)
+
+
 ## Developers
 
 * [WepSIM Source Code](developer.md#wepsim-source-code)

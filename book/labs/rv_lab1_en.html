@@ -1,0 +1,720 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Side-channel attack · WepSIM documentation</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.1.6">
+        <meta name="author" content="WepSIM Team">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="rv_lab2_en.html" />
+    
+    
+    <link rel="prev" href="../integration/gcolab.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Getting Started</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../web/getting-wepsim.html">
+            
+                <a href="../web/getting-wepsim.html">
+            
+                    
+                    Getting WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../web/using-wepsim.html">
+            
+                <a href="../web/using-wepsim.html">
+            
+                    
+                    Using WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Command-line</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../command-line/getting-wepsim-cl.html">
+            
+                <a href="../command-line/getting-wepsim-cl.html">
+            
+                    
+                    Getting WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../command-line/using-wepsim-cl.html">
+            
+                <a href="../command-line/using-wepsim-cl.html">
+            
+                    
+                    Using WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../command-line/checkingwith-wepsim-cl.html">
+            
+                <a href="../command-line/checkingwith-wepsim-cl.html">
+            
+                    
+                    Checking with WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Integration with WepSIM</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../integration/links.html">
+            
+                <a href="../integration/links.html">
+            
+                    
+                    WepSIM links in documents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../integration/gcolab.html">
+            
+                <a href="../integration/gcolab.html">
+            
+                    
+                    WepSIM on Google Colab
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Example of labs</li>
+        
+        
+    
+        <li class="chapter active" data-level="4.1" data-path="rv_lab1_en.html">
+            
+                <a href="rv_lab1_en.html">
+            
+                    
+                    Side-channel attack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="rv_lab2_en.html">
+            
+                <a href="rv_lab2_en.html">
+            
+                    
+                    Design your ISA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Example of tutorials</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../tutorials/riscv.html">
+            
+                <a href="../tutorials/riscv.html">
+            
+                    
+                    RISC-V
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../tutorials/mips.html">
+            
+                <a href="../tutorials/mips.html">
+            
+                    
+                    MIPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Developers</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../developer.html">
+            
+                <a href="../developer.html#wepsim-source-code">
+            
+                    
+                    WepSIM Source Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../developer.html">
+            
+                <a href="../developer.html#wepsim-engine-api">
+            
+                    
+                    WepSIM engine API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../developer.html">
+            
+                <a href="../developer.html#wepsim-for-apache-cordova">
+            
+                    
+                    WepSIM for Apache Cordova
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Side-channel attack</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <ul>
+<li>Authors: <strong>Alejandro Calderón Mateos &amp; Felix García Carballeira</strong></li>
+<li>License: <a href="https://github.com/wepsim/wepsim.github.io/blob/master/LICENSE" target="_blank">GPLv3.0</a></li>
+</ul>
+<h1 id="laboratory-1-assembly-power-consumption-and-security">Laboratory 1: assembly, power-consumption and security</h1>
+<p>The main goal of the proposed laboratory is to understand the concepts related to assembly programming, but also the impact of power-consumption in security. For this purpose we are going to use the RISC-V assembler.
+In order to become familiar with assembly programming and simulator used, it is recommended to solve the examples available in the simulator.</p>
+<p>This laboratory consists of 3 exercises that you can develop and test in <a href="https://wepsim.github.io/wepsim/" target="_blank">WepSIM</a>.</p>
+<h2 id="exercise-1">Exercise 1</h2>
+<p>The goal of this exercise is to develop in RISC-V<sub>imf32</sub> assembler a function called <strong><code>string_compare</code></strong> to work with strings:</p>
+<pre><code>Function string_compare ( char A[], char B[] ) ;
+</code></pre><p>This function allows to compare two strings so that it is possible to know if the strings stored in memory are the same or not.</p>
+<p>This function receives the following arguments in the order given:</p>
+<ul>
+<li>Argument 1: (A) starting address of a string that ends with the ASCII code 0.</li>
+<li>Argument 2: (B) starting address of a string ending in end of string (ASCII code 0).</li>
+</ul>
+<p>The function returns a single integer that takes one of these three possible values:</p>
+<ul>
+<li>On error, it returns the integer -1.</li>
+<li>If the two strings are the same, it returns the integer 1 (one). </li>
+<li>If the two strings are different, it returns the integer 0 (zero).</li>
+</ul>
+<p>The following figure illustrates an example when the content of two strings is different:</p>
+<pre><code>.data
+  A: .string "uno"  # 'u', 'n', 'o', '\0'
+  B: .string "dos"  # 'd', 'o', 's', '\0'
+
+.text
+
+ string_compare:
+       ...
+       jr ra
+
+ main: 
+       la a0 A
+       la a1 B
+       jal ra string_compare
+       #      &lt;-   a0 must be 0 at this point because are differente string
+       ...
+</code></pre><p>The following figure illustrates an example when the content of two strings that are equals:</p>
+<pre><code>.data
+  A: .string "uno"  # 'u', 'n', 'o', '\0'
+  B: .string "uno"  # 'u', 'n', 'o', '\0'
+
+.text
+
+ string_compare:
+       ...
+       jr ra
+
+ main: 
+       la a0 A
+       la a1 B
+       jal ra string_compare
+       #      &lt;-   a0 must be 1 at this point because are the same string
+       ...
+</code></pre><p>The two possible errors to be considered in this function are that address A is null (zero value) and that address B is null (zero value).</p>
+<p>In the <code>string_compare</code> function, in case of finding an error, it must return only the value -1 without doing anything else. In the same way, the function must compare character by character and as soon as it is a different one it must return 0. </p>
+<p>The following figure illustrates an example when an error ocurrs:</p>
+<pre><code>.data
+  A: .string "uno"  # 'u', 'n', 'o', '\0'
+  B: .string "dos"  # 'u', 'n', 'o', '\0'
+
+.text
+
+ string_compare:
+       ...
+       jr ra
+
+ main: 
+       li   a0 0
+       move a1 x0
+       jal ra string_compare
+       #      &lt;-   a0 must be -1 at this point because an error happens
+       ...
+</code></pre><h2 id="exercise-2">Exercise 2</h2>
+<p>The goal of this exercise is to study the impact of number of clock cycles when using the <code>string_compare</code> function, especially its use for a possible side-channel attack:</p>
+<ul>
+<li>Because more clock cycles needed by a function should be directed related to the power consumption in a normal CPU, we can know the input, output and the related power consumption for <code>string_compare</code>.</li>
+<li>In this program, the <code>rdcycle rd</code> RISC-V pseudoinstruction is used.
+This instruction stores in <code>rd</code> the number of cycles that have been executed so far.</li>
+</ul>
+<p>Imagine that a security company uses the <code>string_compare</code> function of Exercise 1 to check if an user's stored key (<code>stored_key</code>) is the same as the key that the user enters on the keyboard to authenticate.</p>
+<p>To test such a function, design and implement a program that performs the following actions:</p>
+<ol>
+<li>The user introduces the key by keyboard and it is stored in <code>user_key</code>.</li>
+<li>The <code>string_compare</code> function is called to check that the key <code>user_key</code> entered by keyboard is valid by comparing it with the user's key that is stored in <code>stored_key</code>, so if it returns 1 it is valid and if it returns 0 it is an invalid key.</li>
+<li>A valid or invalid message is printed on the screen.</li>
+</ol>
+<p>The following code fragment shows the skeleton of this program:</p>
+<pre><code>.data
+    stored_key:     .string   "one"
+    user_key:       .zero     9    
+    valid_msg:      .string   "Valid"
+    no_valid_msg:   .string   "Invalid"
+
+.text
+main:     
+            ...
+            # &lt;- read the user key from keyboard and store in user_key
+
+            # call to string_compare(stored_key, user_key)
+            ...
+            jal ra string_compare
+            mv  t1 a0         # t1: 1 ok and 0 not valid
+
+
+            beq zero a0 print_no
+print_yes:  la  a0  valid_msg
+            j end
+print_no:   la  a0 no_valid_msg
+end:        li  a7 4
+            ecall
+</code></pre><p>As an internship student of this company, we suspect that when comparing the key "one" with a string "a" the function only makes one single comparison between letters ('o' versus 'a'), but when comparing "one" with the string "o" the function makes two comparisons ('o' is equal to 'o' and 'n' is not equal to the end of the string). This causes the number of cycles executed and, therefore, the power consumption when the first letter is matched to be higher. </p>
+<p>To demonstrate this hypothesis, we initially propose the following program skeleton:</p>
+<pre><code>.data
+    valid_msg:      .string   ":Valid:"
+    no_valid_msg:   .string   ":Invalid:"
+
+    stored_key:     .string  "one"
+    possible_key:   .string  "a"
+
+.text
+main:  ...
+       # Obtain the cycles executed so far
+       rdcycle    t0
+
+       # call ro string_compare (stored_key, possible_key)
+       ...
+       jal ra string_compare
+       mv  t1 a0              # t1: 1 ok y 0 not valid
+
+       # Obtain the cycles executed so far
+       rdcycle  t2
+       sub t0 t2 t0           # t0: Number of elapsed cycles 
+
+       # Print messages
+       beq zero t1 p_no
+p_yes: la  a0 valid_msg
+       j end
+p_no:  la  a0 no_valid_msg
+end:   li  a7 4
+       ecall
+
+       # Print the number of cycles 
+       mv a0 t0
+       li a7 1
+       ecall
+       ...
+</code></pre><p>The objective of this exercise is to modify the previous program to calculate the number of cycles (power consumption) for letters 'a' to 'z' as the first character of the key. That is, it is to find out the power consumption (number of cycles) for the following values of possible_key: 'a', 'b' ... 'z'. Only the 27 lowercase letters of the alphabet. </p>
+<p><strong>Note, that possible_key is a string, i.e. when you want to test with the letter 'k', the string will have the value "k", which is equivalent to having two characters in the string: one the ASCII code of the 'k' and then the code 0 indicating the end of the string. It is recommended to study how the characters 'a'...'z' are stored using the ASCII code.</strong></p>
+<p>For this purpose, the function has to be developed: </p>
+<pre><code>Function study_energy ( char password[], char dummy[] ) ;
+</code></pre><p>This function prints in each line, for each of the letters, the following information:</p>
+<pre><code>letter: number of cycles.
+</code></pre><p>For example, a possible output would be this:</p>
+<pre><code>a: 10
+b: 10
+c: 10
+d: 20
+e: 10
+.
+.
+z: 10
+</code></pre><p>Note that in this case the key starts with the letter d, since the number of cycles in this case is higher.</p>
+<p>This function receives the following arguments in the given order:</p>
+<ul>
+<li>Argument 1: (password) starting address of a string with the key to be discovered. Like all strings, it ends with the ASCII code 0 used as the end of the string.</li>
+<li>Argument 2: (dummy) starting address of a string in memory. This string will always include a single character (in memory it will occupy two bytes: the ASCII code of the letter and the ASCII code 0 used as the end of the string).</li>
+</ul>
+<p>The function does not return any value, it simply prints on the console a line for each letter of the alphabet with the format indicated above:</p>
+<pre><code>letter: number of cycles
+</code></pre><p>It is mandatory to correctly follow the parameter passing convention described in the course for RISC-V, as well as to respect the function signature (name, number of parameters, order of parameters and value to be returned). Similarly, the <strong>study_energy</strong> function must use the <strong>string_compare</strong> function of the first exercise (it must call this function).</p>
+<p>It will not be considered valid to develop the code of the functions directly in the main function. You must write the code corresponding to the requested function as a separate function.</p>
+<h2 id="exercise-3">Exercise 3</h2>
+<p>The goal of this exercise is to implement a simple function that performs a <strong>side-channel attack</strong>.</p>
+<p><strong>Consider that the keys are at most 8 characters for the study</strong>. 
+Through <strong>a brute-force attack</strong>, we would <strong>have to test up to 27<sup>8</sup> (282,429,536,481) possible keys</strong>. </p>
+<p><strong>But with a side-channel attack</strong>, it would be possible to detect by using the energy consumption (number of cycles executed) the first character of the key, and once this character is fixed, it would be possible to study the 27 possible characters for the second letter and so on. In other words, <strong>possible combinations are reduced to 27*8 (216 possibilities), in case the key is just 8 characters long</strong>.</p>
+<p>In Exercise 3, we have to implement in assembler RISC-V<sub>32IMF</sub> a function called <code>attack</code> to discover a possible key of up to 8 characters:</p>
+<pre><code>Function attack ( char password[], char dummy[] ) ;
+</code></pre><p>This function receives the following arguments in the provided order:</p>
+<ul>
+<li>Argument 1: (password) starting address of the user key to be discovered. This string ends with the ASCII code 0 used as the end of the string.</li>
+<li>Argument 2: (dummy) starting address of a string in memory where the detected key will be stored. This string must have space for 9 bytes (8 of the string plus the end of the string).</li>
+</ul>
+<p>The function does not return any value, it simply stores in dummy memory address the value of the discovered key. </p>
+<p>For the development of this exercise, you can start with the ideas of Exercise 2 and add everything necessary to perform the attack.</p>
+<p>Note that this is an exercise, in a real scenario the contents of the user's password would never be known. However, the principle used (<a href="https://en.wikipedia.org/wiki/Side-channel_attack" target="_blank">side-channel attack</a>) is the same that has inspired attacks on current processors such as <a href="https://en.wikipedia.org/wiki/Spectre_(security_vulnerability" target="_blank">spectre</a>).</p>
+<h1 id="extra-material">Extra material</h1>
+<p>You can find extra material in this example within WepSIM: <a href="https://acaldero.github.io/wepsim/ws_dist/?mode=ep&amp;examples_set=RISCV&amp;example=21" target="_blank">Example 21</a>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../integration/gcolab.html" class="navigation navigation-prev " aria-label="Previous page: WepSIM on Google Colab">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="rv_lab2_en.html" class="navigation navigation-next " aria-label="Next page: Design your ISA">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Side-channel attack","level":"4.1","depth":1,"next":{"title":"Design your ISA","level":"4.2","depth":1,"path":"labs/rv_lab2_en.md","ref":"labs/rv_lab2_en.md","articles":[]},"previous":{"title":"WepSIM on Google Colab","level":"3.2","depth":1,"path":"integration/gcolab.md","ref":"integration/gcolab.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid","highlight","hide-published-with","hints","chapter-fold","gtag","copy-code-button","livereload"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"search":{},"mermaid":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"gtag":{"token":"G-66LLXNP464"},"highlight":{"exclude":["mermaid"]},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"WepSIM Team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WepSIM documentation","gitbook":"*","description":"WepSIM documents"},"file":{"path":"labs/rv_lab1_en.md","mtime":"2026-02-19T13:40:38.729Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-02-20T10:30:29.796Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/honkit-plugin-mermaid/mermaid-load.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-mermaid/mermaid.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-gtag/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

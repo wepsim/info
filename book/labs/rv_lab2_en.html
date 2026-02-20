@@ -1,0 +1,761 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <title>Design your ISA · WepSIM documentation</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.1.6">
+        <meta name="author" content="WepSIM Team">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-hints/plugin-hints.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../tutorials/riscv.html" />
+    
+    
+    <link rel="prev" href="rv_lab1_en.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Getting Started</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../web/getting-wepsim.html">
+            
+                <a href="../web/getting-wepsim.html">
+            
+                    
+                    Getting WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../web/using-wepsim.html">
+            
+                <a href="../web/using-wepsim.html">
+            
+                    
+                    Using WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Command-line</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../command-line/getting-wepsim-cl.html">
+            
+                <a href="../command-line/getting-wepsim-cl.html">
+            
+                    
+                    Getting WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../command-line/using-wepsim-cl.html">
+            
+                <a href="../command-line/using-wepsim-cl.html">
+            
+                    
+                    Using WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../command-line/checkingwith-wepsim-cl.html">
+            
+                <a href="../command-line/checkingwith-wepsim-cl.html">
+            
+                    
+                    Checking with WepSIM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Integration with WepSIM</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../integration/links.html">
+            
+                <a href="../integration/links.html">
+            
+                    
+                    WepSIM links in documents
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../integration/gcolab.html">
+            
+                <a href="../integration/gcolab.html">
+            
+                    
+                    WepSIM on Google Colab
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Example of labs</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="rv_lab1_en.html">
+            
+                <a href="rv_lab1_en.html">
+            
+                    
+                    Side-channel attack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.2" data-path="rv_lab2_en.html">
+            
+                <a href="rv_lab2_en.html">
+            
+                    
+                    Design your ISA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Example of tutorials</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../tutorials/riscv.html">
+            
+                <a href="../tutorials/riscv.html">
+            
+                    
+                    RISC-V
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../tutorials/mips.html">
+            
+                <a href="../tutorials/mips.html">
+            
+                    
+                    MIPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Developers</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../developer.html">
+            
+                <a href="../developer.html#wepsim-source-code">
+            
+                    
+                    WepSIM Source Code
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../developer.html">
+            
+                <a href="../developer.html#wepsim-engine-api">
+            
+                    
+                    WepSIM engine API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../developer.html">
+            
+                <a href="../developer.html#wepsim-for-apache-cordova">
+            
+                    
+                    WepSIM for Apache Cordova
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            Published with HonKit
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Design your ISA</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <ul>
+<li>Authors: <strong>Alejandro Calderón Mateos &amp; Felix García Carballeira</strong></li>
+<li>License: <a href="https://github.com/wepsim/wepsim.github.io/blob/master/LICENSE" target="_blank">GPLv3.0</a></li>
+</ul>
+<h1 id="laboratory-2-microprogramming-a-compact-instruction-set">Laboratory 2: microprogramming a compact instruction set</h1>
+<p>The main goal of this laboratory is to learn how to design an instruction set for a computer.
+The main knowledge to be practiced are microprogramming, assembly programming and information representation.</p>
+<p>For the development of the laboratory, it is necessary to review the following concepts:</p>
+<ul>
+<li>The representation of integers, character strings, etc.</li>
+<li>The main aspects of the assembly language.</li>
+<li>The instruction format and addressing types.</li>
+<li>The operation of a processor, including the stages of execution, microprogramming, etc.</li>
+</ul>
+<p>The student is going to use the WepSIM simulator to be able to exercise in an interactive way the concepts and knowledge indicated above.</p>
+<p>This laboratory consists of 2 exercises that you can develop and test in <a href="https://wepsim.github.io/wepsim/" target="_blank">WepSIM</a>.</p>
+<h2 id="exercise-1">Exercise 1</h2>
+<p>The company we are work with request you to <strong>design, implement and test</strong> a new instruction set similar to the RISC-V instruction set, using the WepSIM simulator. Instructions are listed in Table 1. The instructions will be encoded in 32 bits.</p>
+<html>
+<table style="border: 1px solid black; border-collapse: collapse; border-style: dotted" cellpadding="5">
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<th> Instruction </th>
+<th> Format </th>
+<th> Associated functionality </th>
+<th> Status register 
+</th></tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  lui RRE1, U32 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 010010<br></br>RRE1 (25-21)<br></br>U32 (63-32) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[RRE1] ← U32 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  sw RRE1, (RRE2) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 010000<br></br>RRE1 (25-21)<br></br>RRE2 (20-16) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Memory[RRE1] ← BR[RRE2] </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  lw RRE1, (RRE2)      </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 010011<br></br>RRE1 (25-21)<br></br>RRE2 (20-16) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[RRE1] ←Memory[RRE2] </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  add RRE1, RRE2, RRE3 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 011000<br></br>RRE1 (25-21)<br></br>RRE2 (20-16)<br></br>RRE3 (15-11)<br></br> </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[RRE1]  ← BR[RRE2]  + BR[RRE3]   </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  addi RRE1, RRE2, S16 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 011010<br></br>RRE1 (25-21)<br></br>RRE2 (20-16)<br></br>S16 (15-0) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[RRE1] ←BR[RRE2] +S16 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  neg RRE1, RRE2 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 011011<br></br>RRE1 (25-21)<br></br>RRE2 (20-16) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[RRE1]  ← 0 -  RRE2 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  bnz S16 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 110011<br></br>S16  (15-0) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  IF (SR. Z)<br></br>PC ← PC + S16 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  beq RRE1, RRE2, S10  </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 110100<br></br>RRE1 (25-21)<br></br>RRE2 (20-16)<br></br>S10 (9-0) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  IF (RRE1  x RRE2)<br></br>PC ← PC + S10 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  jto RRE1 U16 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 100001<br></br>RRE1 (25-21)<br></br>U16 (15-0) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[RRE1] ← PC<br></br>PC ← U16 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  jr RRE1 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 100010<br></br>RRE1 (25-21) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  PC ← BR[RRE1] </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  halt </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 100011 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  PC ← 0x00<br></br>SR ← 0x00 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+</table>
+</html>
+
+<p><br></br></p>
+<html><center><em>Table 1.- RISC-V-like instruction set</em></center></html>
+
+<p>The notation used for the instructions is the following one:</p>
+<ul>
+<li>U32 refers to a 32-bit unsigned integer.</li>
+<li>U16 to a 16-bit unsigned integer.</li>
+<li>S16 to a 16-bit signed integer.</li>
+<li>S10 to a 10-bit signed integer value. </li>
+<li>RRE will be used to denote RISC-V general purpose registers, which in this 32-bit version are 32 registers of 32-bit each. BR will be used to refer to the Register File, and BR[RRE1] to indicate the contents of the RRE1 register. The integers stored in register are two complements 32 bits integers.</li>
+<li>MEMORY[R] refers to the contents of the memory position whose address is stored in the R register.</li>
+</ul>
+<p>The values "S16/S10" indicate that sign extension must be made while in "U16" no sign extension is made (filled with leading zeros).</p>
+<p>The following is the mapping between RISC-V registers and WepSIM registers. This association must be indicated in the register section of the microcode of the requested instructions.</p>
+<html>
+<table style="border: 1px solid black; border-collapse: collapse; border-style: dotted" cellpadding="5">
+<tr>
+<th colspan="2"> RISC-V </th>
+<th> WepSIM register </th>
+<th> Meaning </th>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> x0 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> zero </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> R0 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> Contains a zero </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> x1 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> ra </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> R1 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> Call Return vAddress     </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x2 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  sp </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R2 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Stack pointer </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x3 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  gp </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R3 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Global pointer </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x4 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  tp </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R4 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Thread pointer </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x5 ... x7 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  t0 ... t2       </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R5 ... R7 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Temporary Records (1/2)  </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x8 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  fp </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R8 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Stack frame </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x9 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  s1 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R9 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Record saved </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x10 ... x11 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  a0 ... a1 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R10 ... R11 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Argument for functions (1/2) and return values </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x12 ... x17 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  a2 ... a7 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R12 ... R17 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Function Argument (2/2)  </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x18 ... x27 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  s2 ... s11 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R18 ... R27 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Registers saved </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x28... x31 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  t3 ... t6 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R28 ... R31 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Temporary Records (1/2)  </td>
+</tr>
+</table>
+</html>
+<br></br>
+<html><center><em>Table 2.- RISC-V registers</em></center></html>
+
+
+<p>Each registers has two names and when programming it is possible to use both x0 or zero, x1 or ra, etc.
+For the main control registers:</p>
+<ul>
+<li>The stack pointer register (sp) is the R2 register in the WepSIM elementary processor.</li>
+<li>The status register is the SR register in the WepSIM processor.</li>
+<li>The PC registry is the program counter register. </li>
+</ul>
+<p>WepSIM RT1, RT2, and RT3 registers are transparent to the assembler programmer.</p>
+<p>In order to pass arguments to a subroutine in our RISC-V assembler, the a0... a7 registers will be used, and the a0 and a1 registers will be used to return results (one value in a0, and for two values a0 and a1). 
+In the case of our RISC-V, passing more than eight arguments to a subroutine, from ninth to last of the arguments would be passed on the stack.
+Consider that a subroutine has to keep the value within registers s0... s11, sp, fp and ra between calls.</p>
+<p>The results of this exercise are related to the design of the microcode (memory of laboratory) and the microcode itself (mc file for WepSIM).
+A valid implementation that minimizes the number of clock cycles will be assessed, briefly justifying in memory the design decisions that have been made to achieve this.</p>
+<h2 id="exercise-2">Exercise 2</h2>
+<p>To test the instructions of the exercise 1 you can encode the programs that you deem appropriate.
+However, the company asks us to carry out a program in assembler (in order to make a demonstration) that uses the RISC-V instruction set requested in exercise 1.</p>
+<p>The program to be encoded, using the RISC-V statements designed in the previous section, will have the same functionality as that of the following program written in high-level language:</p>
+<pre><code class="lang-c++">int32 vector[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 } ;
+
+int sumav ( int32 neltos, int32 *vector )
+{
+     int32 v0 = 0 ;
+     for (int32 i=0; i</code></pre>
+<p>This program has a <strong>sumav</strong> routine that receives two arguments: the number of elements of an integer vector and the start direction of that integer vector.
+The routine returns the sum of the numbers contained in the vector passed by argument. 
+There is also a <strong>main</strong> routine that takes care of calling the <strong>sumav</strong> routine and ending the program.
+Note the registers used in the convention for argument passing on this RISC-V are described at the end of Exercise 1.</p>
+<p>The results of this exercise must be indicated both, the part of the memory corresponding to this exercise and in the file associated with the requested functionality.</p>
+<h1 id="extra-material">Extra material</h1>
+<h3 id="example">Example</h3>
+<p>You can find extra material in this example within WepSIM: <a href="https://acaldero.github.io/wepsim/ws_dist/?mode=ep&amp;examples_set=RISCV&amp;example=21" target="_blank">Example 21</a>.</p>
+<h3 id="save-a-checkpoint-with-wepsim">Save a <em>checkpoint</em> with WepSIM</h3>
+<p>WepSIM allows you to save the entire working session into a single file. This session can include the requested microcode, the assembly code, the states at different execution points, and a recording of the work session. In this way it is more agile to continue the work or share that work among members of the laboratory group.</p>
+<p>To do this you have to use what in the WepSIM simulator is called <em>checkpoint</em>. The following are the steps to save a checkpoint:</p>
+<ul>
+<li>In the run mode menu select the <em>"Checkpoint"</em> option.</li>
+<li>Enter the file name in the "File name:" field, then press the "Save" button to save the file.</li>
+<li><strong>Check that the file has been saved correctly and contains everything ordered in the statement.</strong></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="rv_lab1_en.html" class="navigation navigation-prev " aria-label="Previous page: Side-channel attack">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../tutorials/riscv.html" class="navigation navigation-next " aria-label="Next page: RISC-V">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Design your ISA","level":"4.2","depth":1,"next":{"title":"RISC-V","level":"5.1","depth":1,"path":"tutorials/riscv.md","ref":"tutorials/riscv.md","articles":[]},"previous":{"title":"Side-channel attack","level":"4.1","depth":1,"path":"labs/rv_lab1_en.md","ref":"labs/rv_lab1_en.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid","highlight","hide-published-with","hints","chapter-fold","gtag","copy-code-button","livereload"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"search":{},"mermaid":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"gtag":{"token":"G-66LLXNP464"},"highlight":{"exclude":["mermaid"]},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"WepSIM Team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WepSIM documentation","gitbook":"*","description":"WepSIM documents"},"file":{"path":"labs/rv_lab2_en.md","mtime":"2026-02-19T13:40:38.729Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-02-20T10:30:29.796Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/honkit-plugin-mermaid/mermaid-load.js"></script>
+        
+    
+        
+        <script src="../gitbook/honkit-plugin-mermaid/mermaid.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-gtag/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

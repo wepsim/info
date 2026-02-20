@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>Getting WepSIM · WepSIM documentation</title>
+        <title>MIPS · WepSIM documentation</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.1.6">
@@ -62,10 +62,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="using-wepsim-cl.html" />
     
-    
-    <link rel="prev" href="../web/using-wepsim.html" />
+    <link rel="prev" href="riscv.html" />
     
 
     </head>
@@ -142,9 +140,9 @@
         
         
     
-        <li class="chapter active" data-level="2.1" data-path="getting-wepsim-cl.html">
+        <li class="chapter " data-level="2.1" data-path="../command-line/getting-wepsim-cl.html">
             
-                <a href="getting-wepsim-cl.html">
+                <a href="../command-line/getting-wepsim-cl.html">
             
                     
                     Getting WepSIM
@@ -155,9 +153,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="using-wepsim-cl.html">
+        <li class="chapter " data-level="2.2" data-path="../command-line/using-wepsim-cl.html">
             
-                <a href="using-wepsim-cl.html">
+                <a href="../command-line/using-wepsim-cl.html">
             
                     
                     Using WepSIM
@@ -168,9 +166,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="checkingwith-wepsim-cl.html">
+        <li class="chapter " data-level="2.3" data-path="../command-line/checkingwith-wepsim-cl.html">
             
-                <a href="checkingwith-wepsim-cl.html">
+                <a href="../command-line/checkingwith-wepsim-cl.html">
             
                     
                     Checking with WepSIM
@@ -254,9 +252,9 @@
         
         
     
-        <li class="chapter " data-level="5.1" data-path="../tutorials/riscv.html">
+        <li class="chapter " data-level="5.1" data-path="riscv.html">
             
-                <a href="../tutorials/riscv.html">
+                <a href="riscv.html">
             
                     
                     RISC-V
@@ -267,9 +265,9 @@
             
         </li>
     
-        <li class="chapter " data-level="5.2" data-path="../tutorials/mips.html">
+        <li class="chapter active" data-level="5.2" data-path="mips.html">
             
-                <a href="../tutorials/mips.html">
+                <a href="mips.html">
             
                     
                     MIPS
@@ -363,7 +361,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Getting WepSIM</a>
+        <a href=".." >MIPS</a>
     </h1>
 </div>
 
@@ -378,23 +376,33 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="getting-wepsim">Getting WepSIM</h1>
-<p>From Linux/Unix command line, please:</p>
-<ul>
-<li>Check you have installed Node v18.20+, and Bash 5.2+:<pre><code class="lang-bash">sudo apt-get install nodejs npm bash -y
-</code></pre>
-</li>
-<li>Get WepSIM by executing:<pre><code class="lang-bash">wget https://github.com/wepsim/wepsim/releases/download/v2.3.8/wepsim-2.3.8.zip
-unzip wepsim-2.3.8.zip
-cd wepsim-2.3.8
-npm install terser jq jshint yargs clear inquirer@8.2.6 fuzzy \
-         inquirer-command-prompt inquirer-autocomplete-prompt@1
-</code></pre>
-</li>
-<li>Execute wepsim.sh with the help flag in order to show the available command switches:<pre><code class="lang-bash">./wepsim.sh -h
-</code></pre>
-</li>
+                                <ul>
+<li>Authors: <strong>Alejandro Calderón Mateos &amp; Felix García Carballeira</strong></li>
+<li>License: <a href="https://github.com/wepsim/wepsim.github.io/blob/master/LICENSE" target="_blank">GPLv3.0</a></li>
 </ul>
+<h1 id="introduction-to-mips-assembly">Introduction to MIPS assembly</h1>
+<table>
+<thead>
+<tr>
+<th>Tutorial</th>
+<th>Description (what can be learned)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/wepsim/info/tutorials/mips/ws_el_basic_mips_v2.ipynb" target="_blank">Basic instructions</a></td>
+<td>Introduction to the arithmetic and logic instructions.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/wepsim/info/tutorials/mips/ws_el_loop_mips_v1.ipynb" target="_blank">Loops</a></td>
+<td>While/For constructions translated into assembly.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/wepsim/info/tutorials/mips/ws_el_ifthenelse_mips_v1.ipynb" target="_blank">If-Then(-Else)</a></td>
+<td>If-Then and If-Then-Else constructions translated into assembly.</td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -422,14 +430,10 @@ npm install terser jq jshint yargs clear inquirer@8.2.6 fuzzy \
 
             
                 
-                <a href="../web/using-wepsim.html" class="navigation navigation-prev " aria-label="Previous page: Using WepSIM">
+                <a href="riscv.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: RISC-V">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="using-wepsim-cl.html" class="navigation navigation-next " aria-label="Next page: Using WepSIM">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -438,7 +442,7 @@ npm install terser jq jshint yargs clear inquirer@8.2.6 fuzzy \
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Getting WepSIM","level":"2.1","depth":1,"next":{"title":"Using WepSIM","level":"2.2","depth":1,"path":"command-line/using-wepsim-cl.md","ref":"command-line/using-wepsim-cl.md","articles":[]},"previous":{"title":"Using WepSIM","level":"1.3","depth":1,"path":"web/using-wepsim.md","ref":"web/using-wepsim.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid","highlight","hide-published-with","hints","chapter-fold","gtag","copy-code-button","livereload"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"search":{},"mermaid":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"gtag":{"token":"G-66LLXNP464"},"highlight":{"exclude":["mermaid"]},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"WepSIM Team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WepSIM documentation","gitbook":"*","description":"WepSIM documents"},"file":{"path":"command-line/getting-wepsim-cl.md","mtime":"2026-02-20T10:11:07.483Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-02-20T10:30:29.796Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MIPS","level":"5.2","depth":1,"previous":{"title":"RISC-V","level":"5.1","depth":1,"path":"tutorials/riscv.md","ref":"tutorials/riscv.md","articles":[]},"dir":"ltr"},"config":{"plugins":["mermaid","highlight","hide-published-with","hints","chapter-fold","gtag","copy-code-button","livereload"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"search":{},"mermaid":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"gtag":{"token":"G-66LLXNP464"},"highlight":{"exclude":["mermaid"]},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"WepSIM Team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WepSIM documentation","gitbook":"*","description":"WepSIM documents"},"file":{"path":"tutorials/mips.md","mtime":"2026-02-20T10:41:47.649Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-02-20T10:30:29.796Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
