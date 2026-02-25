@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D790HJH70R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-D790HJH70R');
+    </script>
+
+    <!-- Google tag (gtag.js) - Universal -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80849772-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-80849772-3');
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"    content="user-scalable=yes, initial-scale=1,
+                             width=device-width,
+                             maximum-scale=2.5, minimum-scale=.5" />
+    <meta name="description" content="WepSIM homepage">
+    <meta name="author"      content="WepSIM authors">
+
+    <title>WepSIM</title>
+
+    <script src="external/jquery.min.js"></script>
+    <script src="external/popper.min.js"></script>
+
+    <link  href="external/bootstrap.min.css"  rel="stylesheet">
+    <link  href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet"
+           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <script src="external/bootstrap.min.js"></script>
+    <script src="external/clipboard.min.js"></script>
+
+    <meta name="google-site-verification" content="gbIx0pN_mlbiXYFvWz9h251qfap7r2W4yMRkS2tVCS4" />
+
+    <style>
+	.carousel .carousel-indicators button {
+	   width: 20px;
+	  height: 20px;
+	  border-radius: 100%;
+	}
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md bg-dark fixed-top text-white p-1" id="nav1">
+        <div class="container">
+	    <div class="navbar-header page-scroll">
+		<a type="button" aria-expanded="false" aria-label="Toggle navigation"
+		   class="navbar-toggle navbar-toggler-end text-white btn-dark"
+		   data-bs-toggle="collapse" data-bs-target="#navbar-collapse-2">
+		<span class="sr-only">Toggle navigation</span> <span class="fa fa-bars"></span>
+		</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="navbar-collapse-2">
+		<ul class="navbar-nav ml-auto nav-fill flex-fill">
+		    <li class="nav-item m-1 mx-lg-2">
+                    <a class="nav-link text-white p-0" href="#page-top">Introduction</a>
+                    </li>
+
+		    <li class="nav-item m-1 mx-lg-2 dropdown">
+                    <a class="nav-link text-white p-0 dropdown-toggle"
+		       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                       href="#">Advantages</a>
+			    <div class="dropdown-menu">
+			       <a class="dropdown-item" href="#advantages_multidimension">From near NAND to almost tetris</a>
+			       <a class="dropdown-item" href="#advantages_learnonthego">Better learn-on-the-go</a>
+			    </div>
+                    </li>
+		    <li class="nav-item m-1 mx-lg-2 dropdown">
+                    <a class="nav-link text-white p-0 dropdown-toggle"
+		       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                       href="#">Getting WepSIM</a>
+			    <div class="dropdown-menu">
+		               <h6 class="dropdown-header px-1 text-secondary">WepSIM</h6>
+			       <a class="dropdown-item" href="#getwepsim_run">Run without install</a>
+			       <a class="dropdown-item" href="#getwepsim_install">Install WepSIM</a>
+			       <div class="dropdown-divider"></div>
+		               <h6 class="dropdown-header px-1 text-secondary">Source Code</h6>
+			       <a class="dropdown-item" href="#getwepsim_source">GitHub repository</a>
+			    </div>
+                    </li>
+
+		    <li class="nav-item m-1 mx-lg-2 dropdown">
+                    <a class="nav-link text-white p-0 dropdown-toggle"
+		       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                       href="#">Getting Started</a>
+			    <div class="dropdown-menu">
+		               <h6 class="dropdown-header px-1 text-secondary">Web</h6>
+			       <a class="dropdown-item" href="#gettingstarted_example">Learn with an Example</a>
+			       <a class="dropdown-item" href="#gettingstarted_lab">Steps of a typical session</a>
+			       <div class="dropdown-divider"></div>
+		               <h6 class="dropdown-header px-1 text-secondary">Command-line</h6>
+			       <a class="dropdown-item" href="#gettingstarted_cl">Options for executing</a>
+			       <a class="dropdown-item" href="#gettingstarted_cl2">Options for checking</a>
+			    </div>
+                    </li>
+		    <li class="nav-item m-1 mx-lg-2 dropdown">
+                    <a class="nav-link text-white p-0 dropdown-toggle"
+		       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                       href="#">Teaching with WepSIM</a>
+			    <div class="dropdown-menu">
+		               <h6 class="dropdown-header px-1 text-secondary">Examples</h6>
+			       <a class="dropdown-item" href="#teachingwithwepsim_ex1">Learn by examples</a>
+			       <div class="dropdown-divider"></div>
+		               <h6 class="dropdown-header px-1 text-secondary">Laboratories</h6>
+			       <a class="dropdown-item" href="#teachingwithwepsim_lab1">Assembly and security</a>
+			       <a class="dropdown-item" href="#teachingwithwepsim_lab1">Microprogramming</a>
+			    </div>
+                    </li>
+		    <li class="nav-item m-1 mx-lg-2 dropdown">
+                    <a class="nav-link text-white p-0 dropdown-toggle"
+		       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+	               href="#">Publications</a>
+			    <div class="dropdown-menu">
+		               <h6 class="dropdown-header px-1 text-secondary">Publications</h6>
+			       <a class="dropdown-item" href="#publications_en">English</a>
+			       <a class="dropdown-item" href="#publications_es">Spanish</a>
+			    </div>
+                    </li>
+		    <li class="nav-item m-1 mx-lg-2">
+                    <a class="nav-link text-white p-0" href="#authors">Authors</a>
+                    </li>
+		</ul>
+	    </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <nav id="page-top" class="navbar navbar-expand-lg bg-dark text-white p-1" id="nav2">
+        <div class="container p-0">&nbsp;</div>
+    </nav>
+    <header class="masthead bg-light text-black text-center pt-4">
+      <div class="container px-2">
+          <div class="row d-flex align-content-center flex-wrap py-4">
+	     <div class="col text-black m-auto"
+                  ><h3>The Web Elemental Processor SIMulator</h3></div>
+
+	     <div class="btn-group col-auto btn btn-sm btn-primary p-0 m-auto">
+		  <a class="btn btn-sm btn-primary"
+		     href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=MIPS&example=11&simulator=assembly:screen"><strong>Link to <span style="font-size:110%">WepSIM</span></strong></a>
+		  <button type="button" class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+		    <span class="visually-hidden">Toggle Dropdown</span>
+		  </button>
+		  <ul class="dropdown-menu">
+                    <h6 class="text-secondary mb-1">Processor view...</h6>
+		    <li><a class="dropdown-item" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=MIPS&example=11&simulator=microcode:registers&notify=false">mips + registers</a></li>
+		    <li><a class="dropdown-item" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=MIPS&example=11&simulator=microcode:screen&notify=false">mips + screen</a></li>
+		    <li><a class="dropdown-item" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=RISCV&example=14&simulator=microcode:registers&notify=false">risc-v + registers</a></li>
+		    <li><a class="dropdown-item" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=RISCV&example=14&simulator=microcode:screen&notify=false">risc-v + screen</a></li>
+
+		    <li><hr class="dropdown-divider"></li>
+                    <h6 class="text-secondary mb-1">Assembly view...</h6>
+		    <li><a class="dropdown-item" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=MIPS&example=11&simulator=assembly:registers&notify=false">mips assembly + registers</a></li>
+		    <li><a class="dropdown-item" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=MIPS&example=11&simulator=assembly:screen&notify=false">mips assembly + screen</a></li>
+		    <li><a class="dropdown-item" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=RISCV&example=14&simulator=assembly:registers&notify=false">rv assembly + registers</a></li>
+		    <li><a class="dropdown-item" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=RISCV&example=14&simulator=assembly:screen&notify=false">rv assembly + screen</a></li>
+		    <li><a class="dropdown-item" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=RISCV&example=19&simulator=assembly:ledmatrix&notify=false">risc-v + led-matrix</a></li>
+		  </ul>
+	     </div>
+
+	  </div>
+
+
+          <div class="row d-flex align-content-center flex-wrap">
+                <div class="col-12 pt-2 pb-xs-1 pb-md-4">
+
+			<div id="carousel-1" class="carousel slide carousel-fade"
+                             data-bs-ride="carousel" aria-label="carousel of 4 gifs to introduce WepSIM">
+			  <div class="carousel-indicators mb-3">
+			      <button type="button" data-bs-target="#carousel-1" data-bs-slide-to="0" aria-label="Slide 1" class="active"></button>
+			      <button type="button" data-bs-target="#carousel-1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			      <button type="button" data-bs-target="#carousel-1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			      <button type="button" data-bs-target="#carousel-1" data-bs-slide-to="3" aria-label="Slide 4"></button>
+			  </div>
+
+			  <div class="carousel-inner" role="listbox">
+			    <div class="carousel-item active" data-bs-interval="20000">
+				<center>
+				<img class="img-responsive mb-5 px-3"
+				     src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/welcome/simulation_xinstruction.gif"
+				     style="max-height:65vh !important; max-width:90vw !important;"
+				     alt="wepsim screenshot 2">
+				</center>
+				<div class="carousel-caption bg-dark py-2 px-1 w-100" style="left:0">
+				     <h6 class="mb-4">Students are able to see how values are modified
+					     for each clock cycle (at microprograming level),
+				         and for each assembly instruction (at assembly level) too</h6>
+				</div>
+			    </div>
+			    <div class="carousel-item" data-bs-interval="12000">
+				<center>
+				<img class="img-responsive mb-5 px-3"
+				     src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/welcome/change_signal_value.gif"
+				     style="max-height:65vh !important; max-width:90vw !important;"
+				     alt="wepsim screenshot 1">
+				</center>
+				<div class="carousel-caption bg-dark py-2 px-1 w-100" style="left:0">
+				     <h6 class="mb-4">For each control signals students can explorer how it works,
+					 they could change its associated values, and
+				         they could check  the associated help</h6>
+				</div>
+			    </div>
+			    <div class="carousel-item" data-bs-interval="8000">
+				<center>
+				<img class="img-responsive mb-5 px-3"
+				     src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/welcome/example_usage.gif"
+				     style="max-height:65vh !important; max-width:90vw !important;"
+				     alt="wepsim screenshot 4">
+				</center>
+				<div class="carousel-caption bg-dark py-2 px-1 w-100" style="left:0">
+				     <h6 class="mb-4">WepSIM comes with several examples...</h6>
+				</div>
+			    </div>
+			    <div class="carousel-item" data-bs-interval="7000">
+				<center>
+				<img class="img-responsive mb-5 px-3"
+				     src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/welcome/config_usage.gif"
+				     style="max-height:65vh !important; max-width:90vw !important;"
+				     alt="wepsim screenshot 7">
+				</center>
+				<div class="carousel-caption bg-dark py-2 px-1 w-100" style="left:0">
+				     <h6 class="mb-4">...And WepSIM can be easily configured</h6>
+				</div>
+			    </div>
+			  </div>
+
+			  <!-- Left and right controls -->
+			  <a class="left carousel-control-prev" href="#carousel-1" 
+			     role="button" data-bs-slide="prev" style="max-width:5vw !important;">
+			     <span class="carousel-control-prev-icon" aria-hidden="true" 
+				   style="filter:invert(100%);"></span>
+			     <span class="sr-only">Previous</span>
+			  </a>
+			  <a class="right carousel-control-next" href="#carousel-1" 
+			     role="button" data-bs-slide="next" style="max-width:5vw !important;">
+			     <span class="carousel-control-next-icon" aria-hidden="true" 
+				   style="filter:invert(100%);"></span>
+			     <span class="sr-only">Next</span>
+			  </a>
+			</div>
+
+                </div>
+          </div>
+        </div>
+    </header>
+
+    <!-- "advantages" Section -->
+    <section id="advantages" class="pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2>Advantages</h2><hr class="star-primary">
+                </div>
+            </div>
+
+	   <ul>
+
+            <a name="advantages_multidimension" id="advantages_multidimension"></a>
+	    <br>
+	    <h5 class="px-0 pt-2 pb-3 m-0">
+		<li><div class="bg-warning w-100 p-2">From near NAND to almost tetris (from circuits to assembly code):</div></li>
+	    </h5>
+
+            <div class="row">
+                <div class="col-12">
+
+		     <div class="row">
+			  <div class="card col mx-2 p-0 border-secondary">
+			    <div class="card-header fw-bold bg-warning p-2">
+				  + Integrated vision: from hardware to system software
+			    </div>
+			    <img class="img-responsive card-img-top mx-auto"
+			         style="max-height:15vh !important;"
+	                         src="images/hw_and_sw-2.png" alt="Integrated vision of how hardware and software interplays">
+			    <div class="card-body">
+			      <h5 class="card-title mb-0">
+				  Students gain an integrated vision of how hardware and software interplays through microprogramming and assembly programming. <br>
+				  <a href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-MIPS&example=8&simulator=assembly:screen">Interrupts</a>,
+				  <a href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-MIPS&example=10&simulator=assembly:screen">exceptions</a>,
+				  <a href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-MIPS&example=9&simulator=assembly:register_file">system calls</a>,
+				  <a href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-MIPS&example=19&simulator=assembly:screen">threads</a>,
+				  etc. are include in <a href="#gettingstarted_example">the initial Examples</a>.
+			      </h5>
+			    </div>
+			    <div class="card-footer d-none">
+				 <a href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-MIPS&example=8&simulator=assembly:screen">Interrupts</a>,
+				 <a href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-MIPS&example=10&simulator=assembly:screen">exceptions</a>,
+				 <a href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-MIPS&example=9&simulator=assembly:register_file">system calls</a>,
+				 <a href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-MIPS&example=14&simulator=assembly:screen">threads</a>,
+				 etc. are include in Examples.
+			         WepSIM can be used as a complementary tool while teaching Computer Architecture, Operating Systems, etc.
+			    </div>
+			  </div>
+
+			  <div class="card col mx-2 p-0 border-secondary">
+			    <div class="card-header fw-bold bg-warning p-2">
+				  + Critical point of view: evaluating alternatives
+			    </div>
+			    <img class="img-responsive card-img-top mx-auto"
+			         style="max-height:15vh !important;"
+	                         src="images/compare-and-learn-2.png" alt="Compare among architectures, firmwares, and assembly programs">
+			    <div class="card-body">
+			      <h5 class="card-title mb-0">
+				  Students are able to compare different hardware, firmware, instruction sets, etc.
+				  and to assess what are the advantages and disadvantages.  <br>
+				  Students can solve new challenges, and <a href="#gettingstarted_lab">work in new situations</a>.
+			      </h5>
+			    </div>
+			    <div class="card-footer d-none">
+				 Different hardware architecure could be used in WepSIM,
+				 and for each one, several firmwares (instruction sets) can be defined.
+				 So different assembly programs can be designed, coded, tested, and compared.<br>
+			    </div>
+			  </div>
+		     </div>
+                </div>
+            </div>
+
+            <a name="advantages_learnonthego" id="advantages_learnonthego"></a>
+	    <br>
+	    <h5 class="px-0 pt-3 pb-2 m-0">
+		<li><div class="bg-primary text-white w-100 p-2">God is in the details:</div></li>
+	    </h5>
+
+                <div class="col-12 pt-2 px-0">
+		     <div class="row">
+			  <div class="card col mx-2 p-0 border-secondary">
+			    <div class="card-header fw-bold bg-primary text-white py-2">
+				  + Accesibility
+			    </div>
+			    <img class="img-responsive card-img-top mx-auto"
+			         style="max-height:15vh !important;"
+	                         src="images/wcag2-aaa.jpg" alt="WCGA 2 (AAA)">
+			    <div class="card-body">
+			      <h5 class="card-title mb-0">
+				  WepSIM passes the WCAG 2.0 (Level AAA) at the
+				  <a href="https://achecker.achecks.ca/checker/index.php">Web Accessibility Checker</a>. <br>
+				  There is an improved command-line text-based version too.
+			      </h5>
+			    </div>
+			    <div class="card-footer d-none">
+				 WepSIM passes the WCAG 2.0 (Level AAA) at the
+				 <a href="https://achecker.achecks.ca/checker/index.php">Web Accessibility Checker</a>.
+				 Along with an improved command-line version, more users can use it with less problems.
+			    </div>
+			  </div>
+
+			  <div class="card col mx-2 p-0 border-secondary">
+			    <div class="card-header fw-bold bg-primary text-white py-2">
+				  + Interactive
+			    </div>
+			    <img class="img-responsive card-img-top mx-auto"
+			         style="max-height:15vh !important;"
+	                         src="images/fire-check.jpg" alt="Compare among architectures, firmwares, and assembly programs">
+			    <div class="card-body">
+			      <h5 class="card-title mb-0">
+				  Students can easily check "What will happen if I change...".<br>
+				  For example, try to activate two tri-states signals and see what happens.
+			      </h5>
+			    </div>
+			    <div class="card-footer d-none">
+			          It is a very valuable complement of a good exercises book. <br>
+				  For example, students can activate two tri-states signals and see what happens.
+			    </div>
+			  </div>
+
+			  <div class="card col mx-2 p-0 border-secondary">
+			    <div class="card-header fw-bold bg-primary text-white py-2">
+				  + Mobility
+			    </div>
+			    <img class="img-responsive card-img-top mx-auto"
+			         style="max-height:15vh !important;"
+	                         src="images/tablet-313002_1920.jpg" alt="Mobility thanks to WepSIM">
+			    <div class="card-body">
+			      <h5 class="card-title mb-0">
+				  WepSIM can be used in tablets, smartphones, etc.<br>
+				  It can be used in regular classes, while travelling on bus, etc.
+			      </h5>
+			    </div>
+			    <div class="card-footer d-none">
+				  It is more flexible for students to practice. <br>
+				  For example, WepSIM allows the students to learn while travelling on subway, or on bus.
+			    </div>
+			  </div>
+		     </div>
+                </div>
+
+	   </ul>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- "getwepsim" Section -->
+    <section id="getwepsim" class="pt-5">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2>Get WepSIM</h2><hr class="star-primary">
+                </div>
+            </div>
+
+
+	   <ul>
+
+            <a name="getwepsim_run" id="getwepsim_run"></a>
+	    <br>
+	    <h5 class="px-0 pt-2 pb-3 m-0">
+		<li><div class="border border-dark p-2">You could <u>run</u> WepSIM <span class="rounded text-dark bg-light">from text-based command-line or any modern Web Browser</span>:</div></li>
+	    </h5>
+
+	    <div class="row pt-2 pb-4 mx-0">
+
+		  <div class="card col p-0 mx-2 border-secondary">
+		    <div class="card-header bg-light">
+			<h6 class="fw-bold"><u>Run</u> on <u>any platform</u> with Bash+NodeJS [**]</h6>
+		    </div>
+		    <div class="card-body">
+			<h5 class="pb-4">As text-based user interface:
+			<a href="https://github.com/wepsim/wepsim/releases/download/v2.2.2/wepsim-2.2.2.zip">wepsim-cl.zip</a>
+			</h5>
+
+			<img class="img-responsive card-img-top mx-auto d-block"
+			     style="max-height:10vh !important; max-width:5vw !important;"
+			     src="images/tux-158547_960_720.png" alt="linux logo">
+		    </div>
+		    <div class="card-footer bg-light">
+			 [**] Tested on Linux with <br> Node 18.0+ and Bash 4.4+
+		    </div>
+		  </div>
+
+		  <div class="card col p-0 mx-2 border-secondary">
+		    <div class="card-header bg-light">
+			<h6 class="fw-bold"><u>Run</u> on <u>any platform</u> with Web Browser [*]</h6>
+		    </div>
+		    <div class="card-body">
+			<h5 class="pb-4">WepSIM for Web:
+			<a href="https://wepsim.github.io/wepsim/">wepsim.github.io/wepsim/</a>
+			</h5>
+
+			<img class="img-responsive card-img-top mx-auto d-block" alt="web logo"
+			     style="max-height:10vh !important; max-width:5vw !important;"
+			     src="images/html5_logo.png">
+		    </div>
+		    <div class="card-footer bg-light">
+			 [*] Tested with Google Chrome 85+, Mozilla Firefox 85+, <br> Edge Chromium 85+, Apple Safari 12+
+		    </div>
+		  </div>
+
+	    </div>
+
+
+            <a name="getwepsim_install" id="getwepsim_install"></a>
+	    <br>
+	    <h5 class="px-0 pt-2 pb-3 m-0">
+		<li><div class="border border-dark p-2">You can <u>install</u> WepSIM <span class="rounded text-dark bg-light">as a progressive web application</span>:</div></li>
+	    </h5>
+
+	    <div class="row p-2">
+
+		  <div class="card col-sm-6 col-lg-4 p-0 mx-2 border-secondary">
+		    <div class="card-header bg-light">
+			<h6 class="fw-bold"><u>Install</u> on <u>Android</u> <br> (Android 8.0+)</h6>
+		    </div>
+		    <div class="card-body">
+			<h5 class="pb-4">WepSIM on
+			<a href="https://play.google.com/store/apps/details?id=es.uc3m.inf.arcos.wepsim">Google Play Store</a>:<br>
+			</h5>
+
+			<img class="img-responsive card-img-top mx-auto d-block"
+			     style="max-height:35vh !important; max-width:25vw !important;"
+			     src="images/google-play-wepsim.png" alt="google play screenshot">
+
+		    </div>
+		  </div>
+
+
+		  <div class="card col-sm-7 col-lg-7 p-0 mx-2 border-secondary">
+		    <div class="card-header p-0 m-0">
+
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+			  <li class="nav-item">
+			    <a class="nav-link p-2 m-0 active" data-bs-toggle="tab" role="tab"
+	                       id="chrome-tab"    href="#chrome"    aria-controls="chrome"
+			       aria-selected="true"><h6 class="fw-bold"><u>Install</u> on <u>any platform</u> <br> with Google Chrome 85+</h6></a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link p-2 m-0" data-bs-toggle="tab" role="tab"
+	                       id="safari-tab" href="#safari" aria-controls="safari"
+			       aria-selected="false"><h6 class="fw-bold"><u>Install</u> on <u>iOS/MacOS</u><br> (with Apple Safari 12+)</h6></a>
+			  </li>
+			</ul>
+		    </div>
+		    <div class="card-body">
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+			  <div class="tab-pane active" id="chrome" role="tabpanel" aria-labelledby="chrome-tab">
+
+				<h5 class="pb-4">As Progressive Web Application:</h5>
+
+				<div id="carousel-3b" class="carousel slide carousel-fade"
+                                     data-bs-ride="carousel" aria-label="carousel of gifs to introduce PWA">
+				  <div class="carousel-indicators mb-2">
+				      <button data-bs-target="#carousel-3b" data-bs-slide-to="0" class="active"></button>
+				      <button data-bs-target="#carousel-3b" data-bs-slide-to="1"></button>
+				      <button data-bs-target="#carousel-3b" data-bs-slide-to="2"></button>
+				      <button data-bs-target="#carousel-3b" data-bs-slide-to="3"></button>
+				  </div>
+
+				  <div class="carousel-inner" role="listbox">
+				    <div class="carousel-item active">
+					<center>
+					<img class="img-responsive pb-3 mb-3"
+					     src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_android001.jpg"
+					     style="max-height:65vh !important;"
+					     alt="wepsim screenshot android">
+					</center>
+					<div class="carousel-caption bg-dark py-3 px-2">
+					     <h6>
+					     1.- Once the <a href="https://wepsim.github.io/wepsim">https://wepsim.github.io/wepsim</a> is loaded in Chrome (Android, Windows, Linux), from the top-right corner tap on the menu icon (Chrome).
+					     </h6>
+					</div>
+				    </div>
+				    <div class="carousel-item">
+					<center>
+					<img class="img-responsive pb-3 mb-3"
+					     src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_android002.jpg"
+					     style="height:65vh !important;"
+					     alt="wepsim screenshot android">
+					</center>
+					<div class="carousel-caption bg-dark py-2 px-1 w-100" style="left:0">
+					     <h6>
+					     2.- Move within share options until 'add to home screen' option and click on it.
+					     </h6>
+					</div>
+				    </div>
+				    <div class="carousel-item">
+					<center>
+					<img class="img-responsive pb-3 mb-3"
+					     src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_android003.jpg"
+					     style="height:65vh !important;"
+					     alt="wepsim screenshot android">
+					</center>
+					<div class="carousel-caption bg-dark py-2 px-1 w-100" style="left:0">
+					     <h6>
+					     3.- Then click in the 'add' option.
+					     </h6>
+					</div>
+				    </div>
+				    <div class="carousel-item">
+					<center>
+					<img class="img-responsive pb-3 mb-3"
+					     src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_android004.jpg"
+					     style="height:65vh !important;"
+					     alt="wepsim screenshot android">
+					</center>
+					<div class="carousel-caption bg-dark py-2 px-1 w-100" style="left:0">
+					     <h6>
+					     4.- Finally WepSIM can be launched from the home screen icon.
+					     </h6>
+					</div>
+				    </div>
+				  </div>
+
+				  <!-- Left and right controls -->
+				  <a class="left carousel-control-prev" href="#carousel-3b" role="button" data-bs-slide="prev">
+			             <span class="carousel-control-prev-icon" aria-hidden="true" style="filter:invert(100%);"></span>
+				     <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control-next" href="#carousel-3b" role="button" data-bs-slide="next">
+			             <span class="carousel-control-next-icon" aria-hidden="true" style="filter:invert(100%);"></span>
+				     <span class="sr-only">Next</span>
+				  </a>
+				</div>
+
+			  </div>
+			  <div class="tab-pane"        id="safari" role="tabpanel" aria-labelledby="safari-tab">
+
+				<h5 class="pb-4">As Progressive Web Application:<br>
+				</h5>
+
+				<div id="carousel-3a" class="carousel slide carousel-fade"
+                                     data-bs-ride="carousel" aria-label="carousel of gifs to introduce PWA">
+				  <ol class="carousel-indicators">
+				      <li data-bs-target="#carousel-3a" data-bs-slide-to="0" class="active"></li>
+				      <li data-bs-target="#carousel-3a" data-bs-slide-to="1"></li>
+				      <li data-bs-target="#carousel-3a" data-bs-slide-to="2"></li>
+				      <li data-bs-target="#carousel-3a" data-bs-slide-to="3"></li>
+				  </ol>
+
+				  <div class="carousel-inner" role="listbox">
+				    <div class="carousel-item active">
+					<center>
+					<img class="img-responsive pb-3 mb-3"
+					     src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_ios001.jpg"
+					     style="max-height:50vh !important;"
+					     alt="wepsim screenshot ios">
+					</center>
+					<div class="carousel-caption bg-dark py-3">
+					     <h6>
+					     1.- Once the <a href="https://wepsim.github.io/wepsim">https://wepsim.github.io/wepsim</a> is loaded in Safari (iOS, MacOS), from the top-right corner tap on the share icon (Safari).
+					     </h6>
+					</div>
+				    </div>
+				    <div class="carousel-item">
+					<center>
+					<img class="img-responsive pb-3 mb-3"
+					     src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_ios002.jpg"
+					     style="max-height:50vh !important;"
+					     alt="wepsim screenshot ios">
+					</center>
+					<div class="carousel-caption bg-dark py-2 px-1 w-100" style="left:0">
+					     <h6>
+					     2.- Move within share options until 'add to home screen' option and click on it.
+					     </h6>
+					</div>
+				    </div>
+				    <div class="carousel-item">
+					<center>
+					<img class="img-responsive pb-3 mb-3"
+					     src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_ios003.jpg"
+					     style="max-height:50vh !important;"
+					     alt="wepsim screenshot ios">
+					</center>
+					<div class="carousel-caption bg-dark py-2 px-1 w-100" style="left:0">
+					     <h6>
+					     3.- Then click in the 'add' option.
+					     </h6>
+					</div>
+				    </div>
+				    <div class="carousel-item">
+					<center>
+					<img class="img-responsive pb-3 mb-3"
+					     src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_ios004.jpg"
+					     style="max-height:50vh !important;"
+					     alt="wepsim screenshot ios">
+					</center>
+					<div class="carousel-caption bg-dark py-2 px-1 w-100" style="left:0">
+					     <h6>
+					     4.- Finally WepSIM can be launched from the home screen icon.
+					     </h6>
+					</div>
+				    </div>
+				  </div>
+
+				  <!-- Left and right controls -->
+				  <a class="left carousel-control-prev" href="#carousel-3a" role="button" data-bs-slide="prev">
+			             <span class="carousel-control-prev-icon" aria-hidden="true" style="filter:invert(100%);"></span>
+				     <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="right carousel-control-next" href="#carousel-3a" role="button" data-bs-slide="next">
+			             <span class="carousel-control-next-icon" aria-hidden="true" style="filter:invert(100%);"></span>
+				     <span class="sr-only">Next</span>
+				  </a>
+				</div>
+
+			  </div>
+			</div>
+
+		    </div>
+		  </div>
+
+	    </div>
+
+
+            <a name="getwepsim_source" id="getwepsim_source"></a>
+	    <br>
+	    <h5 class="px-0 pt-4 pb-2 m-0">
+		<li><div class="border border-dark p-2">You can view the WepSIM Source Code <span class="rounded text-dark bg-light">in the GitHub repository</span>:</div></li>
+	    </h5>
+
+	    <div class="row card-deck p-2">
+
+		  <div class="card col-sm-12 col-lg-8 p-0 mx-auto border-secondary">
+		    <div class="card-header bg-light">
+			<h6 class="fw-bold">WepSIM Source Code on GitHub</h6>
+		    </div>
+		    <div class="card-body">
+			<h5 class="pb-4">WepSIM repository:
+			<a href="https://github.com/wepsim/wepsim">github.com/wepsim/wepsim</a>
+			</h5>
+			<img class="img-responsive card-img-top mx-auto d-block"
+			     style="max-height:20vh !important; max-width:10vw !important;"
+			     src="images/github-mark.png" alt="github logo">
+		    </div>
+		  </div>
+
+	    </div>
+
+	   </ul>
+
+        </div>
+    </section>
+
+
+    <!-- "gettingstarted" Section -->
+    <section id="gettingstarted" class="pt-5">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2>Getting Started</h2><hr class="star-primary">
+                </div>
+            </div>
+
+	    <ul>
+
+            <a name="gettingstarted_example" id="gettingstarted_example"></a>
+	    <br>
+	    <h5 class="m-1 pt-5 pb-3">
+		<li>To load and use the WepSIM examples, please follow <span class="rounded text-primary fw-bold">these 3 steps</span>:</li>
+	    </h5>
+
+            <div class="row m-1 pb-3">
+
+		  <div class="m-0 w-100">
+		    <div class="nav nav-pills nav-fill" id="v-pills-tab1" role="tablist" aria-orientation="horizontal">
+		      <a class="rounded border border-secondary nav-item nav-link active" data-bs-toggle="tab"  role="tab" aria-selected="true"
+			 id="pill0-step1-tab" href="#pill0-step1" aria-controls="pill0-step1">
+		      <div class="rounded fw-bold mx-auto w-md-25">Step 1</div></a>
+		      <a class="rounded border border-secondary nav-item nav-link" data-bs-toggle="tab"  role="tab" aria-selected="false"
+			 id="pill0-step2-tab" href="#pill0-step2" aria-controls="pill0-step2">
+		      <div class="rounded fw-bold mx-auto w-md-25">Step 2</div></a>
+		      <a class="rounded border border-secondary nav-item nav-link" data-bs-toggle="tab"  role="tab" aria-selected="false"
+			 id="pill0-step3-tab" href="#pill0-step3" aria-controls="pill0-step3">
+		      <div class="rounded fw-bold mx-auto w-md-25">Step 3</div></a>
+		    </div>
+		  </div>
+
+		  <div class="m-0 border border-secondary">
+		    <div class="tab-content" id="v-pills-tabContent">
+		      <div class="tab-pane show active" id="pill0-step1" role="tabpanel" aria-labelledby="pill0-step1-tab">
+			   <h5 class="m-3">
+			   First, we need to load <a href="https://wepsim.github.io/wepsim">WepSIM</a> in your favorite web browser.<br>
+			   Then click on the Examples button to open the Examples dialog.
+			   </h5>
+			   <img class="img-responsive p-1 w-100"
+			        src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/simulator/simulator021.jpg"
+				alt="wepsim screenshot 1">
+		      </div>
+		      <div class="tab-pane" id="pill0-step2" role="tabpanel" aria-labelledby="pill0-step2-tab">
+			   <h5 class="m-3">
+			   In the Examples dialog please click on the colored 'title' of the example and WepSIM will load and compile the associated microcode and assembly code:
+			   </h5>
+			   <img class="img-responsive p-1 w-100"
+			        src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/simulator/simulator022.jpg"
+				alt="wepsim screenshot 2">
+		      </div>
+		      <div class="tab-pane" id="pill0-step3" role="tabpanel" aria-labelledby="pill0-step3-tab">
+			   <h5 class="m-3">
+			   In the simulator workspace you can execute step by step and analyze the state of the components. <br>
+			   It is possible to work both, at assembly level or at microcode level:
+			   </h5>
+			   <img class="img-responsive pb-1 w-100"
+			        src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/welcome/simulation_xinstruction.gif"
+			        alt="wepsim screenshot 3">
+		      </div>
+		    </div>
+		  </div>
+
+	    </div>
+
+
+            <a name="gettingstarted_lab" id="gettingstarted_lab"></a>
+	    <br>
+	    <h5 class="m-1 pt-3 pb-3">
+		<li>
+		You can modify an existing example or build your own.
+		A typical WepSIM session has the <span class="rounded text-primary fw-bold">following 5 steps</span>:
+		</li>
+	    </h5>
+
+            <div class="row m-1 pb-3">
+
+		  <div class="m-0 w-100">
+		    <div class="nav nav-pills nav-fill" id="v-pills-tab2" role="tablist" aria-orientation="horizontal">
+		      <a class="rounded border border-secondary nav-item nav-link active" data-bs-toggle="tab"  role="tab" aria-selected="false"
+			 id="pill1-step1-tab" href="#pill1-step1" aria-controls="pill1-step1">
+		      <div class="rounded fw-bold mx-auto w-md-25">Step 1</div></a>
+		      <a class="rounded border border-secondary nav-item nav-link" data-bs-toggle="tab"  role="tab" aria-selected="false"
+			 id="pill1-step2-tab" href="#pill1-step2" aria-controls="pill1-step2">
+		      <div class="rounded fw-bold mx-auto w-md-25">Step 2</div></a>
+		      <a class="rounded border border-secondary nav-item nav-link" data-bs-toggle="tab"  role="tab" aria-selected="false"
+			 id="pill1-step3-tab" href="#pill1-step3" aria-controls="pill1-step3">
+		      <div class="rounded fw-bold mx-auto w-md-25">Step 3</div></a>
+		      <a class="rounded border border-secondary nav-item nav-link" data-bs-toggle="tab"  role="tab" aria-selected="false"
+			 id="pill1-step4-tab" href="#pill1-step4" aria-controls="pill1-step4">
+		      <div class="rounded fw-bold mx-auto w-md-25">Step 4</div></a>
+		      <a class="rounded border border-secondary nav-item nav-link" data-bs-toggle="tab"  role="tab" aria-selected="false"
+			 id="pill1-step5-tab" href="#pill1-step5" aria-controls="pill1-step5">
+		      <div class="rounded fw-bold mx-auto w-md-25">Step 5</div></a>
+		    </div>
+		  </div>
+
+		  <div class="m-0 border border-secondary">
+		    <div class="tab-content" id="v-pills-tabContent">
+		      <div class="tab-pane show active" id="pill1-step1" role="tabpanel" aria-labelledby="pill1-step1-tab">
+			   <h5 class="m-3">
+			   First, we need to load <a href="https://wepsim.github.io/wepsim">WepSIM</a> in your web browser.<br>
+			   Then you should go to the microcode editor workspace:
+			   </h5>
+			   <img class="img-responsive p-1 w-100"
+			        src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/simulator/firmware001.jpg"
+			        alt="wepsim screenshot 1">
+		      </div>
+		      <div class="tab-pane" id="pill1-step2" role="tabpanel" aria-labelledby="pill1-step2-tab">
+			   <h5 class="m-3">
+			   You can load an existing microcode or edit a new one.
+			   You have to microcompile the microcode to load the binary into the CPU's control memory:
+			   </h5>
+			   <img class="img-responsive pb-1 w-100"
+				src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/simulator/firmware002.jpg"
+				alt="wepsim screenshot 2">
+			   </h5>
+		      </div>
+		      <div class="tab-pane" id="pill1-step3" role="tabpanel" aria-labelledby="pill1-step3-tab">
+			   <h5 class="m-3">
+			   Next, you could go to the assembly editor workspace.
+			   In the editor workspace you can load an existing assembly code or edit a new one:
+			   </h5>
+			   <img class="img-responsive pb-1 w-100"
+			        src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/simulator/assembly002b.jpg"
+			        alt="wepsim screenshot 3">
+			   </h5>
+		      </div>
+		      <div class="tab-pane" id="pill1-step4" role="tabpanel" aria-labelledby="pill1-step4-tab">
+			   <h5 class="m-3">
+			   The instructions set defined in the previous microcode is used to create your assembly code.
+			   You have to compile the assembly code to load the binary into the main memory:
+			   </h5>
+			   <img class="img-responsive pb-1 w-100"
+				src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/simulator/assembly003.jpg"
+				alt="wepsim screenshot 4">
+			   </h5>
+		      </div>
+		      <div class="tab-pane" id="pill1-step5" role="tabpanel" aria-labelledby="pill1-step5-tab">
+			   <h5 class="m-3">
+			   Finally, you can go back to the simulator workspace.
+			   You can execute and analyze the state of the components.
+			   It is possible to work at assembly level or at microcode level:
+			   </h5>
+			   <img class="img-responsive pb-1 w-100"
+			        src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/welcome/simulation_xinstruction.gif"
+			        alt="wepsim screenshot 5">
+			   </h5>
+		      </div>
+		      <div class="tab-pane" id="pill1-step6" role="tabpanel" aria-labelledby="pill1-step6-tab">
+			   <h5 class="m-3">
+			   Also, it is possible to compare what changes in the system at two given execution states:
+			   </h5>
+			   <img class="img-responsive pb-1 w-100"
+			        src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/welcome/states_usage.gif"
+			        alt="wepsim screenshot 6">
+			   </h5>
+		      </div>
+		    </div>
+		  </div>
+
+	    </div>
+
+
+            <a name="gettingstarted_cl" id="gettingstarted_cl"></a>
+	    <br>
+	    <h5 class="m-1 pt-3 pb-3">
+		<li>A typical session with command-line interface of WepSIM has the following <span class="rounded text-primary fw-bold">possible options</span>:</li>
+	    </h5>
+
+            <div class="row m-1 pb-3">
+
+		  <div class="m-0 w-100">
+		    <div class="nav nav-pills nav-fill" id="v-pills-tab3" role="tablist" aria-orientation="horizontal">
+		      <a class="rounded border border-secondary nav-item nav-link active" data-bs-toggle="tab"  role="tab" aria-selected="false"
+			 id="pill2-step2-tab" href="#pill2-step2" aria-controls="pill2-step2">
+		      <span class="rounded fw-bold p-1">Step by step</span></a>
+		      <a class="rounded border border-secondary nav-item nav-link" data-bs-toggle="tab"  role="tab" aria-selected="false"
+			 id="pill2-step3-tab" href="#pill2-step3" aria-controls="pill2-step3">
+		      <span class="rounded fw-bold p-1">Microstep by microstep</span></a>
+		      <a class="rounded border border-secondary nav-item nav-link" data-bs-toggle="tab"  role="tab" aria-selected="false"
+			 id="pill2-step6-tab" href="#pill2-step6" aria-controls="pill2-step6">
+		      <span class="rounded fw-bold p-1">Verbalized</span></a>
+		    </div>
+		  </div>
+
+		  <div class="m-0 border border-tertiary">
+		    <div class="tab-content" id="v-pills-tabContent">
+		      <div class="tab-pane show active" id="pill2-step2" role="tabpanel" aria-labelledby="pill2-step2-tab">
+			   <h5 class="m-3">
+			   <strong>Goal</strong>: Run step by step and print the modified elements on each step.<br>
+			   <br>
+			   <strong>For example</strong>: 'run step by step' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print for each assembly instruction the state elements that modify its value:
+			   </h5>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-keyboard m-2"></strong>
+   <kbd class="col" style="display:block;">
+   ./wepsim.sh -a stepbystep -m ep -f ./examples/microcode/mips/ep_base.mc -s ./examples/assembly/mips/s1e1.asm
+   </kbd>
+</div>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-tv m-2"></strong>
+   <samp class="col pt-2 px-0">
+pc,		instruction,		changes_from_zero_or_current_value<br>
+pc = 0x8000,	li $2 2,		register R2 = 0x2; register R29 = 0xfffff; register PC = 0x8004<br>
+pc = 0x8004,	li $3 1,		register R3 = 0x1; register PC = 0x8008<br>
+pc = 0x8008,	add $5 $2 $3,		register R5 = 0x3; register PC = 0x800c<br>
+	...<br>
+   </samp>
+</div>
+		      </div>
+		      <div class="tab-pane" id="pill2-step3" role="tabpanel" aria-labelledby="pill2-step3-tab">
+			   <h5 class="m-3">
+			   <strong>Goal</strong>: Run microstep by microstep and print the modified elements on each step.<br>
+			   <br>
+			   <strong>For example</strong>: 'run microstep by microstep' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print for each microinstruction the state elementes that modify its value:
+			   </h5>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-keyboard m-2"></strong>
+   <kbd class="col" style="display:block;">
+   ./wepsim.sh -a microstepbymicrostep -m ep -f ./examples/microcode/mips/ep_base.mc -s ./examples/assembly/mips/s1e1.asm
+   </kbd>
+</div>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-tv m-2"></strong>
+   <samp class="col pt-2 px-0">
+micropc,		microcode,				changes_from_zero_or_current_value<br>
+micropc = 0x0,		T2 C0,					<br>
+micropc = 0x1,		TA R BW=11 M1 C1			<br>
+micropc = 0x2,		M2 C2 T1 C3,				register PC = 0x8004<br>
+micropc = 0x3,		A0 B=0 C=0,				<br>
+micropc = 0xd3,		SE OFFSET=0 SIZE=10000 T3 LC MR=0 SELC=10101 A0 B C=0,register R2 = 0x2; register R29 = 0xfffff<br>
+micropc = 0x0,		T2 C0,					<br>
+	...<br>
+   </samp>
+</div>
+		      </div>
+		      <div class="tab-pane" id="pill2-step6" role="tabpanel" aria-labelledby="pill2-step6-tab">
+			   <h5 class="m-3">
+			   <strong>Goal</strong>: Run microstep by microstep from a checkpoint and with a more descriptive output.<br>
+			   <br>
+			   <strong>For example</strong>: 'run microstep by microstep' the assembly and microcode from checkpoint 'tutorial_1.txt', and print for each microinstruction the state elementes that modify its value:
+			   </h5>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-keyboard m-2"></strong>
+   <kbd class="col" style="display:block;">
+   ./wepsim.sh -a microstepverbalized  --checkpoint ./examples/checkpoint/tutorial_1.txt
+   </kbd>
+</div>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-tv m-2"></strong>
+   <samp class="col pt-2 px-0">
+Micropc at 0x0.	Activated signals are: A0 B C. Associated actions are: Copy to Input microaddress Microaddress Register plus one with result 0x1. Copy from Output of MUX C to A1 value 0x0. Copy from INT to Output of MUX C value 0x0 (copied 1 bits from bit 0). MADDR is 5. <br>
+Micropc at 0x1.	Activated signals are: T2 C0. Associated actions are: Copy from Program Counter Register to Internal Bus value 0x8000. Load from Internal Bus to Memory Address Register value 0x8000. <br>
+Micropc at 0x2.	Activated signals are: TA R BW M1 C1. Associated actions are: Copy from Memory Address Register to Address Bus value 0x8000. Memory output = 0xc801000 (Read a word from 0x8000). Select the full Word. Copy from from Memory to Input of Memory Data Register value 0xc801000. Load from Input of Memory Data Register to Memory Data Register value 0xc801000. <br>
+	...<br>
+   </samp>
+</div>
+		      </div>
+	            </div>
+	          </div>
+
+	    </div>
+
+
+            <a name="gettingstarted_cl2" id="gettingstarted_cl2"></a>
+	    <br>
+	    <h5 class="m-1 pt-3 pb-3">
+		<li>WepSIM command-line interface <span class="rounded text-primary fw-bold">possible options</span> used for checking the expected result:</li>
+	    </h5>
+
+            <div class="row m-1 pb-3">
+
+		  <div class="m-0 w-100">
+		    <div class="nav nav-pills nav-fill" id="v-pills-tab3b" role="tablist" aria-orientation="horizontal">
+		      <a class="rounded border nav-item nav-link active" data-bs-toggle="tab"  role="tab" aria-selected="true"
+			 id="pill3-step1-tab" href="#pill3-step1" aria-controls="pill3-step1">
+		      <span class="rounded fw-bold p-1">Run</span></a>
+		      <a class="rounded border border-secondary nav-item nav-link" data-bs-toggle="tab"  role="tab" aria-selected="false"
+			 id="pill3-step4-tab" href="#pill3-step4" aria-controls="pill3-step4">
+		      <span class="rounded fw-bold p-1">Run & check (ok)</span></a>
+		      <a class="rounded border border-secondary nav-item nav-link" data-bs-toggle="tab"  role="tab" aria-selected="false"
+			 id="pill3-step5-tab" href="#pill3-step5" aria-controls="pill3-step5">
+		      <span class="rounded fw-bold p-1">Run & check (ko)</span></a>
+		    </div>
+		  </div>
+
+		  <div class="m-0 border border-tertiary">
+		    <div class="tab-content" id="v-pills-tabContent">
+		      <div class="tab-pane show active" id="pill3-step1" role="tabpanel" aria-labelledby="pill3-step1-tab">
+			   <h5 class="m-3">
+			   <strong>Goal</strong>: Run and print the final state.<br>
+			   <br>
+			   <strong>For example</strong>: 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print the final state:
+			   </h5>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-keyboard m-2"></strong>
+   <kbd class="col" style="display:block;">
+   ./wepsim.sh -a run -m ep -f ./examples/microcode/mips/ep_base.mc -s ./examples/assembly/mips/s1e1.asm
+   </kbd>
+</div>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-tv m-2"></strong>
+   <samp class="col pt-2 px-0">
+register R2 = 0x2; register R3 = 0x1; register R5 = 0x1; register R29 = 0xfffff; register PC = 0x8018; memory 0x8000 = 0x8400002; memory 0x8004 = 0x8600001; memory 0x8008 = 0xa21809; memory 0x800c = 0x8400002; memory 0x8010 = 0x8600001; memory 0x8014 = 0xa2180a;<br>
+   </samp>
+</div>
+		      </div>
+		      <div class="tab-pane" id="pill3-step2" role="tabpanel" aria-labelledby="pill3-step2-tab">
+			   <h5 class="m-3">
+			   <strong>Goal</strong>: Run step by step and print the modified elements on each step.<br>
+			   <br>
+			   <strong>For example</strong>: 'run' 'step by step' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print for each assembly instruction the state elements that modify its value:
+			   </h5>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-keyboard m-2"></strong>
+   <kbd class="col" style="display:block;">
+   ./wepsim.sh -a stepbystep -m ep -f ./examples/microcode/mips/ep_base.mc -s ./examples/assembly/mips/s1e1.asm
+   </kbd>
+</div>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-tv m-2"></strong>
+   <samp class="col pt-2 px-0">
+pc,		instruction,		changes_from_zero_or_current_value<br>
+pc = 0x8000,	li $2 2,		register R2 = 0x2; register R29 = 0xfffff; register PC = 0x8004<br>
+pc = 0x8004,	li $3 1,		register R3 = 0x1; register PC = 0x8008<br>
+pc = 0x8008,	add $5 $2 $3,		register R5 = 0x3; register PC = 0x800c<br>
+	...<br>
+   </samp>
+</div>
+		      </div>
+		      <div class="tab-pane" id="pill3-step3" role="tabpanel" aria-labelledby="pill3-step3-tab">
+			   <h5 class="m-3">
+			   <strong>Goal</strong>: Run microstep by microstep and print the modified elements on each step.<br>
+			   <br>
+			   <strong>For example</strong>: 'run' 'microstep by microstep' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print for each microinstruction the state elementes that modify its value:
+			   </h5>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-keyboard m-2"></strong>
+   <kbd class="col" style="display:block;">
+   ./wepsim.sh -a microstepbymicrostep -m ep -f ./examples/microcode/mips/ep_base.mc -s ./examples/assembly/mips/s1e1.asm
+   </kbd>
+</div>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-tv m-2"></strong>
+   <samp class="col pt-2 px-0">
+micropc,		microcode,				changes_from_zero_or_current_value<br>
+micropc = 0x0,		T2 C0,					<br>
+micropc = 0x1,		TA R BW=11 M1 C1,				<br>
+micropc = 0x2,		M2 C2 T1 C3,				register PC = 0x8004<br>
+micropc = 0x3,		A0 B=0 C=0,				<br>
+micropc = 0xd3,		SE OFFSET=0 SIZE=10000 T3 LC MR=0 SELC=10101 A0 B C=0,register R2 = 0x2; register R29 = 0xfffff<br>
+	...<br>
+   </samp>
+</div>
+		      </div>
+		      <div class="tab-pane" id="pill3-step4" role="tabpanel" aria-labelledby="pill3-step4-tab">
+			   <h5 class="m-3">
+			   <strong>Goal</strong>: Run and check that state at the end of the execution is the same as the one stored on a file.<br>
+			   <br>
+			   <strong>For example</strong>: 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode (and if it matchs the expected state then the output is going to be):
+			   </h5>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-keyboard m-2"></strong>
+   <kbd class="col" style="display:block;">
+   ./wepsim.sh -a check -m ep -f ./examples/microcode/mips/ep_base.mc -s ./examples/assembly/mips/s1e1.asm -r ./examples/checklist/mips/cl-s1e1.txt
+   </kbd>
+</div>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-tv m-2"></strong>
+   <samp class="col pt-2 px-0">
+	OK: Execution: no error reported<br>
+   </samp>
+</div>
+		      </div>
+		      <div class="tab-pane" id="pill3-step5" role="tabpanel" aria-labelledby="pill3-step5-tab">
+			   <h5 class="m-3">
+			   <strong>Goal</strong>: Run and check that state at the end of the execution is not the same as the one stored on a file.<br>
+			   <br>
+			   <strong>For example</strong>: 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode (and if it fails to match the expected state then the output is going to be):
+			   </h5>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-keyboard m-2"></strong>
+   <kbd class="col" style="display:block;">
+   ./wepsim.sh -a check -m ep -f ./examples/microcode/mips/ep_base.mc -s ./examples/assembly/mips/s1e1.asm -r ./examples/checklist/mips/cl-s1e1.txt
+   </kbd>
+</div>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-tv m-2"></strong>
+   <samp class="col pt-2 px-0">
+ERROR: Execution: different results: cpu[R1]='0' (expected '0xf'), cpu[R2]='0x2' (expected '0xf'), memory[0x1000]='0' (expected '0xa07ff0f'), memory[0x1004]='0' (expected '0x10061'), memory[0x1008]='0' (expected '0x7ffff'), 
+   ...<br>
+   </samp>
+</div>
+		      </div>
+		      <div class="tab-pane" id="pill3-step6" role="tabpanel" aria-labelledby="pill3-step6-tab">
+			   <h5 class="m-3">
+			      And least but not less, it is possible to execute microstep by microstep but with a more descriptive output (and from a checkpoint too):
+			   </h5>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-keyboard m-2"></strong>
+   <kbd class="col" style="display:block;">
+   ./wepsim.sh -a microstepverbalized --verbal math --checkpoint ./examples/checkpoint/tutorial_1.txt
+   </kbd>
+</div>
+<div class="m-2 border border-secondary row">
+   <strong class="col-auto fas fa-tv m-2"></strong>
+   <samp class="col pt-2 px-0">
+Micropc at 0x0.	Activated signals are: A0 B C. Associated actions are: Input microaddress = Microaddress Register + 1 (0x1). A1 = Output of MUX C (0x0). Output of MUX C = INT (0x0, 1 bits from bit 0). MADDR is 5. <br>
+Micropc at 0x1.	Activated signals are: T2 C0. Associated actions are: Internal Bus = Program Counter Register (0x8000). Memory Address Register = Internal Bus (0x8000). <br>
+Micropc at 0x2.	Activated signals are: TA R BW M1 C1. Associated actions are: Address Bus = Memory Address Register (0x8000). Memory output = 0xc801000 (Read a word from 0x8000). Select the full Word. Input of Memory Data Register = from Memory (0xc801000). Memory Data Register = Input of Memory Data Register (0xc801000). <br>
+	...<br>
+   </samp>
+</div>
+		      </div>
+	            </div>
+	          </div>
+
+	    </div>
+
+    </section>
+
+
+    <!-- "teachingwithwepsim" Section -->
+    <section id="teachingwithwepsim" class="pt-5">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2>Teaching with WepSIM</h2><hr class="star-primary">
+                </div>
+            </div>
+
+	    <ul>
+
+	    <a name="teachingwithwepsim_gcolab1" id="teachingwithwepsim_gcolab1"></a>
+	    <br>
+            <h5 class="m-1 pt-3 pb-3">
+		<li>Example of notebooks for Google Colab:</li>
+            </h5>
+
+	    <div class="list-group my-3">
+
+		<table class="table table-striped table-bordered table-hover border-2">
+		  <thead>
+		    <tr>
+		      <th scope="col" width="25%">
+		      <em><span class="badge bg-success">Entry level</span></em>
+		      </th>
+		      <th scope="col" width="55%">
+		      Description (what can be learned)
+		      </th>
+		      <th scope="col" colspan="2" style="text-align: center">
+		      Click to read...
+		      </th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <tr>
+		    <td>
+		      <b class="mb-1">Basic instructions</b>
+		    </td>
+		    <td>
+		      Introduction to the arithmetic and logic instructions.
+		    </td>
+		    <td>
+<a class="btn btn-outline-primary py-0 my-1 text-white fw-bold text-justify" href="https://githubtocolab.com/wepsim/wepsim.github.io/blob/master/google_colab/ws_el_basic_mips_v2.ipynb">
+<span class="rounded text-primary fw-bold">MIPS<sub>32im</sub> </span>
+</a>
+		    </td>
+		    <td>
+<a class="btn btn-outline-primary py-0 my-1 text-white fw-bold text-justify" href="https://githubtocolab.com/wepsim/wepsim.github.io/blob/master/google_colab/ws_el_basic_rv_v2.ipynb">
+<span class="rounded text-primary fw-bold">RISC-V<sub>32im</sub> </span>
+</a>
+		    </td>
+		    </tr>
+
+		    <tr>
+		    <td>
+		      <b class="mb-1">Loops</b>
+		    </td>
+		    <td>
+		      While/For constructions translated into assembly.
+		    </td>
+		    <td>
+<a class="btn btn-outline-primary py-0 my-1 text-white fw-bold text-justify" href="https://githubtocolab.com/wepsim/wepsim.github.io/blob/master/google_colab/ws_el_loop_mips_v1.ipynb">
+<span class="rounded text-primary fw-bold">MIPS<sub>32im</sub> </span>
+</a>
+		    </td>
+		    <td>
+<a class="btn btn-outline-primary py-0 my-1 text-white fw-bold text-justify" href="https://githubtocolab.com/wepsim/wepsim.github.io/blob/master/google_colab/ws_el_loop_rv_v1.ipynb">
+<span class="rounded text-primary fw-bold">RISC-V<sub>32im</sub> </span>
+</a>
+		    </td>
+		    </tr>
+
+		    <tr>
+		    <td>
+		      <b class="mb-1">If-Then(-Else)</b>
+		    </td>
+		    <td>
+		      If-Then and If-Then-Else constructions translated into assembly.
+		    </td>
+		    <td>
+<a class="btn btn-outline-primary py-0 my-1 text-white fw-bold text-justify" href="https://githubtocolab.com/wepsim/wepsim.github.io/blob/master/google_colab/ws_el_ifthenelse_mips_v1.ipynb">
+<span class="rounded text-primary fw-bold">MIPS<sub>32im</sub> </span>
+</a>
+		    </td>
+		    <td>
+<a class="btn btn-outline-primary py-0 my-1 text-white fw-bold text-justify" href="https://githubtocolab.com/wepsim/wepsim.github.io/blob/master/google_colab/ws_el_ifthenelse_rv_v1.ipynb">
+<span class="rounded text-primary fw-bold">RISC-V<sub>32im</sub> </span>
+</a>
+		    </td>
+		    </tr>
+
+		  </tbody>
+		</table>
+
+	    </div>
+
+
+            <a name="teachingwithwepsim_ex1" id="teachingwithwepsim_ex1"></a>
+	    <br>
+	    <h5 class="m-1 pt-2 pb-3">
+		<li>WepSIM comes with some interesting examples (<span class="rounded text-primary fw-bold">click to load</span> and then press 'Run'):</li>
+	    </h5>
+
+	    <div class="list-group mb-2">
+
+		<table class="table table-striped table-bordered table-hover border-3">
+		  <thead>
+		    <tr>
+		      <th scope="col" width="25%">
+		      <em><span class="badge bg-success">Entry level</span></em>
+                      </th>
+		      <th scope="col" width="45%">
+		      Description (what can be learned)
+                      </th>
+		      <th scope="col" colspan="2" style="text-align: center">
+		      <span class="rounded text-primary fw-bold">Click to load</span>
+                      </th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <tr>
+		      <td>
+		      <b class="mb-1">Basic instructions</b>
+                      </td>
+		      <td>
+		      Introduction to the arithmetic and logic instructions.
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-MIPS&example=0&simulator=assembly:register_file">
+<span class="rounded text-primary fw-bold">MIPS<sub>32</sub></span>
+</a>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-RISCV&example=0&simulator=assembly:register_file">
+<span class="rounded text-primary fw-bold">RISC-V<sub>32im</sub></span>
+</a>
+                      </td>
+		    </tr>
+
+		    <tr>
+		      <td>
+		      <b class="mb-1">Loops</b>
+                      </td>
+		      <td>
+		      While/For constructions translated into assembly.
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-MIPS&example=2&simulator=assembly:register_file">
+<span class="rounded text-primary fw-bold">MIPS<sub>32</sub></span>
+</a>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-RISCV&example=2&simulator=assembly:register_file">
+<span class="rounded text-primary fw-bold">RISC-V<sub>32im</sub></span>
+</a>
+                      </td>
+		    </tr>
+
+		    <tr>
+		      <td>
+		      <b class="mb-1">If-Then(-Else)</b>
+                      </td>
+		      <td>
+		    <p class="mb-1">If-Then and If-Then-Else constructions translated into assembly.</p>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-MIPS&example=3&simulator=assembly:register_file">
+<span class="rounded text-primary fw-bold">MIPS<sub>32</sub></span>
+</a>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-RISCV&example=3&simulator=assembly:register_file">
+<span class="rounded text-primary fw-bold">RISC-V<sub>32im</sub></span>
+</a>
+                      </td>
+		    </tr>
+
+		  </tbody>
+		</table>
+
+
+		<table class="table table-striped table-bordered table-hover border-2 my-3">
+		  <thead>
+		    <tr>
+		      <th scope="col" width="25%">
+	              <em><span class="badge bg-info">Medium level</span></em>
+                      </th>
+		      <th scope="col" width="45%">
+		      Description (what can be learned)
+                      </th>
+		      <th scope="col" colspan="2" style="text-align: center">
+		      <span class="rounded text-primary fw-bold">Click to load</span>
+                      </th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <tr>
+                      <td>
+		      <b class="mb-1">Given a vector, compute the sum of its elements</b>
+                      </td>
+                      <td>
+		    <p class="mb-1">Vector: It uses memory access, looping, and arithmetics.</p>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-MIPS&example=4&simulator=assembly:register_file">
+<span class="rounded text-primary fw-bold">MIPS<sub>32</sub> </span>
+</a>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-RISCV&example=4&simulator=assembly:register_file">
+<span class="rounded text-primary fw-bold">RISC-V<sub>32im</sub></span>
+</a>
+                      </td>
+		    </tr>
+
+		    <tr>
+                      <td>
+		      <b class="mb-1">Matrix: Count the zero elements in a matrix of integer values</b>
+                      </td>
+                      <td>
+		    <p class="mb-1">Matrix: It uses memory access, dual-loop, and arithmetics.</p>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-MIPS&example=6&simulator=assembly:register_file">
+<span class="rounded text-primary fw-bold">MIPS<sub>32</sub> </span>
+</a>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-RISCV&example=6&simulator=assembly:register_file">
+<span class="rounded text-primary fw-bold">RISC-V<sub>32im</sub> </span>
+</a>
+                      </td>
+		    </tr>
+
+		    <tr>
+		      <td>
+		      <b class="mb-1">Split a IEEE754 floating point value into its parts (sign, exponent, mantissa).</b>
+                      </td>
+		      <td>
+		    <p class="mb-1">BitOps: It uses masks and bitwise operators</p>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-MIPS&example=5&simulator=assembly:register_file">
+<span class="rounded text-primary fw-bold">MIPS<sub>32</sub> </span>
+</a>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/wepsim-classic.html?mode=ep&examples_set=Default-RISCV&example=5&simulator=assembly:register_file">
+<span class="rounded text-primary fw-bold">RISC-V<sub>32im</sub> </span>
+</a>
+                      </td>
+		    </tr>
+
+		    <tr>
+                      <td>
+		      <b class="mb-1">Function call: Fibonacci</b>
+                      </td>
+                      <td>
+		    <p class="mb-1">Function call: Recursive function call.</p>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/?mode=ep&examples_set=Default-MIPS&example=19&simulator=assembly:register_file">
+<span class="rounded text-primary fw-bold">MIPS<sub>32</sub> </span>
+</a>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/?mode=ep&examples_set=Default-RISCV&example=10&simulator=assembly:register_file">
+<span class="rounded text-primary fw-bold">RISC-V<sub>32im</sub> </span>
+</a>
+                      </td>
+		    </tr>
+
+		  </tbody>
+		</table>
+
+
+		<table class="table table-striped table-bordered table-hover border-2 my-3">
+		  <thead>
+		    <tr>
+		      <th scope="col" width="25%">
+	              <em><span class="badge bg-warning">Advanced level</span></em>
+                      </th>
+		      <th scope="col" width="45%">
+		      Description (what can be learned)
+                      </th>
+		      <th scope="col" colspan="2" style="text-align: center">
+		      <span class="rounded text-primary fw-bold">Click to load</span>
+                      </th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <tr>
+                      <td>
+		      <b class="mb-1">I/O device: Led matrix</b>
+                      </td>
+                      <td>
+		    <p class="mb-1">I/O device: It uses memory access, loop, and arithmetics.</p>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/?mode=ep&examples_set=Default-MIPS&example=13&simulator=assembly:ledmatrix">
+<span class="rounded text-primary fw-bold">MIPS<sub>32</sub> </span>
+</a>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/?mode=ep&examples_set=Default-RISCV&example=18&simulator=assembly:ledmatrix">
+<span class="rounded text-primary fw-bold">RISC-V<sub>32im</sub> </span>
+</a>
+                      </td>
+		    </tr>
+
+		    <tr>
+                      <td>
+		      <b class="mb-1">System events: Floating point exception, system call, and an interrupt.</b>
+                      </td>
+                      <td>
+		    <p class="mb-1">System events: FPE (0/0), print-string, and int0 every 900 clock cycles.</p>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/?mode=ep&examples_set=Default-MIPS&example=11&simulator=assembly:screen">
+<span class="rounded text-primary fw-bold">MIPS<sub>32</sub> </span>
+</a>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/?mode=ep&examples_set=Default-RISCV&example=14&simulator=assembly:register_file">
+<span class="rounded text-primary fw-bold">RISC-V<sub>32im</sub> </span>
+</a>
+                      </td>
+		    </tr>
+
+		    <tr>
+                      <td>
+		      <b class="mb-1">Round-Robin: Two threads in a round-robin fashion.</b>
+                      </td>
+                      <td>
+		    <p class="mb-1">Round-Robin: Two threads, one prints 'a' letter and the other prints 'b' in a round-robin fashion.</p>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-white fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/?mode=ep&examples_set=Default-MIPS&example=20&simulator=assembly:screen">
+<span class="rounded text-primary fw-bold">MIPS<sub>32</sub> </span>
+</a>
+                      </td>
+		      <td style="text-align: center">
+<a class="btn btn-outline-primary py-0 my-1 text-dark fw-bold text-justify" href="https://wepsim.github.io/wepsim/ws_dist/?mode=ep&examples_set=Default-RISCV&example=20&simulator=assembly:screen">
+<span class="rounded text-primary fw-bold">RISC-V<sub>32im</sub> </span>
+</a>
+                      </td>
+		    </tr>
+		  </tbody>
+		</table>
+
+	    </div>
+
+
+	    <a name="teachingwithwepsim_lab1" id="teachingwithwepsim_lab1"></a>
+	    <br>
+            <h5 class="m-1 pt-3 pb-3">
+		<li>Example of laboratories:</li>
+            </h5>
+
+	    <div class="list-group my-3">
+
+		<table class="table table-striped table-bordered table-hover border-2">
+		  <thead>
+		    <tr>
+		      <th scope="col" width="25%">
+		      <em><span class="badge bg-info">Medium level</span></em>
+		      </th>
+		      <th scope="col" width="55%">
+		      Description (what can be learned)
+		      </th>
+		      <th scope="col" width="17%">
+		      Click to read...
+		      </th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <tr>
+		    <td>
+		      <b class="mb-1">Assembly</b>
+		    </td>
+		    <td>
+		      Assembly, energy consumption and the impact on security
+		    </td>
+		    <td>
+<a class="btn btn-outline-primary py-0 my-1 text-white fw-bold text-justify" href="https://wepsim.github.io/teaching/rv_lab1_en.html">
+<span class="rounded text-primary fw-bold">Laboratory</span>
+</a>
+		    </td>
+		    </tr>
+
+		    <tr>
+		    <td>
+		      <b class="mb-1">Microprogramming</b>
+		    </td>
+		    <td>
+		      How a simple and compact instruction set is designed and works
+		    </td>
+		    <td>
+<a class="btn btn-outline-primary py-0 my-1 text-white fw-bold text-justify" href="https://wepsim.github.io/teaching/rv_lab2_en.html">
+<span class="rounded text-primary fw-bold">Laboratory</span>
+</a>
+		    </td>
+		    </tr>
+		  </tbody>
+		</table>
+
+	    </div>
+
+	</ul>
+
+        </div>
+    </section>
+
+
+    <!-- "publications" Section -->
+    <section id="publications" class="pt-5">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Publications</h2><hr class="star-primary">
+                </div>
+            </div>
+
+	    <ul>
+
+	    <a name="publications_en" id="publications_en"></a>
+	    <br>
+	    <h5 class="m-1 pt-3 pb-3">
+		<li>English:</li>
+	    </h5>
+
+            <div class="row">
+                <div class="col-md-4">
+
+		    <div class="row">
+
+			  <div class="card col mx-2 p-0">
+			    <span class="badge bg-primary">Spanking New!</span>
+			    <ul class="list-group list-group-flush">
+			          <img class="img-responsive card-img-top w-25 mx-auto"
+                                       src="images/books-pixabay-1673578_1280.png"
+				       alt="book icon">
+				  <li class="list-group-item fw-bold">
+				      <a href="https://ieeexplore.ieee.org/document/8662722">WepSIM: an Online Interactive Educational Simulator Integrating Microdesign, Microprogramming, and Assembly Language Programming</a>
+				  </li>
+				  <li class="list-group-item">
+					<button class="btn c2c p-0 float-end border border-secondary px-2" data-clipboard-action="copy" data-clipboard-target="#ws19">
+					   <span data-bs-toggle="tooltip" data-placement="bottom" title="Copy bibtex to clipboard">
+					   <em class="fa fa-quote-right"></em>&nbsp;Cite
+                                           </span>
+					</button>
+					<small id="ws19">
+					@article{wepsim2019,<br>
+					  author = {Garcia-Carballeira, Felix and Calderon-Mateos, Alejandro and Alonso-Monsalve, Saul and Prieto-Cepeda, Javier},
+					  title   = {WepSIM: an Online Interactive Educational Simulator Integrating Microdesign, Microprogramming, and Assembly Language Programming},<br>
+					  journal = {IEEE Transactions on Learning Technologies},<br>
+					  number  = 1,
+					  volume  = 1,
+					  pages   = {0-8},<br>
+					  month   = 2,
+					  year    = 2019
+					}<br>
+					</small>
+				  </li>
+			    </ul>
+			  </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <a name="publications_es" id="publications_es"></a>
+	    <br>
+	    <h5 class="m-1 pt-3 pb-3">
+		<li>Spanish:</li>
+	    </h5>
+
+            <div class="row">
+                <div class="col-md-12">
+
+		    <div class="row">
+
+			  <div class="card col mx-2 p-0">
+			    <span class="badge bg-secondary">Spanish Internal Handbook</span>
+			    <ul class="list-group list-group-flush">
+			          <img class="img-responsive card-img-top w-25 mx-auto"
+                                       src="images/books-pixabay-1673578_1280.png"
+				       alt="book icon">
+				  <li class="list-group-item fw-bold" style="height:22vh !important;">
+				      <a href="wepsim-manual.pdf">WepSIM Handbook (Spanish)</a>
+				  </li>
+				  <li class="list-group-item">
+					<button class="btn c2c p-0 float-end border border-secondary px-2" data-clipboard-action="copy" data-clipboard-target="#ws16a">
+					   <span data-bs-toggle="tooltip" data-placement="bottom" title="Copy bibtex to clipboard">
+					   <em class="fa fa-quote-right"></em>&nbsp;Cite
+                                           </span>
+					</button>
+					<small id="ws16a">
+					@article{wepsim2016x,<br>
+					  author  = {García-Carballeira, Félix},<br>
+					  title   = {WepSIM Handbook},<br>
+					  number  = 1,
+					  volume  = 1,
+					  pages   = {0-30},<br>
+					  month   = 1,
+					  year    = 2016
+					}<br>
+					</small>
+				  </li>
+			    </ul>
+			  </div>
+
+			  <div class="card col mx-2 p-0">
+			    <span class="badge bg-secondary">Spanish Journal</span>
+			    <ul class="list-group list-group-flush">
+			          <img class="img-responsive card-img-top w-25 mx-auto"
+                                       src="images/books-pixabay-1673578_1280.png"
+				       alt="book icon">
+				  <li class="list-group-item fw-bold" style="height:22vh !important;">
+				      <a href="http://digibug.ugr.es/bitstream/10481/41909/1/T3_N6_Revista_EAIC_2016.pdf">WepSIM: Simulador modular e interactivo de un procesador elemental para facilitar una visión integrada de la microprogramación y la programación en ensamblador</a>
+				  </li>
+				  <li class="list-group-item">
+					<button class="btn c2c p-0 float-end border border-secondary px-2" data-clipboard-action="copy" data-clipboard-target="#ws16b">
+					   <span data-bs-toggle="tooltip" data-placement="bottom" title="Copy bibtex to clipboard">
+					   <em class="fa fa-quote-right"></em>&nbsp;Cite
+                                           </span>
+					</button>
+					<small id="ws16b">
+					@article{wepsim2016a,<br>
+					  author  = {Calderón-Mateos, Alejandro and García-Carballeira, Félix and Prieto-Cepeda, Javier},<br>
+					  title   = {WepSIM: Simulador modular e interactivo de un procesador elemental para facilitar una visión integrada de la microprogramación y la programación en ensamblador},<br>
+					  journal = {Enseñanza y Aprendizaje de Ingeniería de Computadores},<br>
+					  number  = 6,
+					  volume  = 1,
+					  pages   = {0-8},<br>
+					  month   = 2,
+					  year    = 2016
+					}<br>
+					</small>
+				  </li>
+			    </ul>
+			  </div>
+
+			  <div class="card col mx-2 p-0">
+			    <span class="badge bg-secondary">Spanish Conference</span>
+			    <ul class="list-group list-group-flush">
+			          <img class="img-responsive card-img-top w-25 mx-auto"
+                                       src="images/books-pixabay-1673578_1280.png"
+				       alt="book icon">
+				  <li class="list-group-item fw-bold" style="height:22vh !important;">
+				      WepSIM: simulador integrado de microprogramación y programación en ensamblador
+				  </li>
+				  <li class="list-group-item">
+					<button class="btn c2c p-0 float-end border border-secondary px-2" data-clipboard-action="copy" data-clipboard-target="#ws16c">
+					   <span data-bs-toggle="tooltip" data-placement="bottom" title="Copy bibtex to clipboard">
+					   <em class="fa fa-quote-right"></em>&nbsp;Cite
+                                           </span>
+					</button>
+					<small id="ws16c">
+					@conference{wepsim2016b,<br>
+					  author  = {Prieto-Cepeda, Javier and García-Carballeira, Félix and Calderón, Alejando and Alonso-Monsalve, Saúl}, <br>
+					  title   = {WepSIM: simulador integrado de microprogramación y programación en ensamblador},<br>
+					  publisher = {XXVII Jornadas de Paralelismo (JP2016), Salamanca, Spain, September},<br>
+                                          organization = {XXVII Jornadas de Paralelismo (JP2016), Salamanca, Spain},<br>
+					  number  = 1,
+					  volume  = 1,
+					  pages   = {0-8},<br>
+					  month   = 9,
+					  year    = 2016
+					}<br>
+					</small>
+				  </li>
+			    </ul>
+			  </div>
+
+		    </div>
+
+		</div>
+            </div>
+
+	    </ul>
+
+        </div>
+    </section>
+
+
+    <!-- "authors" Section -->
+    <section id="authors" class="pt-5 pb-5">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2>Authors</h2><hr class="star-primary">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 p-md-0">
+
+		    <div class="row">
+			  <div class="card col mx-2 p-0">
+			      <img src="https://wepsim.github.io/wepsim/images/author_jprieto.png"
+				   class="img-responsive card-img-top img-rounded h-100"
+                                   alt="Author 1 thumbnail image"><br>
+			    <div class="card-body">
+		                   <h5>Javier Prieto Cepeda</h5>
+			    </div>
+                            <div class="list-group h-50 bg-light border">
+                                 <a class='card-link list-group-itemlist-group-item-action px-2 py-1 m-1'
+                                     href='https://www.linkedin.com/in/javier-prieto-cepeda'><span class="fab fa-linkedin"></span> linkedin</a>
+			    </div>
+			  </div>
+			  <div class="card col mx-2 p-0">
+			      <img src="https://wepsim.github.io/wepsim/images/author_salonso.png"
+				   class="img-responsive card-img-top img-rounded h-100"
+                                   alt="Author 2 thumbnail image"><br>
+			    <div class="card-body">
+			           <h5>Saúl Alonso Monsalve</h5>
+			    </div>
+			    <div class="list-group list-group-flush h-50 bg-light border">
+                                  <a class='card-link list-group-itemlist-group-item-action px-2 py-1 m-1'
+                                     href='https://www.researchgate.net/profile/Saul_Alonso_Monsalve'><span class="fab fa-researchgate"></span> r-gate</a>
+                                  <a class='card-link list-group-itemlist-group-item-action px-2 py-1 m-1'
+                                     href='https://github.com/saulam/wepsim'><span class="fab fa-github"></span> github</a>
+                                  <a class='card-link list-group-itemlist-group-item-action px-2 py-1 m-1'
+                                     href='https://www.linkedin.com/in/salonsom/'><span class="fab fa-linkedin"></span> linkedin</a>
+                            </div>
+			  </div>
+			  <div class="card col mx-2 p-0">
+			      <img src="https://wepsim.github.io/wepsim/images/author_acaldero.png"
+				   class="img-responsive card-img-top img-rounded h-100"
+                                   alt="Author 4 thumbnail image"><br>
+			    <div class="card-body px-2">
+			         <h5>Alejandro Calderón Mateos</h5>
+			    </div>
+			    <div class="list-group list-group-flush h-50 bg-light border">
+                                  <a class='card-link list-group-itemlist-group-item-action px-2 py-1 m-1'
+                                     href='https://www.researchgate.net/profile/Alejandro_Calderon2'><span class="fab fa-researchgate"></span> r-gate</a>
+                                  <a class='card-link list-group-itemlist-group-item-action px-2 py-1 m-1'
+                                     href='https://github.com/acaldero/'><span class="fab fa-github"></span> github</a>
+                                 <a class='card-link list-group-itemlist-group-item-action px-2 py-1 m-1'
+                                     href='https://www.linkedin.com/in/alejandro-calderon-mateos/'><span class="fab fa-linkedin"></span> linkedin</a>
+                            </div>
+			  </div>
+			  <div class="card col mx-2 p-0">
+			      <img src="https://wepsim.github.io/wepsim/images/author_fgarcia.png"
+				   class="img-responsive card-img-top img-rounded h-100"
+                                   alt="Author 3 thumbnail image"><br>
+			    <div class="card-body">
+			          <h5>Félix García Carballeira</h5>
+			    </div>
+			    <div class="list-group list-group-flush h-50 bg-light border">
+                                  <a class='card-link list-group-itemlist-group-item-action px-2 py-1 m-1'
+                                     href='https://www.researchgate.net/profile/Felix_Garcia-Carballeira'><span class="fab fa-researchgate"></span> r-gate</a>
+			    </div>
+			  </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- "License" -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	 <span class="text-white mr-auto">&copy; 2015-2023</span>
+	 <span class="text-white ml-auto"><a href="http://www.gnu.org/licenses/">LGPL 3.0</a></span>
+    </nav>
+
+</body>
+
+
+<script>
+    var clipboard = new ClipboardJS('.c2c') ;
+
+    $(function () {
+       $('[data-bs-toggle="tooltip"]').tooltip() ;
+    }) ;
+</script>
+
+
+</html>
+
