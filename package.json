@@ -7,7 +7,6 @@
       "gitbook-plugin-hide-published-with": "^0.0.1",
       "gitbook-plugin-hints": "^1.0.2",
       "gitbook-plugin-local-pagefooter": "^1.0.5",
-      "gitbook-plugin-splitter": "^0.0.8",
       "gitbook-plugin-tabs": "^0.0.7",
       "highlight.js-mermaid": "^0.0.0",
       "honkit": "^6.1.4",
@@ -16,7 +15,7 @@
    "scripts": {
       "build": "npx honkit build docs ../book",
       "serve": "npx honkit serve docs ../book",
-      "book": "npm install; npx honkit build docs ../book; npx honkit serve docs ../book"
+      "book": "npm install; npx honkit serve docs ../book"
    },
    "devDependencies": {
       "gitbook-plugin-copy-code-button": "^0.0.2",

@@ -4,11 +4,9 @@
 # Getting Started: Developers
 
 
-<a name="wepsim-apache-cordova"/>
+## WepSIM for Apache Cordova
 
-# WepSIM for Apache Cordova
-
-## 1) Prepare the Apache Cordova Project:
+### 1) Prepare the Apache Cordova Project:
 
 + 1.1) Follow Apache Cordova tutorial in order to create a new project:
   ```bash
@@ -24,13 +22,13 @@
   cordova plugin add cordova-plugin-console
   cordova plugin add cordova-plugin-device
   cordova plugin add cordova-plugin-dialogs
-  cordova plugin add https://github.com/apache/cordova-plugin-file-transfer.git
   cordova plugin add cordova-plugin-file
+  cordova plugin add https://github.com/apache/cordova-plugin-file-transfer.git
   cordova plugin add cordova-plugin-splashscreen
   cordova plugin add cordova-plugin-web-share
   ```
 
-## 2) Update WepSIM files:
+### 2) Update WepSIM files:
 
 + 2.1) Copy WepSIM files into the www directory:
   ```bash
@@ -43,7 +41,23 @@
   ./wepsim-master/devel/mk_cordova.sh
   ```
 
-## 3) Build Android .apk:
++ 2.3) [Android Only] Add to file "platforms/android/app/src/main/java/es/uc3m/inf/arcos/wepsim/MainActivity.java" the code:
+```java
+ ...
+ import android.webkit.WebView;
+ import android.webkit.WebSettings;
+ import android.webkit.WebSettings.ZoomDensity;
+ ...
+ WebView webView = (WebView) appView.getEngine().getView();
+ WebSettings settings = webView.getSettings();
+ settings.setUseWideViewPort(true);
+ settings.setSupportZoom(true);
+ settings.setBuiltInZoomControls(true);
+ settings.setDisplayZoomControls(false);
+ ...
+```
+
+### 3) Build Android .apk:
 
 + 3.1) Build .apk:
   ```bash

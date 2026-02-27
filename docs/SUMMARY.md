@@ -34,9 +34,8 @@
 
 ### Developers
 
-* [Android / iOSx](readme.md)
-  * [Apache Cordova](developer/mobile.md)
-* [WepSIM as API](readme.md)
+* [Building with WepSIM](readme.md)
+  * [Android and iOSx](developer/mobile.md)
   * [WepSIM API (JS)](developer/api_js.md)
 * [Contributions](readme.md)
   * [WepSIM Source Code](developer/source_code.md)
