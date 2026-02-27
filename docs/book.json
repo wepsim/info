@@ -2,10 +2,16 @@
   "title": "WepSIM documentation",
   "description": "WepSIM documents",
   "author": "WepSIM Team",
-  "plugins": ["mermaid","highlight","hide-published-with","hints","chapter-fold","gtag","copy-code-button"],
+  "plugins": ["mermaid","highlight","hide-published-with","hints","chapter-fold","gtag","copy-code-button","back-to-top-button","splitter","local-pagefooter"],
   "pluginsConfig": {
     "highlight": {
       "exclude": ["mermaid"]
+    },
+    "local-pagefooter": {
+      "copyright":"LGPL v3",
+      "islocal" : true,
+      "modify_label": "wepsim: ",
+      "modify_format": "2.3.8"
     },
     "gtag": {
       "token": "G-66LLXNP464"

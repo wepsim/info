@@ -2,7 +2,7 @@
 # Welcome to the WepSIM documentation!
 
 
-### 👨‍🎓 Learning with WepSIM
+### 👨‍🎓 Learning with WepSIM...
 * New to WepSIM? Get up and running quickly:
   1. Learn about the **[Web Interface](web/using-wepsim.md)** to enjoy the simulator
      * **[Try it now in your browser](https://wepsim.github.io/wepsim)** - No installation needed!
@@ -17,7 +17,7 @@
   * **[Assembly, power-consumption and security](labs/rv_lab1_en.md)**
 
 
-### 👨‍🏫 Teachers, start here!
+### 👨‍🏫 Teaching with WepSIM...
 * **Integratting WepSIM with your subject**:
   * **[WepSIM links in your documents](integration/links.md)** - Integrate WepSIM active links in your educational materials
   * **[WepSIM in your notebooks](integration/gcolab.md)** - Integrate WepSIM in your Google Colab notebooks
