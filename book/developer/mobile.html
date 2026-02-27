@@ -3,7 +3,7 @@
 <html lang="" >
     <head>
         <meta charset="UTF-8">
-        <title>Getting WepSIM · WepSIM documentation</title>
+        <title>Apache Cordova · WepSIM documentation</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 6.1.6">
@@ -62,7 +62,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="using-wepsim.html" />
+    <link rel="next" href="../readme.md" />
     
     
     <link rel="prev" href="../readme.md" />
@@ -123,9 +123,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="getting-wepsim.html">
+        <li class="chapter " data-level="1.2.1" data-path="../web/getting-wepsim.html">
             
-                <a href="getting-wepsim.html">
+                <a href="../web/getting-wepsim.html">
             
                     
                     Getting WepSIM
@@ -136,9 +136,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="using-wepsim.html">
+        <li class="chapter " data-level="1.2.2" data-path="../web/using-wepsim.html">
             
-                <a href="using-wepsim.html">
+                <a href="../web/using-wepsim.html">
             
                     
                     Using WepSIM
@@ -395,9 +395,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="4.1.1" data-path="../developer/mobile.html">
+        <li class="chapter active" data-level="4.1.1" data-path="mobile.html">
             
-                <a href="../developer/mobile.html">
+                <a href="mobile.html">
             
                     
                     Apache Cordova
@@ -427,9 +427,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="4.2.1" data-path="../developer/api_js.html">
+        <li class="chapter " data-level="4.2.1" data-path="api_js.html">
             
-                <a href="../developer/api_js.html">
+                <a href="api_js.html">
             
                     
                     WepSIM API (JS)
@@ -459,9 +459,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="4.3.1" data-path="../developer/source_code.html">
+        <li class="chapter " data-level="4.3.1" data-path="source_code.html">
             
-                <a href="../developer/source_code.html">
+                <a href="source_code.html">
             
                     
                     WepSIM Source Code
@@ -514,7 +514,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Getting WepSIM</a>
+        <a href=".." >Apache Cordova</a>
     </h1>
 </div>
 
@@ -529,65 +529,59 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="getting-wepsim">Getting WepSIM</h1>
+                                <h1 id="getting-started-developers">Getting Started: Developers</h1>
+<p><a name="wepsim-apache-cordova"></a></p>
+<h1 id="wepsim-for-apache-cordova">WepSIM for Apache Cordova</h1>
+<h2 id="1-prepare-the-apache-cordova-project">1) Prepare the Apache Cordova Project:</h2>
 <ul>
-<li><a href="#1-run-wepsim-from-web-browser">Run from Web browser</a></li>
-<li><a href="#2-install-wepsim-as-progressive-web-application-pwa">Install as Progressive Web Application</a></li>
+<li><p>1.1) Follow Apache Cordova tutorial in order to create a new project:</p>
+<pre><code class="lang-bash">npm install -g cordova
+cordova create wepsim es.uc3m.inf.arcos.wepsim WepSIM
+cd wepsim
+cordova platform add android
+cordova platform add ios
+</code></pre>
+</li>
+<li><p>1.2) Install at least the following plugins:</p>
+<pre><code class="lang-bash">cordova plugin add cordova-plugin-console
+cordova plugin add cordova-plugin-device
+cordova plugin add cordova-plugin-dialogs
+cordova plugin add https://github.com/apache/cordova-plugin-file-transfer.git
+cordova plugin add cordova-plugin-file
+cordova plugin add cordova-plugin-splashscreen
+cordova plugin add cordova-plugin-web-share
+</code></pre>
+</li>
 </ul>
-<h2 id="1-run-wepsim-from-web-browser">1. Run WepSIM from Web browser</h2>
-<p>To use WepSIM from a Web browser please follow these steps:</p>
-<ol>
-<li>Open your (compatible) Web browser<ul>
-<li>Please check that you have a compatible Web browser: <ul>
-<li>Google Chrome 100+, Mozilla Firefox 100+, Microsoft Edge 100+, and Apple Safari 16+ <br></br></li>
+<h2 id="2-update-wepsim-files">2) Update WepSIM files:</h2>
+<ul>
+<li><p>2.1) Copy WepSIM files into the www directory:</p>
+<pre><code class="lang-bash">wget https://github.com/wepsim/wepsim/archive/refs/heads/master.zip
+unzip master.zip
+</code></pre>
+</li>
+<li><p>2.2) Build www for the Apache Cordova project:</p>
+<pre><code class="lang-bash">./wepsim-master/devel/mk_cordova.sh
+</code></pre>
+</li>
 </ul>
+<h2 id="3-build-android-apk">3) Build Android .apk:</h2>
+<ul>
+<li><p>3.1) Build .apk:</p>
+<pre><code class="lang-bash">cordova build android --debug
+</code></pre>
+</li>
+<li><p>3.2) Run WepSIM's App...</p>
+<ul>
+<li>... on Emulator:<pre><code class="lang-bash">cordova run android
+</code></pre>
+</li>
+<li>... on Device:<pre><code class="lang-bash">adb -d install -r ./platforms/android/app/build/outputs/apk/debug/app-debug.apk
+</code></pre>
 </li>
 </ul>
 </li>
-<li>Click on the link <a href="https://wepsim.github.io/wepsim" target="_blank">https://wepsim.github.io/wepsim</a><ul>
-<li>A nightly build version is also available at <a href="https://acaldero.github.io/wepsim" target="_blank">https://acaldero.github.io/wepsim</a></li>
 </ul>
-</li>
-</ol>
-<h2 id="2-install-wepsim-as-progressive-web-application-pwa">2. Install WepSIM as Progressive Web Application (PWA)</h2>
-<p>WepSIM can be installed on iOS, Android, Windows, Linux, etc. as a Progressive Web Application.</p>
-<p>To install WepSIM as a Progressive Web Application (PWA), please follow these steps:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:right">Step</th>
-<th style="text-align:center">iOS</th>
-<th style="text-align:center">Android</th>
-<th style="text-align:left">Action to perform</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right"> <strong>1</strong></td>
-<td style="text-align:center"><img src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_ios001.jpg" alt="screen:pwa_ios"></img></td>
-<td style="text-align:center"><img src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_android001_short.jpg" alt="screen:pwa_android"></img></td>
-<td style="text-align:left">First, open Safari (iOS, MacOS) or Chrome (Android, Windows, Linux) and load <a href="https://wepsim.github.io/wepsim" target="_blank">https://wepsim.github.io/wepsim</a>. <br></br> From the top-right corner, tap on the share icon (Safari) or the menu icon (Chrome).</td>
-</tr>
-<tr>
-<td style="text-align:right"> <strong>2</strong></td>
-<td style="text-align:center"><img src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_ios002.jpg" alt="screen:pwa_ios"></img></td>
-<td style="text-align:center"><img src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_android002_short.jpg" alt="screen:pwa_android"></img></td>
-<td style="text-align:left">Move within share options until 'add to home screen' option and click on it.</td>
-</tr>
-<tr>
-<td style="text-align:right"> <strong>3</strong></td>
-<td style="text-align:center"><img src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_ios003.jpg" alt="screen:pwa_ios"></img></td>
-<td style="text-align:center"><img src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_android003_short.jpg" alt="screen:pwa_android"></img></td>
-<td style="text-align:left">Finally, click in the 'add' option.</td>
-</tr>
-<tr>
-<td style="text-align:right"> <strong>4</strong></td>
-<td style="text-align:center"><img src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_ios004.jpg" alt="screen:pwa_ios"></img></td>
-<td style="text-align:center"><img src="https://raw.githubusercontent.com/wepsim/wepsim/master/images/pwa/pwa_android004_short.jpg" alt="screen:pwa_android"></img></td>
-<td style="text-align:left">Then, WepSIM can be launched from the home screen icon.</td>
-</tr>
-</tbody>
-</table>
 
                                 
                                 </section>
@@ -615,12 +609,12 @@
 
             
                 
-                <a href="../readme.md" class="navigation navigation-prev " aria-label="Previous page: Web">
+                <a href="../readme.md" class="navigation navigation-prev " aria-label="Previous page: Android / iOSx">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="using-wepsim.html" class="navigation navigation-next " aria-label="Next page: Using WepSIM">
+                <a href="../readme.md" class="navigation navigation-next " aria-label="Next page: WepSIM as API">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -631,7 +625,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Getting WepSIM","level":"1.2.1","depth":2,"next":{"title":"Using WepSIM","level":"1.2.2","depth":2,"path":"web/using-wepsim.md","ref":"web/using-wepsim.md","articles":[]},"previous":{"title":"Web","level":"1.2","depth":1,"path":"readme.md","ref":"readme.md","articles":[{"title":"Getting WepSIM","level":"1.2.1","depth":2,"path":"web/getting-wepsim.md","ref":"web/getting-wepsim.md","articles":[]},{"title":"Using WepSIM","level":"1.2.2","depth":2,"path":"web/using-wepsim.md","ref":"web/using-wepsim.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["mermaid","highlight","hide-published-with","hints","chapter-fold","gtag","copy-code-button","livereload"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"search":{},"mermaid":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"gtag":{"token":"G-66LLXNP464"},"highlight":{"exclude":["mermaid"]},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"WepSIM Team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WepSIM documentation","gitbook":"*","description":"WepSIM documents"},"file":{"path":"web/getting-wepsim.md","mtime":"2026-02-20T10:11:07.483Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-02-27T11:21:27.317Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Apache Cordova","level":"4.1.1","depth":2,"next":{"title":"WepSIM as API","level":"4.2","depth":1,"path":"readme.md","ref":"readme.md","articles":[{"title":"WepSIM API (JS)","level":"4.2.1","depth":2,"path":"developer/api_js.md","ref":"developer/api_js.md","articles":[]}]},"previous":{"title":"Android / iOSx","level":"4.1","depth":1,"path":"readme.md","ref":"readme.md","articles":[{"title":"Apache Cordova","level":"4.1.1","depth":2,"path":"developer/mobile.md","ref":"developer/mobile.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["mermaid","highlight","hide-published-with","hints","chapter-fold","gtag","copy-code-button","livereload"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"search":{},"mermaid":{},"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"gtag":{"token":"G-66LLXNP464"},"highlight":{"exclude":["mermaid"]},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"WepSIM Team","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"WepSIM documentation","gitbook":"*","description":"WepSIM documents"},"file":{"path":"developer/mobile.md","mtime":"2026-02-25T16:31:22.512Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-02-27T11:21:27.317Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
