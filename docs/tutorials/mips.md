@@ -10,20 +10,37 @@
 * [If-Then(-Else)](#if-then-else)
 
 
-### Basic instructions
+### Basic instructions [(Google colab)](https://githubtocolab.com/wepsim/info/blob/master/tutorials/mips/ws_el_basic_mips_v2.ipynb)
 
-Introduction to the arithmetic and logic instructions.
-* [Basic instructions](https://githubtocolab.com/wepsim/info/blob/master/tutorials/mips/ws_el_basic_mips_v2.ipynb)
+* Load and copy instructions
+  * li
+  * mv
+* Arithmetic instructions
+  * add, addi, sub
+  * mul, div
+  * rem
+* Logic instructions
+  * or, ori
+  * and, andi
+  * xor, xori
+* Shift instructions
+  * srl, sll
+  * sra
 
 
-### Loops
+### Loops [(Google colab)](https://githubtocolab.com/wepsim/info/blob/master/tutorials/mips/ws_el_loop_mips_v1.ipynb)                 
 
-While/For constructions translated into assembly.
-* [Loops](https://githubtocolab.com/wepsim/info/blob/master/tutorials/mips/ws_el_loop_mips_v1.ipynb)                 
+Loop constructions translated into assembly:
+* FOR-like loop: x1 != 5
+* FOR-like loop: x1 <  5
+* FOR-like loop: x1 <= 5
 
 
-### If-Then(-Else)
+### If-Then(-Else) [(Google colab)](https://githubtocolab.com/wepsim/info/blob/master/tutorials/mips/ws_el_ifthenelse_mips_v1.ipynb)  
 
-If-Then and If-Then-Else constructions translated into assembly.
-* [If-Then(-Else)](https://githubtocolab.com/wepsim/info/blob/master/tutorials/mips/ws_el_ifthenelse_mips_v1.ipynb)  
+If-Then/If-Then-Else constructions translated into assembly:
+* if-then (full assembly version)
+* if-then (compact assembly version)
+* if-then-else (compact assembly version)
+
 

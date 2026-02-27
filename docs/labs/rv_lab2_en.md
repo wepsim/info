@@ -3,265 +3,244 @@
 + License: [GPLv3.0](https://github.com/wepsim/wepsim.github.io/blob/master/LICENSE)
 
 
-# Laboratory 2: microprogramming a compact instruction set
+# Laboratory 1: assembly, power-consumption and security
 
-The main goal of this laboratory is to learn how to design an instruction set for a computer.
-The main knowledge to be practiced are microprogramming, assembly programming and information representation.
+The main goal of the proposed laboratory is to understand the concepts related to assembly programming, but also the impact of power-consumption in security. For this purpose we are going to use the RISC-V assembler.
+In order to become familiar with assembly programming and simulator used, it is recommended to solve the examples available in the simulator.
 
-For the development of the laboratory, it is necessary to review the following concepts:
-  * The representation of integers, character strings, etc.
-  * The main aspects of the assembly language.
-  * The instruction format and addressing types.
-  * The operation of a processor, including the stages of execution, microprogramming, etc.
-
-The student is going to use the WepSIM simulator to be able to exercise in an interactive way the concepts and knowledge indicated above.
-
-This laboratory consists of 2 exercises that you can develop and test in <a href="https://wepsim.github.io/wepsim/">WepSIM</a>.
+This laboratory consists of 3 exercises that you can develop and test in <a href="https://wepsim.github.io/wepsim/">WepSIM</a>.
 
 
 ## Exercise 1
- 
-The company we are work with request you to **design, implement and test** a new instruction set similar to the RISC-V instruction set, using the WepSIM simulator. Instructions are listed in Table 1. The instructions will be encoded in 32 bits.
+The goal of this exercise is to develop in RISC-V<sub>imf32</sub> assembler a function called **`string_compare`** to work with strings:
+```
+Function string_compare ( char A[], char B[] ) ;
+```
 
-<html>
-<table style="border: 1px solid black; border-collapse: collapse; border-style: dotted" cellpadding="5">
-<tr    style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<th> Instruction </th>
-<th> Format </th>
-<th> Associated functionality </th>
-<th> Status register </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  lui RRE1, U32 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 010010<br>RRE1 (25-21)<br>U32 (63-32) </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[RRE1] ← U32 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  sw RRE1, (RRE2) </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 010000<br>RRE1 (25-21)<br>RRE2 (20-16) </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Memory[RRE1] ← BR[RRE2] </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  lw RRE1, (RRE2)      </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 010011<br>RRE1 (25-21)<br>RRE2 (20-16) </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[RRE1] ←Memory[RRE2] </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  add RRE1, RRE2, RRE3 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 011000<br>RRE1 (25-21)<br>RRE2 (20-16)<br>RRE3 (15-11)<br> </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[RRE1]  ← BR[RRE2]  + BR[RRE3]   </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Updated </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  addi RRE1, RRE2, S16 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 011010<br>RRE1 (25-21)<br>RRE2 (20-16)<br>S16 (15-0) </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[RRE1] ←BR[RRE2] +S16 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Updated </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  neg RRE1, RRE2 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 011011<br>RRE1 (25-21)<br>RRE2 (20-16) </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[RRE1]  ← 0 -  RRE2 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Updated </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  bnz S16 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 110011<br>S16  (15-0) </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  IF (SR. Z)<br>PC ← PC + S16 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  beq RRE1, RRE2, S10  </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 110100<br>RRE1 (25-21)<br>RRE2 (20-16)<br>S10 (9-0) </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  IF (RRE1  x RRE2)<br>PC ← PC + S10 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  jto RRE1 U16 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 100001<br>RRE1 (25-21)<br>U16 (15-0) </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[RRE1] ← PC<br>PC ← U16 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  jr RRE1 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 100010<br>RRE1 (25-21) </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  PC ← BR[RRE1] </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  halt </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  CO (31-26): 100011 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  PC ← 0x00<br>SR ← 0x00 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
-</tr>
-</table>
-</html>
+This function allows to compare two strings so that it is possible to know if the strings stored in memory are the same or not.
 
-<br>
-<html><center><em>Table 1.- RISC-V-like instruction set</em></center></html>
+This function receives the following arguments in the order given:
+  * Argument 1: (A) starting address of a string that ends with the ASCII code 0.
+  * Argument 2: (B) starting address of a string ending in end of string (ASCII code 0).
 
-The notation used for the instructions is the following one:
- * U32 refers to a 32-bit unsigned integer.
- * U16 to a 16-bit unsigned integer.
- * S16 to a 16-bit signed integer.
- * S10 to a 10-bit signed integer value. 
- * RRE will be used to denote RISC-V general purpose registers, which in this 32-bit version are 32 registers of 32-bit each. BR will be used to refer to the Register File, and BR[RRE1] to indicate the contents of the RRE1 register. The integers stored in register are two complements 32 bits integers.
- * MEMORY[R] refers to the contents of the memory position whose address is stored in the R register.
+The function returns a single integer that takes one of these three possible values:
+  * On error, it returns the integer -1.
+  * If the two strings are the same, it returns the integer 1 (one). 
+  * If the two strings are different, it returns the integer 0 (zero).
 
-The values "S16/S10" indicate that sign extension must be made while in "U16" no sign extension is made (filled with leading zeros).
+The following figure illustrates an example when the content of two strings is different:
+```
+.data
+  A: .string "uno"  # 'u', 'n', 'o', '\0'
+  B: .string "dos"  # 'd', 'o', 's', '\0'
 
-The following is the mapping between RISC-V registers and WepSIM registers. This association must be indicated in the register section of the microcode of the requested instructions.
+.text
 
-<html>
-<table style="border: 1px solid black; border-collapse: collapse; border-style: dotted" cellpadding="5">
-<tr>
-<th colspan="2"> RISC-V </th>
-<th> WepSIM register </th>
-<th> Meaning </th>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> x0 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> zero </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> R0 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> Contains a zero </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> x1 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> ra </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> R1 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> Call Return vAddress     </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x2 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  sp </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R2 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Stack pointer </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x3 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  gp </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R3 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Global pointer </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x4 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  tp </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R4 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Thread pointer </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x5 ... x7 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  t0 ... t2       </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R5 ... R7 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Temporary Records (1/2)  </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x8 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  fp </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R8 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Stack frame </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x9 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  s1 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R9 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Record saved </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x10 ... x11 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  a0 ... a1 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R10 ... R11 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Argument for functions (1/2) and return values </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x12 ... x17 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  a2 ... a7 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R12 ... R17 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Function Argument (2/2)  </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x18 ... x27 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  s2 ... s11 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R18 ... R27 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Registers saved </td>
-</tr>
-<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x28... x31 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  t3 ... t6 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R28 ... R31 </td>
-<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Temporary Records (1/2)  </td>
-</tr>
-</table>
-</html>
-<br>
-<html><center><em>Table 2.- RISC-V registers</em></center></html>
+ string_compare:
+       ...
+       jr ra
+
+ main: 
+       la a0 A
+       la a1 B
+       jal ra string_compare
+       #      <-   a0 must be 0 at this point because are differente string
+       ...
+```
 
 
-Each registers has two names and when programming it is possible to use both x0 or zero, x1 or ra, etc.
-For the main control registers:
- * The stack pointer register (sp) is the R2 register in the WepSIM elementary processor.
- * The status register is the SR register in the WepSIM processor.
- * The PC registry is the program counter register. 
+The following figure illustrates an example when the content of two strings that are equals:
+```
+.data
+  A: .string "uno"  # 'u', 'n', 'o', '\0'
+  B: .string "uno"  # 'u', 'n', 'o', '\0'
 
-WepSIM RT1, RT2, and RT3 registers are transparent to the assembler programmer.
+.text
 
-In order to pass arguments to a subroutine in our RISC-V assembler, the a0... a7 registers will be used, and the a0 and a1 registers will be used to return results (one value in a0, and for two values a0 and a1). 
-In the case of our RISC-V, passing more than eight arguments to a subroutine, from ninth to last of the arguments would be passed on the stack.
-Consider that a subroutine has to keep the value within registers s0... s11, sp, fp and ra between calls.
+ string_compare:
+       ...
+       jr ra
 
-The results of this exercise are related to the design of the microcode (memory of laboratory) and the microcode itself (mc file for WepSIM).
-A valid implementation that minimizes the number of clock cycles will be assessed, briefly justifying in memory the design decisions that have been made to achieve this.
+ main: 
+       la a0 A
+       la a1 B
+       jal ra string_compare
+       #      <-   a0 must be 1 at this point because are the same string
+       ...
+```
+
+The two possible errors to be considered in this function are that address A is null (zero value) and that address B is null (zero value).
+
+In the `string_compare` function, in case of finding an error, it must return only the value -1 without doing anything else. In the same way, the function must compare character by character and as soon as it is a different one it must return 0. 
+
+The following figure illustrates an example when an error ocurrs:
+```
+.data
+  A: .string "uno"  # 'u', 'n', 'o', '\0'
+  B: .string "dos"  # 'u', 'n', 'o', '\0'
+
+.text
+
+ string_compare:
+       ...
+       jr ra
+
+ main: 
+       li   a0 0
+       move a1 x0
+       jal ra string_compare
+       #      <-   a0 must be -1 at this point because an error happens
+       ...
+```
+
 
 
 ## Exercise 2
+The goal of this exercise is to study the impact of number of clock cycles when using the `string_compare` function, especially its use for a possible side-channel attack:
+  * Because more clock cycles needed by a function should be directed related to the power consumption in a normal CPU, we can know the input, output and the related power consumption for `string_compare`.
+  * In this program, the `rdcycle rd` RISC-V pseudoinstruction is used.
+This instruction stores in `rd` the number of cycles that have been executed so far.
 
-To test the instructions of the exercise 1 you can encode the programs that you deem appropriate.
-However, the company asks us to carry out a program in assembler (in order to make a demonstration) that uses the RISC-V instruction set requested in exercise 1.
+Imagine that a security company uses the `string_compare` function of Exercise 1 to check if an user's stored key (`stored_key`) is the same as the key that the user enters on the keyboard to authenticate.
 
-The program to be encoded, using the RISC-V statements designed in the previous section, will have the same functionality as that of the following program written in high-level language:
+To test such a function, design and implement a program that performs the following actions:
+  1. The user introduces the key by keyboard and it is stored in `user_key`.
+  2. The `string_compare` function is called to check that the key `user_key` entered by keyboard is valid by comparing it with the user's key that is stored in `stored_key`, so if it returns 1 it is valid and if it returns 0 it is an invalid key.
+  3. A valid or invalid message is printed on the screen.
 
-```c++
-int32 vector[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 } ;
+The following code fragment shows the skeleton of this program:
+```
+.data
+    stored_key:     .string   "one"
+    user_key:       .zero     9    
+    valid_msg:      .string   "Valid"
+    no_valid_msg:   .string   "Invalid"
 
-int sumav ( int32 neltos, int32 *vector )
-{
-     int32 v0 = 0 ;
-     for (int32 i=0; i<neltos; i++) {
-            v0 = v0 + vector[i] ;
-     }
-     return v0 ;
-}
+.text
+main:     
+            ...
+            # <- read the user key from keyboard and store in user_key
 
-int main ( int argc, char *argv[] )
-{
-     int32 ret = sumav(10, vector) ;
-     exit(0) ;
-}
+            # call to string_compare(stored_key, user_key)
+            ...
+            jal ra string_compare
+            mv  t1 a0         # t1: 1 ok and 0 not valid
+
+            
+            beq zero a0 print_no
+print_yes:  la  a0  valid_msg
+            j end
+print_no:   la  a0 no_valid_msg
+end:        li  a7 4
+            ecall
 ```
 
-This program has a **sumav** routine that receives two arguments: the number of elements of an integer vector and the start direction of that integer vector.
-The routine returns the sum of the numbers contained in the vector passed by argument. 
-There is also a **main** routine that takes care of calling the **sumav** routine and ending the program.
-Note the registers used in the convention for argument passing on this RISC-V are described at the end of Exercise 1.
+As an internship student of this company, we suspect that when comparing the key "one" with a string "a" the function only makes one single comparison between letters ('o' versus 'a'), but when comparing "one" with the string "o" the function makes two comparisons ('o' is equal to 'o' and 'n' is not equal to the end of the string). This causes the number of cycles executed and, therefore, the power consumption when the first letter is matched to be higher. 
 
-The results of this exercise must be indicated both, the part of the memory corresponding to this exercise and in the file associated with the requested functionality.
+To demonstrate this hypothesis, we initially propose the following program skeleton:
+```
+.data
+    valid_msg:      .string   ":Valid:"
+    no_valid_msg:   .string   ":Invalid:"
+
+    stored_key:     .string  "one"
+    possible_key:   .string  "a"
+
+.text
+main:  ...
+       # Obtain the cycles executed so far
+       rdcycle	t0
+
+       # call ro string_compare (stored_key, possible_key)
+       ...
+       jal ra string_compare
+       mv  t1 a0              # t1: 1 ok y 0 not valid
+
+       # Obtain the cycles executed so far
+       rdcycle  t2
+       sub t0 t2 t0           # t0: Number of elapsed cycles 
+
+       # Print messages
+       beq zero t1 p_no
+p_yes: la  a0 valid_msg
+       j end
+p_no:  la  a0 no_valid_msg
+end:   li  a7 4
+       ecall
+
+       # Print the number of cycles 
+       mv a0 t0
+       li a7 1
+       ecall
+       ...
+```
+
+The objective of this exercise is to modify the previous program to calculate the number of cycles (power consumption) for letters 'a' to 'z' as the first character of the key. That is, it is to find out the power consumption (number of cycles) for the following values of possible_key: 'a', 'b' ... 'z'. Only the 27 lowercase letters of the alphabet. 
+
+**Note, that possible_key is a string, i.e. when you want to test with the letter 'k', the string will have the value "k", which is equivalent to having two characters in the string: one the ASCII code of the 'k' and then the code 0 indicating the end of the string. It is recommended to study how the characters 'a'...'z' are stored using the ASCII code.**
+
+For this purpose, the function has to be developed: 
+```
+Function study_energy ( char password[], char dummy[] ) ;
+```
+
+This function prints in each line, for each of the letters, the following information:
+```
+letter: number of cycles.
+```
+
+For example, a possible output would be this:
+```
+a: 10
+b: 10
+c: 10
+d: 20
+e: 10
+.
+.
+z: 10
+```
+
+Note that in this case the key starts with the letter d, since the number of cycles in this case is higher.
+
+This function receives the following arguments in the given order:
+  * Argument 1: (password) starting address of a string with the key to be discovered. Like all strings, it ends with the ASCII code 0 used as the end of the string.
+  * Argument 2: (dummy) starting address of a string in memory. This string will always include a single character (in memory it will occupy two bytes: the ASCII code of the letter and the ASCII code 0 used as the end of the string).
+
+The function does not return any value, it simply prints on the console a line for each letter of the alphabet with the format indicated above:
+```
+letter: number of cycles
+```
+
+It is mandatory to correctly follow the parameter passing convention described in the course for RISC-V, as well as to respect the function signature (name, number of parameters, order of parameters and value to be returned). Similarly, the **study_energy** function must use the **string_compare** function of the first exercise (it must call this function).
+
+It will not be considered valid to develop the code of the functions directly in the main function. You must write the code corresponding to the requested function as a separate function.
+
+
+## Exercise 3
+The goal of this exercise is to implement a simple function that performs a **side-channel attack**.
+
+**Consider that the keys are at most 8 characters for the study**. 
+Through **a brute-force attack**, we would **have to test up to 27<sup>8</sup> (282,429,536,481) possible keys**. 
+
+**But with a side-channel attack**, it would be possible to detect by using the energy consumption (number of cycles executed) the first character of the key, and once this character is fixed, it would be possible to study the 27 possible characters for the second letter and so on. In other words, **possible combinations are reduced to 27*8 (216 possibilities), in case the key is just 8 characters long**.
+
+In Exercise 3, we have to implement in assembler RISC-V<sub>32IMF</sub> a function called `attack` to discover a possible key of up to 8 characters:
+```
+Function attack ( char password[], char dummy[] ) ;
+```
+
+This function receives the following arguments in the provided order:
+  * Argument 1: (password) starting address of the user key to be discovered. This string ends with the ASCII code 0 used as the end of the string.
+  * Argument 2: (dummy) starting address of a string in memory where the detected key will be stored. This string must have space for 9 bytes (8 of the string plus the end of the string).
+
+The function does not return any value, it simply stores in dummy memory address the value of the discovered key. 
+
+For the development of this exercise, you can start with the ideas of Exercise 2 and add everything necessary to perform the attack.
+
+Note that this is an exercise, in a real scenario the contents of the user's password would never be known. However, the principle used ([side-channel attack](https://en.wikipedia.org/wiki/Side-channel_attack)) is the same that has inspired attacks on current processors such as [spectre](https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)).
 
 
 # Extra material
-
-### Example
-You can find extra material in this example within WepSIM: <a href="https://acaldero.github.io/wepsim/ws_dist/?mode=ep&examples_set=RISCV&example=21">Example 21</a>.
-
-
-### Save a _checkpoint_ with WepSIM
-
-WepSIM allows you to save the entire working session into a single file. This session can include the requested microcode, the assembly code, the states at different execution points, and a recording of the work session. In this way it is more agile to continue the work or share that work among members of the laboratory group.
-
-To do this you have to use what in the WepSIM simulator is called _checkpoint_. The following are the steps to save a checkpoint:
-* In the run mode menu select the _"Checkpoint"_ option.
-* Enter the file name in the "File name:" field, then press the "Save" button to save the file.
-* **Check that the file has been saved correctly and contains everything ordered in the statement.**
+You can find extra material in this example within WepSIM: <a href="https://acaldero.github.io/wepsim/ws_dist/?mode=ep&examples_set=RISCV&example=22">Example 22</a>.
 

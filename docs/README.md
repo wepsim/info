@@ -13,8 +13,8 @@
   * **[MIPS32](tutorials/mips.md)**
 <br>
 * Examples of **laboratories for microprogramming** with WepSIM:
-  * **[Microprogramming a compact instruction set](labs/rv_lab2_en.md)**
-  * **[Assembly, power-consumption and security](labs/rv_lab1_en.md)**
+  * **[Microprogramming a compact instruction set](labs/rv_lab1_en.md)**
+  * **[Assembly, power-consumption and security](labs/rv_lab2_en.md)**
 
 
 ### 👨‍🏫 Teaching with WepSIM...
