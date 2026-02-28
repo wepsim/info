@@ -1,4 +1,4 @@
-# The WepSIM project: documentation
+# The WepSIM documentation
 
 <html>
 	<ul>
