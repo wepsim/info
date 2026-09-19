@@ -1,0 +1,74 @@
+site_name: WepSIM
+site_description: WepSIM documentation
+
+site_url: https://wepsim.github.io/info/
+use_directory_urls: false 
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs     # Horizontal upper menu
+    - navigation.sections # Lateral menu
+    - content.code.copy   # Copy button
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo      # indigo, blue, teal, etc.
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Dark-Mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Light-Mode
+
+nav:
+  - Documentation:
+    - Getting Started:
+      - Web:
+        - Getting WepSIM: web/getting-wepsim.md
+        - Using WepSIM: web/using-wepsim.md
+      - Command-line:
+        - Getting WepSIM: command-line/getting-wepsim-cl.md
+        - Using WepSIM: command-line/using-wepsim-cl.md
+        - Checking with WepSIM: command-line/checkingwith-wepsim-cl.md
+    - Learning with WepSIM:
+      - Example of tutorials:
+        - RISC-V: tutorials/riscv.md
+        - MIPS: tutorials/mips.md
+      - Example of labs:
+        - Side-channel attack: labs/rv_lab1_en.md
+        - Design your ISA: labs/rv_lab2_en.md
+    - Teaching with WepSIM:
+      - Integration with WepSIM:
+        - WepSIM links in documents: integration/links.md
+        - WepSIM on Google Colab: integration/gcolab.md
+      - Automatic checking: command-line/checkingwith-wepsim-cl.md
+    - Developers:
+      - Building with WepSIM:
+        - Android and iOSx: developer/mobile.md
+        - WepSIM API (JS): developer/api_js.md
+      - Contributions:
+        - WepSIM Source Code: developer/source_code.md
+
+copyright: 'Released under the LGPL v3 License. (c) 2012-2026'
+
+markdown_extensions:
+  - tables
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

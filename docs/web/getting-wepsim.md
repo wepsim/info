@@ -1,18 +1,16 @@
 
 # Getting WepSIM
 
-* [Run from Web browser](#1-run-wepsim-from-web-browser)
-* [Install as Progressive Web Application](#2-install-wepsim-as-progressive-web-application-pwa)
-
 
 ## 1. Run WepSIM from Web browser
 
 To use WepSIM from a Web browser please follow these steps:
+
 1. Open your (compatible) Web browser
-   * Please check that you have a compatible Web browser: 
-     * Google Chrome 100+, Mozilla Firefox 100+, Microsoft Edge 100+, and Apple Safari 16+ <br>
+     * Please check that you have a compatible Web browser: 
+        * Google Chrome 100+, Mozilla Firefox 100+, Microsoft Edge 100+, or Apple Safari 16+ <br>
 2. Click on the link https://wepsim.github.io/wepsim
-   * A nightly build version is also available at https://acaldero.github.io/wepsim
+     * A nightly build version is also available at https://acaldero.github.io/wepsim
 
 
 ## 2. Install WepSIM as Progressive Web Application (PWA)

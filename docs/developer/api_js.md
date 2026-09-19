@@ -9,8 +9,9 @@
   You will need to include the WepSIM engine in your proyect:
 
 ```javascript
-&lt;script src="min.sim_all.js"   >&lt;/script>&lt;noscript>Your browser does not support JavaScript!&lt;/noscript>
-&lt;script src="min.wepsim_web.js">&lt;/script>&lt;noscript>Your browser does not support JavaScript!&lt;/noscript>
+<script src="min.sim_all.js"   ></script>
+<script src="min.wepsim_web.js"></script>
+<noscript>Your browser does not support JavaScript</noscript>
 ```
 
 + And then, one simple example of using this WepSIM API is the following:

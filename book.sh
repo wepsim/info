@@ -21,5 +21,8 @@
 #
 
 
-npm run book
+# pip install --user mkdocs mkdocs-material --break-system-packages
+
+mkdocs build
+mkdocs serve
 

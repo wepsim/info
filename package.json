@@ -1,28 +1,5 @@
 {
-   "dependencies": {
-      "build": "^0.1.4",
-      "gitbook-plugin-alerts": "file:./plugins/gitbook-plugin-alerts",
-      "gitbook-plugin-back-to-top-button": "^0.1.4",
-      "gitbook-plugin-chapter-fold": "^0.0.4",
-      "gitbook-plugin-hide-published-with": "^0.0.1",
-      "gitbook-plugin-hints": "^1.0.2",
-      "gitbook-plugin-local-pagefooter": "^1.0.5",
-      "gitbook-plugin-tabs": "^0.0.7",
-      "highlight.js-mermaid": "^0.0.0",
-      "honkit": "^6.1.4",
-      "honkit-plugin-mermaid-md-adoc": "^0.0.8"
-   },
-   "scripts": {
-      "build": "npx honkit build docs ../book",
-      "serve": "npx honkit serve docs ../book",
-      "book": "npm install; npx honkit serve docs ../book"
-   },
-   "devDependencies": {
-      "gitbook-plugin-copy-code-button": "^0.0.2",
-      "gitbook-plugin-gtag": "^0.0.3",
-      "honkit-plugin-mermaid": "^0.1.4"
-   },
-   "overrides": {
-      "mermaid": "^11.0.0"
-   }
+  "devDependencies": {
+    "mkdocs": "^0.0.1"
+  }
 }

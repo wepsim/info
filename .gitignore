@@ -12,6 +12,4 @@ ipython_config.py
 
 # nodejs
 node_modules/
-package-lock.json
-bun.lock
 

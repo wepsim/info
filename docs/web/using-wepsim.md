@@ -1,11 +1,6 @@
 
 # Getting Started
 
-* [Executing a WepSIM example](#1-steps-to-execute-a-wepsim-example)
-* [Changing the default configuration](#2-steps-to-change-the-wepsim-configuration)
-* [Workflow on building your own experiment](#3-typical-workflow-to-modify-an-existing-example-or-build-your-own-experiment)
-* [How to check what changes in the execution](#4-typical-steps-to-use-the-state-management-in-wepsim)
-
 
 ## 1. Steps to execute a WepSIM example
 

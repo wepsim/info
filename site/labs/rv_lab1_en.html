@@ -1,0 +1,1878 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="WepSIM documentation">
+      
+      
+      
+        <link rel="canonical" href="https://wepsim.github.io/info/labs/rv_lab1_en.html">
+      
+      
+        <link rel="prev" href="../tutorials/mips.html">
+      
+      
+        <link rel="next" href="rv_lab2_en.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Side-channel attack - WepSIM</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#laboratory-2-microprogramming-a-compact-instruction-set" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="WepSIM" class="md-header__button md-logo" aria-label="WepSIM" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WepSIM
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Side-channel attack
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="Dark-Mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark-Mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="Light-Mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light-Mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../web/getting-wepsim.html" class="md-tabs__link">
+          
+  
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="WepSIM" class="md-nav__button md-logo" aria-label="WepSIM" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    WepSIM
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_1_1" id="__nav_1_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web/getting-wepsim.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting WepSIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web/using-wepsim.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using WepSIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_1_2" id="__nav_1_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command-line
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Command-line
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command-line/getting-wepsim-cl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting WepSIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command-line/using-wepsim-cl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using WepSIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command-line/checkingwith-wepsim-cl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checking with WepSIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Learning with WepSIM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Learning with WepSIM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_1" id="__nav_1_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example of tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Example of tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/riscv.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RISC-V
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorials/mips.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MIPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_2" id="__nav_1_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example of labs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Example of labs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Side-channel attack
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="rv_lab1_en.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Side-channel attack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rv_lab2_en.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Design your ISA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Teaching with WepSIM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Teaching with WepSIM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3_1" id="__nav_1_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration with WepSIM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration with WepSIM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/links.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WepSIM links in documents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/gcolab.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WepSIM on Google Colab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command-line/checkingwith-wepsim-cl.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checking with WepSIM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Developers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4_1" id="__nav_1_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building with WepSIM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Building with WepSIM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developer/mobile.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android and iOSx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developer/api_js.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WepSIM API (JS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4_2" id="__nav_1_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contributions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developer/source_code.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WepSIM Source Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exercise 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<ul>
+<li>Authors: <strong>Alejandro Calderón Mateos &amp; Felix García Carballeira</strong></li>
+<li>License: <a href="https://github.com/wepsim/wepsim.github.io/blob/master/LICENSE">GPLv3.0</a></li>
+</ul>
+<h1 id="laboratory-2-microprogramming-a-compact-instruction-set">Laboratory 2: microprogramming a compact instruction set</h1>
+<p>The main goal of this laboratory is to learn how to design an instruction set for a computer.
+The main knowledge to be practiced are microprogramming, assembly programming and information representation.</p>
+<p>For the development of the laboratory, it is necessary to review the following concepts:
+  * The representation of integers, character strings, etc.
+  * The main aspects of the assembly language.
+  * The instruction format and addressing types.
+  * The operation of a processor, including the stages of execution, microprogramming, etc.</p>
+<p>The student is going to use the WepSIM simulator to be able to exercise in an interactive way the concepts and knowledge indicated above.</p>
+<p>This laboratory consists of 2 exercises that you can develop and test in <a href="https://wepsim.github.io/wepsim/">WepSIM</a>.</p>
+<h2 id="exercise-1">Exercise 1</h2>
+<p>The company we are work with request you to <strong>design, implement and test</strong> a new instruction set similar to the RISC-V instruction set, using the WepSIM simulator.
+Instructions are listed in Table 1. The instructions will be encoded in 32 bits.</p>
+<html>
+<table style="border: 1px solid black; border-collapse: collapse; border-style: dotted" cellpadding="5">
+<tr    style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<th> Instruction </th>
+<th> Format </th>
+<th> Associated functionality </th>
+<th> Status register </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  lui R<sub>1</sub>, U32 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  <li>OC (31-26): 010010<li>R<sub>1</sub> (25-21)<li>U32 (63-32) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[R<sub>1</sub>] ← U32 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  sw R<sub>1</sub>, (R<sub>2</sub>) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  <li>OC (31-26): 010000<li>R<sub>1</sub> (25-21)<li>R<sub>2</sub> (20-16) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Memory[R<sub>1</sub>] ← BR[R<sub>2</sub>] </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  lw R<sub>1</sub>, (R<sub>2</sub>)      </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  <li>OC (31-26): 010011<li>R<sub>1</sub> (25-21)<li>R<sub>2</sub> (20-16) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[R<sub>1</sub>] ←Memory[R<sub>2</sub>] </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  add R<sub>1</sub>, R<sub>2</sub>, R<sub>3</sub> </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  <li>OC (31-26): 011000<li>R<sub>1</sub> (25-21)<li>R<sub>2</sub> (20-16)<li>R<sub>3</sub> (15-11) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[R<sub>1</sub>]  ← BR[R<sub>2</sub>]  + BR[R<sub>3</sub>]   </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  addi R<sub>1</sub>, R<sub>2</sub>, S16 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  <li>OC (31-26): 011010<li>R<sub>1</sub> (25-21)<li>R<sub>2</sub> (20-16)<li>S16 (15-0) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[R<sub>1</sub>] ←BR[R<sub>2</sub>] +S16 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  neg R<sub>1</sub>, R<sub>2</sub> </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  <li>OC (31-26): 011011<li>R<sub>1</sub> (25-21)<li>R<sub>2</sub> (20-16) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  BR[R<sub>1</sub>]  ← 0 -  R<sub>2</sub> </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  bnz S16 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  <li>OC (31-26): 110011<li>S16  (15-0) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  IF (SR. Z)<li>&nbsp;&nbsp;&nbsp;&nbsp;PC ← PC + S16 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  beq R<sub>1</sub>, R<sub>2</sub>, S10  </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  <li>OC (31-26): 110100<li>R<sub>1</sub> (25-21)<li>R<sub>2</sub> (20-16)<li>S10 (9-0) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  IF (R<sub>1</sub> = R<sub>2</sub>)<li>&nbsp;&nbsp;&nbsp;&nbsp;PC ← PC + S10 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  jto R<sub>1</sub> U16 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  <li>OC (31-26): 100001<li>R<sub>1</sub> (25-21)<li>U16 (15-0) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  <li>BR[R<sub>1</sub>] ← PC<li>PC ← U16 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  jr R<sub>1</sub> </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  <li>OC (31-26): 100010<li>R<sub>1</sub> (25-21) </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  PC ← BR[R<sub>1</sub>] </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  halt </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  <li>OC (31-26): 100011 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  <li>PC ← 0x00<li>SR ← 0x00 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Not updated </td>
+</tr>
+</table>
+</html>
+
+<html><center><em>Table 1.- RISC-V-like instruction set</em></center></html>
+
+<p><br>
+The notation used for the instructions is the following one:
+ * U32 refers to a 32-bit unsigned integer.
+ * U16 to a 16-bit unsigned integer.
+ * S16 to a 16-bit signed integer.
+ * S10 to a 10-bit signed integer value. 
+ * R<sub>x</sub> will be used to denote RISC-V general purpose registers, which in this 32-bit version are 32 registers of 32-bit each. BR will be used to refer to the Register File, and BR[R<sub>x</sub>] to indicate the contents of the R<sub>x</sub> register. The integers stored in register are two complements 32 bits integers.
+ * MEMORY[R] refers to the contents of the memory position whose address is stored in the R register.</p>
+<p>The values "S16/S10" indicate that sign extension must be made while in "U16" no sign extension is made (filled with leading zeros).</p>
+<p>The following is the mapping between RISC-V registers and WepSIM registers. This association must be indicated in the register section of the microcode of the requested instructions.</p>
+<html>
+<table style="border: 1px solid black; border-collapse: collapse; border-style: dotted" cellpadding="5">
+<tr>
+<th colspan="2"> RISC-V </th>
+<th> WepSIM register </th>
+<th> Meaning </th>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> x0 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> zero </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> R0 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> Contains a zero </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> x1 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> ra </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> R1 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted"> Call Return vAddress     </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x2 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  sp </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R2 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Stack pointer </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x3 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  gp </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R3 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Global pointer </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x4 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  tp </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R4 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Thread pointer </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x5 ... x7 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  t0 ... t2       </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R5 ... R7 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Temporary Records (1/2)  </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x8 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  fp </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R8 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Stack frame </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x9 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  s1 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R9 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Record saved </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x10 ... x11 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  a0 ... a1 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R10 ... R11 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Argument for functions (1/2) and return values </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x12 ... x17 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  a2 ... a7 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R12 ... R17 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Function Argument (2/2)  </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x18 ... x27 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  s2 ... s11 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R18 ... R27 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Registers saved </td>
+</tr>
+<tr style="border: 1px solid black; border-collapse: collapse; border-style: dotted">
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  x28... x31 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  t3 ... t6 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  R28 ... R31 </td>
+<td style="border: 1px solid black; border-collapse: collapse; border-style: dotted">  Temporary Records (1/2)  </td>
+</tr>
+</table>
+</html>
+<html><center><em>Table 2.- RISC-V registers</em></center></html>
+
+<p><br>
+Each registers has two names and when programming it is possible to use both x0 or zero, x1 or ra, etc.
+For the main control registers:
+ * The stack pointer register (sp) is the R2 register in the WepSIM elementary processor.
+ * The status register is the SR register in the WepSIM processor.
+ * The PC registry is the program counter register. </p>
+<p>WepSIM RT1, RT2, and RT3 registers are transparent to the assembler programmer.</p>
+<p>In order to pass arguments to a subroutine in our RISC-V assembler, the a0... a7 registers will be used, and the a0 and a1 registers will be used to return results (one value in a0, and for two values a0 and a1). 
+In the case of our RISC-V, passing more than eight arguments to a subroutine, from ninth to last of the arguments would be passed on the stack.
+Consider that a subroutine has to keep the value within registers s0... s11, sp, fp and ra between calls.</p>
+<p>The results of this exercise are related to the design of the microcode (memory of laboratory) and the microcode itself (mc file for WepSIM).
+A valid implementation that minimizes the number of clock cycles will be assessed, briefly justifying in memory the design decisions that have been made to achieve this.</p>
+<h2 id="exercise-2">Exercise 2</h2>
+<p>To test the instructions of the exercise 1 you can encode the programs that you deem appropriate.
+However, the company asks us to carry out a program in assembler (in order to make a demonstration) that uses the RISC-V instruction set requested in exercise 1.</p>
+<p>The program to be encoded, using the RISC-V statements designed in the previous section, will have the same functionality as that of the following program written in high-level language:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">int32</span><span class="w"> </span><span class="n">vector</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">sumav</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">neltos</span><span class="p">,</span><span class="w"> </span><span class="kt">int32_t</span><span class="w"> </span><span class="o">*</span><span class="n">vector</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">     </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">v0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">     </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">int32</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">neltos</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">            </span><span class="n">v0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vector</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">     </span><span class="p">}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="n">v0</span><span class="w"> </span><span class="p">;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">argv</span><span class="p">[]</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">{</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">     </span><span class="kt">int32_t</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sumav</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">vector</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">     </span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>This program has a <strong>sumav</strong> routine that receives two arguments: the number of elements of an integer vector and the start direction of that integer vector.
+The routine returns the sum of the numbers contained in the vector passed by argument. 
+There is also a <strong>main</strong> routine that takes care of calling the <strong>sumav</strong> routine and ending the program.
+Note the registers used in the convention for argument passing on this RISC-V are described at the end of Exercise 1.</p>
+<p>The results of this exercise must be indicated both, the part of the memory corresponding to this exercise and in the file associated with the requested functionality.</p>
+<h1 id="extra-material">Extra material</h1>
+<h3 id="example">Example</h3>
+<p>You can find extra material in this example within WepSIM: <a href="https://acaldero.github.io/wepsim/ws_dist/?mode=ep&examples_set=RISCV&example=4">Example 4</a>.</p>
+<h3 id="save-a-checkpoint-with-wepsim">Save a <em>checkpoint</em> with WepSIM</h3>
+<p>WepSIM allows you to save the entire working session into a single file. This session can include the requested microcode, the assembly code, the states at different execution points, and a recording of the work session. In this way it is more agile to continue the work or share that work among members of the laboratory group.</p>
+<p>To do this you have to use what in the WepSIM simulator is called <em>checkpoint</em>. The following are the steps to save a checkpoint:
+* In the run mode menu select the <em>"Checkpoint"</em> option.
+* Enter the file name in the "File name:" field, then press the "Save" button to save the file.
+* <strong>Check that the file has been saved correctly and contains everything ordered in the statement.</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Released under the LGPL v3 License. (c) 2012-2026
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
