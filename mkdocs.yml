@@ -10,7 +10,11 @@ theme:
   features:
     - navigation.tabs     # Horizontal upper menu
     - navigation.sections # Lateral menu
+    - navigation.expand   # Collapsed are shown by default
+    - navigation.top
     - content.code.copy   # Copy button
+    - search.highlight
+    - search.share
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default

@@ -2,70 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://wepsim.github.io/info/index.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/SUMMARY.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/command-line/checkingwith-wepsim-cl.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/command-line/getting-wepsim-cl.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/command-line/using-wepsim-cl.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/developer/api_html5.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/developer/api_js.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/developer/mobile.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/developer/source_code.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/integration/gcolab.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/integration/links.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/labs/rv_lab1_en.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/labs/rv_lab2_en.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/tutorials/mips.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/tutorials/riscv.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/web/getting-wepsim.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
     <url>
          <loc>https://wepsim.github.io/info/web/using-wepsim.html</loc>
-         <lastmod>2026-09-19</lastmod>
+         <lastmod>2026-09-22</lastmod>
     </url>
 </urlset>
