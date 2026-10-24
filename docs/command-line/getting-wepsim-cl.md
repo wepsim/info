@@ -9,9 +9,9 @@ From Linux/Unix command line, please:
   ```
 * Get WepSIM by executing:
   ```bash
-  wget https://github.com/wepsim/wepsim/releases/download/v2.5.0/wepsim-2.5.0.zip
-  unzip wepsim-2.5.0.zip
-  cd wepsim-2.5.0
+  wget https://github.com/wepsim/wepsim/releases/download/v2.5.2/wepsim-2.5.2.zip
+  unzip wepsim-2.5.2.zip
+  cd wepsim-2.5.2
   npm install terser jq jshint yargs clear inquirer@8.2.6 fuzzy \
            inquirer-command-prompt inquirer-autocomplete-prompt@1
   ``` 
