@@ -4,10 +4,10 @@
 
 ### Run and save the final state
 
-+ From the command line it is possible to 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print the final state:
++ From the command line it is possible to 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_enhanced.mc' microcode, and print the final state:
   ```bash
   ./wepsim.sh -a run -m ep \
-              -f ./repo/microcode/mips/ep_base.mc \
+              -f ./repo/microcode/mips/ep_sig1_l5.mc \
               -s ./repo/assembly/mips/s1e5.asm > cl-s1e5.txt
   cat cl-s1e5.txt
   ```
@@ -19,10 +19,10 @@
 
 ### Run & check end state (example when o.k.)
 
-+ You can check if the state at the end of the execution is the same as the one stored on file 'cl-s1e1.txt'. You can 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode (**and if it matches the expected state, then the output is going to be**):
++ You can check if the state at the end of the execution is the same as the one stored on file 'cl-s1e1.txt'. You can 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_enhanced.mc' microcode (**and if it matches the expected state, then the output is going to be**):
   ```bash
   ./wepsim.sh -a check -m ep \
-              -f ./repo/microcode/mips/ep_base.mc \
+              -f ./repo/microcode/mips/ep_sig1_l5.mc \
               -s ./repo/assembly/mips/s1e1.asm \
               -r ./repo/checklist/mips/cl-s1e1.txt
   ```
@@ -34,10 +34,10 @@
 
 ### Run & check end state (example when k.o.)
 
-+ You can check if the state at the end of the execution is the same as the one stored on file 'cl-s1e1.txt'. You can 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode (**and if it fails to match the expected state then the output is going to be**):
++ You can check if the state at the end of the execution is the same as the one stored on file 'cl-s1e1.txt'. You can 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_enhanced.mc' microcode (**and if it fails to match the expected state then the output is going to be**):
   ```bash
   ./wepsim.sh -a check -m ep \
-              -f ./repo/microcode/mips/ep_base.mc \
+              -f ./repo/microcode/mips/ep_sig1_l5.mc \
               -s ./repo/assembly/mips/s1e1.asm \
               -r ./repo/checklist/mips/cl-s1e2.txt
   ```

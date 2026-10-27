@@ -11,12 +11,12 @@
   !echo "(1/4) Installing pre-requisites..."
   !npm install  terser jq jshint yargs clear inquirer >& /dev/null
   !echo "(2/4) Downloading WepSIM..."
-  !wget https://github.com/wepsim/wepsim/releases/download/v2.3.8/wepsim-2.3.8.zip >& /dev/null
-  !unzip -o wepsim-2.3.8.zip  >& /dev/null
-  !rm -fr   wepsim-2.3.8.zip
+  !wget https://github.com/wepsim/wepsim/releases/download/v2.5.2/wepsim-2.5.2.zip >& /dev/null
+  !unzip -o wepsim-2.5.2.zip  >& /dev/null
+  !rm -fr   wepsim-2.5.2.zip
   !echo "(3/4) Executing WepSIM..."
-  !./wepsim-2.3.8/wepsim.sh -a stepbystep -m ep -f ./wepsim-2.3.8/repo/microcode/mips/ep_base.mc -s ./wepsim-2.3.8/repo/assembly/mips/s1e1.asm > ./result.csv
-  !rm -fr   wepsim-2.3.8
+  !./wepsim-2.5.2/wepsim.sh -a stepbystep -m ep -f ./wepsim-2.5.2/repo/microcode/mips/ep_enhanced.mc -s ./wepsim-2.5.2/repo/assembly/mips/s1e1.asm > ./result.csv
+  !rm -fr   wepsim-2.5.2
   !echo "(4/4) Showing execution trace as table..."
 
   import pandas as pd

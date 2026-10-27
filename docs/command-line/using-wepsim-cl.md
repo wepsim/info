@@ -4,10 +4,10 @@
 
 ### Run and print the final state
 
-+ From the command line it is possible to 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print the final state:
++ From the command line it is possible to 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_enhanced.mc' microcode, and print the final state:
   ```bash
   ./wepsim.sh -a run -m ep \
-              -f ./repo/microcode/mips/ep_base.mc \
+              -f ./repo/microcode/mips/ep_enhanced.mc \
               -s ./repo/assembly/mips/s1e5.asm
   ```
   Output:
@@ -18,10 +18,10 @@
 
 ### Run step by step
 
-+ It is also possible to 'run' 'step by step' the 's1_e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print for each assembly instruction the state elements that modify its value:
++ It is also possible to 'run' 'step by step' the 's1_e1.asm' assembly for the 'ep' architecture with the 'ep_enhanced.mc' microcode, and print for each assembly instruction the state elements that modify its value:
   ```bash
   ./wepsim.sh -a stepbystep -m ep \
-              -f ./repo/microcode/mips/ep_base.mc \
+              -f ./repo/microcode/mips/ep_enhanced.mc \
               -s ./repo/assembly/mips/s1e1.asm
   ```
   Output:
@@ -38,10 +38,10 @@
 
 ### Run microstep by microstep
 
-+ And to 'run' 'microstep by microstep' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print for each microinstruction the state elements that modify its value:
++ And to 'run' 'microstep by microstep' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_enhanced.mc' microcode, and print for each microinstruction the state elements that modify its value:
   ```bash
   ./wepsim.sh -a microstepbymicrostep -m ep \
-              -f ./repo/microcode/mips/ep_base.mc \
+              -f ./repo/microcode/mips/ep_enhanced.mc \
               -s ./repo/assembly/mips/s1e1.asm
   ```
   Output:
@@ -66,7 +66,7 @@
 + And finally, it is possible to execute microstep by microstep but with a more verbose description:
   ```bash
   ./wepsim.sh -a microstepverbalized -m ep \
-              -f ./repo/microcode/mips/ep_base.mc \
+              -f ./repo/microcode/mips/ep_enhanced.mc \
               -s ./repo/assembly/mips/s1e1.asm
   ```
   Output:
