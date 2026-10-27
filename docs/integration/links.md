@@ -2,17 +2,17 @@
 
 # Integrating WepSIM
 
-<a name="wepsim-links"/>
+<a name="wepsim-links"/></a>
 
 ## WepSIM Links in documents
 
-In the WepSIM URL you can use several arguments to perform certain actions automatically.
+In the WepSIM URL you can use several arguments to perform certain actions automatically. <br>
 This is an example:
 <html>
 <center>
  <h5>
  <table width="75%" border="2">
-  <tr><td><a href="http://wepsim.github.io/wepsim/ws_dist/?mode=ep&amp;examples_set=RISCV&amp;example=0&amp;simulator=assembly:14&amp;notify=false">http://wepsim.github.io/wepsim/ws_dist/?mode=ep&amp;examples_set=RISCV&amp;example=0&amp;simulator=assembly:14&amp;notify=false</a></td></tr>
+  <tr><td><a href="http://wepsim.github.io/wepsim/ws_dist/?mode=ep&examples_set=RISCV&example=0&simulator=assembly:14&notify=false">http://wepsim.github.io/wepsim/ws_dist/?mode=ep&amp;examples_set=RISCV&amp;example=0&amp;simulator=assembly:14&amp;notify=false</a></td></tr>
  </table>
  </h5>
  </center>
