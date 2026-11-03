@@ -2,17 +2,19 @@
 # Welcome to the WepSIM documentation!
 
 
-### 👨‍🎓 Learning with WepSIM...
-* New to WepSIM? Get up and running quickly:
+### 👨‍🎓 New to WepSIM?
+* Get up and running quickly:
     1. Learn about the **[Web Interface](web/using-wepsim.md)** to enjoy the simulator
           * **[Try it now in your browser](https://wepsim.github.io/wepsim)** - No installation needed!
     2. Or learn about **[installing](command-line/getting-wepsim-cl.md)** and **[using the CLI Interface](command-line/using-wepsim-cl.md)**
-* Example of **tutorials for assembly** with WepSIM:
+
+### 👨‍🎓 Learning with WepSIM...
+* Example of **basic tutorials for learning assembly** with WepSIM:
     * **[RISC-V](tutorials/riscv.md)**
     * **[MIPS32](tutorials/mips.md)**
-* Examples of **laboratories for microprogramming** with WepSIM:
+* Examples of **microprogramming laboratories** with WepSIM:
     * **[Microprogramming a compact instruction set](labs/rv_lab1_en.md)**
-    * **[Assembly, power-consumption and security](labs/rv_lab2_en.md)**
+    * **[Power-consumption and security](labs/rv_lab2_en.md)**
 
 
 ### 👨‍🏫 Teaching with WepSIM...
