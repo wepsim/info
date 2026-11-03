@@ -1648,9 +1648,9 @@
 <h1 id="getting-started">Getting Started</h1>
 <h3 id="run-and-print-the-final-state">Run and print the final state</h3>
 <ul>
-<li>From the command line it is possible to 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print the final state:
+<li>From the command line it is possible to 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_enhanced.mc' microcode, and print the final state:
   <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./wepsim.sh<span class="w"> </span>-a<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>ep<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">            </span>-f<span class="w"> </span>./repo/microcode/mips/ep_base.mc<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">            </span>-f<span class="w"> </span>./repo/microcode/mips/ep_enhanced.mc<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">            </span>-s<span class="w"> </span>./repo/assembly/mips/s1e5.asm
 </span></code></pre></div>
   Output:
@@ -1659,9 +1659,9 @@
 </ul>
 <h3 id="run-step-by-step">Run step by step</h3>
 <ul>
-<li>It is also possible to 'run' 'step by step' the 's1_e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print for each assembly instruction the state elements that modify its value:
+<li>It is also possible to 'run' 'step by step' the 's1_e1.asm' assembly for the 'ep' architecture with the 'ep_enhanced.mc' microcode, and print for each assembly instruction the state elements that modify its value:
   <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./wepsim.sh<span class="w"> </span>-a<span class="w"> </span>stepbystep<span class="w"> </span>-m<span class="w"> </span>ep<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">            </span>-f<span class="w"> </span>./repo/microcode/mips/ep_base.mc<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">            </span>-f<span class="w"> </span>./repo/microcode/mips/ep_enhanced.mc<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">            </span>-s<span class="w"> </span>./repo/assembly/mips/s1e1.asm
 </span></code></pre></div>
   Output:
@@ -1676,9 +1676,9 @@
 </ul>
 <h3 id="run-microstep-by-microstep">Run microstep by microstep</h3>
 <ul>
-<li>And to 'run' 'microstep by microstep' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print for each microinstruction the state elements that modify its value:
+<li>And to 'run' 'microstep by microstep' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_enhanced.mc' microcode, and print for each microinstruction the state elements that modify its value:
   <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./wepsim.sh<span class="w"> </span>-a<span class="w"> </span>microstepbymicrostep<span class="w"> </span>-m<span class="w"> </span>ep<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">            </span>-f<span class="w"> </span>./repo/microcode/mips/ep_base.mc<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">            </span>-f<span class="w"> </span>./repo/microcode/mips/ep_enhanced.mc<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">            </span>-s<span class="w"> </span>./repo/assembly/mips/s1e1.asm
 </span></code></pre></div>
   Output:
@@ -1700,7 +1700,7 @@
 <ul>
 <li>And finally, it is possible to execute microstep by microstep but with a more verbose description:
   <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>./wepsim.sh<span class="w"> </span>-a<span class="w"> </span>microstepverbalized<span class="w"> </span>-m<span class="w"> </span>ep<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">            </span>-f<span class="w"> </span>./repo/microcode/mips/ep_base.mc<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">            </span>-f<span class="w"> </span>./repo/microcode/mips/ep_enhanced.mc<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">            </span>-s<span class="w"> </span>./repo/assembly/mips/s1e1.asm
 </span></code></pre></div>
   Output:

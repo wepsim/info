@@ -1706,9 +1706,9 @@
 <h1 id="checking-with-wepsim">Checking with WepSIM</h1>
 <h3 id="run-and-save-the-final-state">Run and save the final state</h3>
 <ul>
-<li>From the command line it is possible to 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode, and print the final state:
+<li>From the command line it is possible to 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_enhanced.mc' microcode, and print the final state:
   <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./wepsim.sh<span class="w"> </span>-a<span class="w"> </span>run<span class="w"> </span>-m<span class="w"> </span>ep<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">            </span>-f<span class="w"> </span>./repo/microcode/mips/ep_base.mc<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">            </span>-f<span class="w"> </span>./repo/microcode/mips/ep_sig1_l5.mc<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">            </span>-s<span class="w"> </span>./repo/assembly/mips/s1e5.asm<span class="w"> </span>&gt;<span class="w"> </span>cl-s1e5.txt
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>cat<span class="w"> </span>cl-s1e5.txt
 </span></code></pre></div>
@@ -1718,9 +1718,9 @@
 </ul>
 <h3 id="run-check-end-state-example-when-ok">Run &amp; check end state (example when o.k.)</h3>
 <ul>
-<li>You can check if the state at the end of the execution is the same as the one stored on file 'cl-s1e1.txt'. You can 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode (<strong>and if it matches the expected state, then the output is going to be</strong>):
+<li>You can check if the state at the end of the execution is the same as the one stored on file 'cl-s1e1.txt'. You can 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_enhanced.mc' microcode (<strong>and if it matches the expected state, then the output is going to be</strong>):
   <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>./wepsim.sh<span class="w"> </span>-a<span class="w"> </span>check<span class="w"> </span>-m<span class="w"> </span>ep<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">            </span>-f<span class="w"> </span>./repo/microcode/mips/ep_base.mc<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">            </span>-f<span class="w"> </span>./repo/microcode/mips/ep_sig1_l5.mc<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">            </span>-s<span class="w"> </span>./repo/assembly/mips/s1e1.asm<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">            </span>-r<span class="w"> </span>./repo/checklist/mips/cl-s1e1.txt
 </span></code></pre></div>
@@ -1730,9 +1730,9 @@
 </ul>
 <h3 id="run-check-end-state-example-when-ko">Run &amp; check end state (example when k.o.)</h3>
 <ul>
-<li>You can check if the state at the end of the execution is the same as the one stored on file 'cl-s1e1.txt'. You can 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_base.mc' microcode (<strong>and if it fails to match the expected state then the output is going to be</strong>):
+<li>You can check if the state at the end of the execution is the same as the one stored on file 'cl-s1e1.txt'. You can 'run' the 's1e1.asm' assembly for the 'ep' architecture with the 'ep_enhanced.mc' microcode (<strong>and if it fails to match the expected state then the output is going to be</strong>):
   <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>./wepsim.sh<span class="w"> </span>-a<span class="w"> </span>check<span class="w"> </span>-m<span class="w"> </span>ep<span class="w"> </span><span class="se">\</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">            </span>-f<span class="w"> </span>./repo/microcode/mips/ep_base.mc<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">            </span>-f<span class="w"> </span>./repo/microcode/mips/ep_sig1_l5.mc<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">            </span>-s<span class="w"> </span>./repo/assembly/mips/s1e1.asm<span class="w"> </span><span class="se">\</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">            </span>-r<span class="w"> </span>./repo/checklist/mips/cl-s1e2.txt
 </span></code></pre></div>
